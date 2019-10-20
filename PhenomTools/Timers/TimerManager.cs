@@ -28,6 +28,6 @@ public static class TimerManager
 
     public static void UpdateActiveTimersList()
     {
-        activeTimers.OrderBy(t => t.currentTime);
+        activeTimers = activeTimers.OrderBy(t => t.currentTime).ToList();
     }
 }
