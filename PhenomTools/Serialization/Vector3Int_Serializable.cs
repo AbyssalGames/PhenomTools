@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class Vector3Int_Serializable
+public struct Vector3Int_Serializable
 {
     public int x;
     public int y;
@@ -26,9 +26,10 @@ public class Vector3Int_Serializable
     {
         x = vector.x;
         y = vector.y;
+        z = 0;
     }
 
-    public Vector3Int ToVector3Int_Unserializable()
+    public Vector3Int ToUnserializable()
     {
         return new Vector3Int(x, y, z);
     }

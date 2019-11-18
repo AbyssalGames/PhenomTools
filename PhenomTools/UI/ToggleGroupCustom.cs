@@ -10,9 +10,9 @@ public class ToggleGroupCustom : MonoBehaviour
     [SerializeField]
     private new bool enabled = true;
     [SerializeField]
-    private bool allowSwitchOff;
+    private bool allowSwitchOff = false;
     [SerializeField]
-    private Toggle[] toggles;
+    private Toggle[] toggles = null;
 
     private int currentActiveIndex = -1;
 

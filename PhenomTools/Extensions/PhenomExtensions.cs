@@ -413,26 +413,26 @@ public static class PhenomExtensions
         image.fillClockwise = clockwise;
     }
 
-    public static Vector3Int ToTilePosition(this Vector3 vector)
-    {
-        return new Vector3Int(Mathf.FloorToInt(vector.x), Mathf.FloorToInt(vector.y), 0);
-    }
-    public static Vector3Int ToTilePosition(this Vector2 vector)
-    {
-        return new Vector3Int(Mathf.FloorToInt(vector.x), Mathf.FloorToInt(vector.y), 0);
-    }
-    public static Vector2Int ToTilePosition2D(this Vector3 vector)
+    public static Vector2Int ToTilePosition(this Vector3 vector)
     {
         return new Vector2Int(Mathf.FloorToInt(vector.x), Mathf.FloorToInt(vector.y));
     }
-    public static Vector2Int ToTilePosition2D(this Vector2 vector)
+    public static Vector2Int ToTilePosition(this Vector2 vector)
     {
         return new Vector2Int(Mathf.FloorToInt(vector.x), Mathf.FloorToInt(vector.y));
     }
-    public static Vector2Int ToTilePosition2D(this Vector3Int vector)
-    {
-        return new Vector2Int(Mathf.FloorToInt(vector.x), Mathf.FloorToInt(vector.y));
-    }
+    //public static Vector2Int ToTilePosition2D(this Vector3 vector)
+    //{
+    //    return new Vector2Int(Mathf.FloorToInt(vector.x), Mathf.FloorToInt(vector.y));
+    //}
+    //public static Vector2Int ToTilePosition2D(this Vector2 vector)
+    //{
+    //    return new Vector2Int(Mathf.FloorToInt(vector.x), Mathf.FloorToInt(vector.y));
+    //}
+    //public static Vector2Int ToTilePosition2D(this Vector3Int vector)
+    //{
+    //    return new Vector2Int(Mathf.FloorToInt(vector.x), Mathf.FloorToInt(vector.y));
+    //}
     public static Vector2Int ToChunk(this Vector2Int vector)
     {
         return new Vector2Int(Mathf.FloorToInt(vector.x / 16f), Mathf.FloorToInt(vector.y / 16f));
@@ -441,13 +441,21 @@ public static class PhenomExtensions
     {
         return new Vector2Int(Mathf.FloorToInt(vector.x / 16f), Mathf.FloorToInt(vector.y / 16f));
     }
-    public static Vector3Int ToTilePosition(this Vector2Int vector)
-    {
-        return new Vector3Int(Mathf.FloorToInt(vector.x), Mathf.FloorToInt(vector.y), 0);
-    }
+    //public static Vector3Int ToTilePosition(this Vector2Int vector)
+    //{
+    //    return new Vector3Int(Mathf.FloorToInt(vector.x), Mathf.FloorToInt(vector.y), 0);
+    //}
     public static Vector3Int RoundToInt(this Vector3 vector)
     {
         return new Vector3Int(Mathf.RoundToInt(vector.x), Mathf.RoundToInt(vector.y), Mathf.RoundToInt(vector.z));
+    }
+    public static Vector3Int ToVector3Int(this Vector2Int vector)
+    {
+        return new Vector3Int(vector.x, vector.y, 0);
+    }
+    public static Vector2Int ToVector2Int(this Vector3Int vector)
+    {
+        return new Vector2Int(vector.x, vector.y);
     }
     public static Vector3 ToVector3(this Vector2 vector)
     {
@@ -466,12 +474,12 @@ public static class PhenomExtensions
 
         return newArray;
     }
-    public static Vector3Int_Serializable[] ToSerializable(this Vector2Int[] array)
+    public static Vector2Int_Serializable[] ToSerializable(this Vector2Int[] array)
     {
-        Vector3Int_Serializable[] newArray = new Vector3Int_Serializable[array.Length];
+        Vector2Int_Serializable[] newArray = new Vector2Int_Serializable[array.Length];
 
         for (int i = 0; i < array.Length; i++)
-            newArray[i] = new Vector3Int_Serializable(array[i]);
+            newArray[i] = new Vector2Int_Serializable(array[i]);
 
         return newArray;
     }

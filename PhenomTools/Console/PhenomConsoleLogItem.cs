@@ -7,10 +7,9 @@ public class PhenomConsoleLogItem : MonoBehaviour
     public static bool altColor;
 
     [SerializeField]
-    private TextMeshProUGUI logText;
-
+    private TextMeshProUGUI logText = null;
     [SerializeField]
-    private Image bgImage;
+    private Image bgImage = null;
 
     private int logIndex;
 

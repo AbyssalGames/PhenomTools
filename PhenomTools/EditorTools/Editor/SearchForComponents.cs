@@ -6,10 +6,10 @@ using UnityEditor.SceneManagement;
 
 public class SearchForComponents : EditorWindow
 {
-    //[MenuItem("EDITORS/Search For Components")]
+    [MenuItem("PhenomTools/Search For Components")]
     static void Init()
     {
-        SearchForComponents window = (SearchForComponents)EditorWindow.GetWindow(typeof(SearchForComponents));
+        SearchForComponents window = (SearchForComponents)GetWindow(typeof(SearchForComponents));
         window.Show();
         window.position = new Rect(20, 80, 550, 500);
     }
@@ -34,10 +34,10 @@ public class SearchForComponents : EditorWindow
         public List<string> usageSource;
         public ComponentNames(string comp, string space, string path)
         {
-            this.componentName = comp;
-            this.namespaceName = space;
-            this.assetPath = path;
-            this.usageSource = new List<string>();
+            componentName = comp;
+            namespaceName = space;
+            assetPath = path;
+            usageSource = new List<string>();
         }
         public override bool Equals(object obj)
         {

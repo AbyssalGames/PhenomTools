@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 public class ScrollRectExtended : ScrollRect, IBeginDragHandler, IEndDragHandler
 {
-    public event Action onBeginDragHandler, onEndDragHandler, currentInertiaPassedThresholdHandler;
+    public event Action onBeginDragHandler;
+    public event Action onEndDragHandler;
 
     public override void OnBeginDrag(PointerEventData eventData)
     {

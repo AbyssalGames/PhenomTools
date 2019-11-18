@@ -23,15 +23,15 @@ public class SoundManager : MonoBehaviour
     public static MusicHandler music => instance?._music;
 
     [SerializeField]
-    private SoundChannelHandler _channels;
+    private SoundChannelHandler _channels = null;
     [SerializeField]
-    private MusicHandler _music;
+    private MusicHandler _music = null;
 
     private void Awake()
     {
         if (instance == null)
         {
-            instance = (SoundManager)this.SetAsSingleton(instance);
+            instance = this;
 
             SetAudioConfiguration();
 
@@ -40,7 +40,7 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
-            DestroyImmediate(gameObject);
+            Destroy(gameObject);
         }
     }
 

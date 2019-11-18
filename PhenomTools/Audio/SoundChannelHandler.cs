@@ -102,6 +102,8 @@ public class SoundChannelHandler : MonoBehaviour
                     MasterAudio.SetBusVolumeByName(channel.busName, newValue);
                 else
                     MasterAudio.FadeBusToVolume(channel.busName, newValue, fadeDuration);
+
+                volumeUpdatedEvent?.Invoke(channel);
             }
             else
                 PhenomConsole.Log("No Master Audio Bus with name: " + channel.busName, LogType.Error);

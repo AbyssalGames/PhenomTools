@@ -13,47 +13,53 @@ public enum LogType
     Error, Assertion, Warning, Normal, Exception, Boon
 }
 
+/// <summary>
+/// Custom Run-time logger
+/// </summary>
 public class PhenomConsole : MonoBehaviour
 {
     private static PhenomConsole instance;
 
     [SerializeField]
-    private RectTransform logRoot;
+    private RectTransform logRoot = null;
     [SerializeField]
-    private GameObject logItemPrefab;
-    [SerializeField]
-    private Scrollbar scrollbar;
+    private GameObject logItemPrefab = null;
+    //[SerializeField]
+    //private Scrollbar scrollbar = null;
     [SerializeField]
     private int maxLines = 100;
     [SerializeField]
     private bool collapse = true;
     [SerializeField]
-    private bool listenForSystemLogs;
+    private bool listenForSystemLogs = false;
 
     [Space]
     [SerializeField]
-    private bool useLogFile;
+    private bool useTimestamp = true;
     [SerializeField]
-    private bool useConsoleWriteLine;
-    [SerializeField]
-    private string logName = "PhenomLog_";
+    private bool useConsoleWriteLine = false;
 
     private Dictionary<string, int> logDict = new Dictionary<string, int>();
     private int currentLogCount;
     private List<GameObject> logObjects = new List<GameObject>();
-    private string fileName;
+
+    private static string fileName;
 
     private void Awake()
     {
-        instance = (PhenomConsole)this.SetAsSingleton(instance);
+        if(instance == null)
+        { 
+            instance = this;
 
 #if !UNITY_EDITOR
-        if (instance.useLogFile)
-        {
-            fileName = Application.dataPath + "/" + logName + DateTime.UtcNow.ToString("MM-dd_HH-mm-ss") + ".txt";
+            fileName = Application.dataPath + "/PhenomLog_" + DateTime.UtcNow.ToString("MM-dd_HH-mm-ss") + ".txt";
             File.Create(fileName);
-        }
 #endif
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnEnable()
@@ -75,10 +81,10 @@ public class PhenomConsole : MonoBehaviour
 
     public static void Log(object log, LogType logType = LogType.Normal, Object context = null, bool useTimestamp = true, bool useTypePrefix = false)
     {
-        if (useTypePrefix)
+        if (useTypePrefix || instance?.useConsoleWriteLine == true)
             log = string.Concat(GetTypePrefix(logType), log);
 
-        if (useTimestamp)
+        if (useTimestamp && instance?.useTimestamp == true)
         {
             DateTime now = DateTime.Now;
             log = string.Concat(now.Hour.ToString("00"), ":", now.Minute.ToString("00"), ":", now.Second.ToString("00"), ":", now.Millisecond.ToString("000"), " : ", log);
@@ -107,8 +113,7 @@ public class PhenomConsole : MonoBehaviour
         {
             instance.NewLine(log.ToString(), logType);
 #if !UNITY_EDITOR
-            if (instance.useLogFile)
-                instance.WriteToFile(log.ToString());
+            instance.WriteToFile(log.ToString());
 #endif
         }
     }
@@ -142,11 +147,13 @@ public class PhenomConsole : MonoBehaviour
 
     }
 
+#if !UNITY_EDITOR
     public void WriteToFile(string text)
     {
         using (StreamWriter writer = new StreamWriter(fileName, true))
             writer.WriteLine(text);
     }
+#endif
 
     public static Color GetColorOfLogType(LogType type, float value, float alpha)
     {

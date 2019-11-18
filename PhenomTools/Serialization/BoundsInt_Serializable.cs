@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using UnityEngine.Scripting;
 
 [Serializable]
-public class BoundsInt_Serializable
+public struct BoundsInt_Serializable
 {
     public Vector3Int_Serializable position;
     public Vector3Int_Serializable size;
@@ -31,6 +31,6 @@ public class BoundsInt_Serializable
 
     public BoundsInt ToBoundsInt_Unserializable()
     {
-        return new BoundsInt(position.ToVector3Int_Unserializable(), size.ToVector3Int_Unserializable());
+        return new BoundsInt(position.ToUnserializable(), size.ToUnserializable());
     }
 }
