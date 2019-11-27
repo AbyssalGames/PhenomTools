@@ -1,0 +1,16 @@
+{
+    "name": "MasterAudio.Editor",
+    "references": [
+        "GUID:cb43b33822e79774a8cefeb777da2667",
+        "GUID:91f249d1755b91e4a8fcb76fc07f2512",
+        "GUID:a5027eefc60318b4ca8e8f62e59654ad"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

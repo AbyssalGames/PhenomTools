@@ -1,0 +1,15 @@
+{
+    "name": "MasterAudio.RelationsInspector.Editor",
+    "references": [
+        "GUID:91f249d1755b91e4a8fcb76fc07f2512",
+        "GUID:cb43b33822e79774a8cefeb777da2667"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

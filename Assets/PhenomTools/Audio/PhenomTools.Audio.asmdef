@@ -1,0 +1,15 @@
+{
+    "name": "PhenomTools.Audio",
+    "references": [
+        "GUID:b73bdeda682a722408c6b6cc8473c6d3",
+        "GUID:cb43b33822e79774a8cefeb777da2667"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
