@@ -5,29 +5,28 @@ using UnityEngine;
 
 public static class TimerManager
 {
-    public static List<Timer> activeTimers { get; private set; } = new List<Timer>();
+    public static List<TimeKeeperBase> activeTimeKeepers { get; private set; } = new List<TimeKeeperBase>();
 
-    public static void RegisterNewTimer(Timer timer)
+    public static void RegisterNewTimer(TimeKeeperBase timer)
     {
-        timer.timerCoroutine = timer.TimerCoroutine();
-        PhenomExtensions.coroutineHolder.StartCoroutine(timer.timerCoroutine);
+        PhenomExtensions.coroutineHolder.StartCoroutine(timer.keeperCoroutine);
 
-        if(!activeTimers.Contains(timer))
-            activeTimers.Add(timer);
+        if(!activeTimeKeepers.Contains(timer))
+            activeTimeKeepers.Add(timer);
 
         UpdateActiveTimersList();
     }
 
-    public static void RemoveTimer(Timer timer)
+    public static void RemoveTimer(TimeKeeperBase timer)
     {
         if (timer.isRunning)
-            timer.StopTimer();
+            timer.Stop();
 
-        activeTimers.Remove(timer);
+        activeTimeKeepers.Remove(timer);
     }
 
     public static void UpdateActiveTimersList()
     {
-        activeTimers = activeTimers.OrderBy(t => t.currentTime).ToList();
+        activeTimeKeepers = activeTimeKeepers.OrderBy(t => t.currentTime).ToList();
     }
 }

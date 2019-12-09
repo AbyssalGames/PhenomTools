@@ -3,20 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Counts down from given duration. Calls onComplete when it reaches 0.
-/// </summary>
 [Serializable]
-public class Timer : TimeKeeperBase
+public class Stopwatch : TimeKeeperBase
 {
-    public Timer(float duration, bool useSeconds = true, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
+    public Stopwatch(float duration = 0, bool useSeconds = true, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
     {
         Begin(duration, useSeconds, updateMode);
     }
 
-    public override void Begin(float duration, bool useSeconds = true, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
+    public override void Begin(float duration = 0, bool useSeconds = true, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
     {
-        currentTime = duration;
+        currentTime = 0;
         keeperCoroutine = KeeperCoroutine();
 
         CallOnUpdate();
@@ -26,16 +23,16 @@ public class Timer : TimeKeeperBase
 
     protected override IEnumerator KeeperCoroutine()
     {
-        while (isRunning && currentTime > 0)
+        while (isRunning && (duration == 0 || currentTime < duration))
         {
             if (useSeconds)
             {
-                if(updateMode == AnimatorUpdateMode.Normal || updateMode == AnimatorUpdateMode.AnimatePhysics)
+                if (updateMode == AnimatorUpdateMode.Normal || updateMode == AnimatorUpdateMode.AnimatePhysics)
                     yield return new WaitForSeconds(1);
-                else if(updateMode == AnimatorUpdateMode.UnscaledTime)
+                else if (updateMode == AnimatorUpdateMode.UnscaledTime)
                     yield return new WaitForSecondsRealtime(1);
 
-                currentTime = (int)currentTime - 1;
+                currentTime = (int)currentTime + 1;
 
                 CallOnUpdate();
             }
@@ -43,7 +40,7 @@ public class Timer : TimeKeeperBase
             {
                 if (updateMode == AnimatorUpdateMode.UnscaledTime)
                 {
-                    currentTime = startTime + duration - Time.realtimeSinceStartup;
+                    currentTime = Time.realtimeSinceStartup - startTime;
                 }
                 else
                 {
@@ -52,14 +49,12 @@ public class Timer : TimeKeeperBase
                     else
                         yield return new WaitForEndOfFrame();
 
-                    currentTime -= Time.deltaTime;
+                    currentTime += Time.deltaTime;
                 }
 
                 CallOnUpdate();
             }
         }
-
-        currentTime = 0f;
 
         keeperCoroutine = null;
         Stop();
@@ -67,7 +62,7 @@ public class Timer : TimeKeeperBase
 
     public override void Reset()
     {
-        currentTime = duration;
+        currentTime = 0;
 
         base.Reset();
     }

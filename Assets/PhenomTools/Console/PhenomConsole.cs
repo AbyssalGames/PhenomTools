@@ -118,6 +118,7 @@ public class PhenomConsole : MonoBehaviour
 #endif
         }
     }
+    public static void LogError(object log, Object context = null, bool useTimestamp = true, bool useTypePrefix = false) => Log(log, LogType.Error, context, useTimestamp, useTypePrefix);
 
     private void NewLine(string log, LogType logType)
     {

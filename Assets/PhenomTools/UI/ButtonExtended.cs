@@ -6,7 +6,15 @@ using UnityEngine.UI;
 
 public class ButtonExtended : Button
 {
-    public Sound clickSound;
+    [SerializeField]
+    private Sound clickSound = null;
+
+    private Animator anim;
+
+    protected override void Awake()
+    {
+        anim = animator;
+    }
 
     public void SetParameters(Button b, Graphic targetGraphic, ButtonClickedEvent onClick)
     {
@@ -28,6 +36,19 @@ public class ButtonExtended : Button
     {
         base.OnPointerClick(eventData);
 
+        anim?.SetBool("Pressed", false);
 
+        if (!IsActive() || !IsInteractable())
+            return;
+
+        SoundManager.Play2DSound(clickSound);
+    }
+
+    public void OnPointerDown(BaseEventData eventData)
+    {
+        if (!IsActive() || !IsInteractable())
+            return;
+
+        anim?.SetBool("Pressed", true);
     }
 }
