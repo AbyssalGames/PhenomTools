@@ -5,7 +5,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace Malee.Editor {
+namespace PhenomTools {
 
 	public class ReorderableList {
 

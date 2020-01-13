@@ -1,87 +1,71 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class Stopwatch : TimeKeeperBase
+namespace PhenomTools
 {
-    public Stopwatch(float duration = 0, bool useSeconds = true, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
+    [Serializable]
+    public class Stopwatch : TimeKeeperBase
     {
-        Begin(duration, useSeconds, updateMode);
-    }
-
-    public override void Begin(float duration = 0, bool useSeconds = true, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
-    {
-        currentTime = 0;
-        keeperCoroutine = KeeperCoroutine();
-
-        CallOnUpdate();
-
-        base.Begin(duration, useSeconds, updateMode);
-    }
-
-    protected override IEnumerator KeeperCoroutine()
-    {
-        while (isRunning && (duration == 0 || currentTime < duration))
+        public Stopwatch(float duration = 0, bool useSeconds = true, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
         {
-            if (useSeconds)
-            {
-                if (updateMode == AnimatorUpdateMode.Normal || updateMode == AnimatorUpdateMode.AnimatePhysics)
-                    yield return new WaitForSeconds(1);
-                else if (updateMode == AnimatorUpdateMode.UnscaledTime)
-                    yield return new WaitForSecondsRealtime(1);
+            Begin(duration, useSeconds, updateMode);
+        }
 
-                currentTime = (int)currentTime + 1;
+        public override void Begin(float duration = 0, bool useSeconds = true, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
+        {
+            currentTime = 0;
+            keeperCoroutine = KeeperCoroutine();
 
-                CallOnUpdate();
-            }
-            else
+            CallOnUpdate();
+
+            base.Begin(duration, useSeconds, updateMode);
+        }
+
+        protected override IEnumerator KeeperCoroutine()
+        {
+            while (isRunning && (duration == 0 || currentTime < duration))
             {
-                if (updateMode == AnimatorUpdateMode.UnscaledTime)
+                if (useSeconds)
                 {
-                    currentTime = Time.realtimeSinceStartup - startTime;
+                    if (updateMode == AnimatorUpdateMode.Normal || updateMode == AnimatorUpdateMode.AnimatePhysics)
+                        yield return new WaitForSeconds(1);
+                    else if (updateMode == AnimatorUpdateMode.UnscaledTime)
+                        yield return new WaitForSecondsRealtime(1);
+
+                    currentTime = (int)currentTime + 1;
+
+                    CallOnUpdate();
                 }
                 else
                 {
-                    if (updateMode == AnimatorUpdateMode.AnimatePhysics)
-                        yield return new WaitForFixedUpdate();
+                    if (updateMode == AnimatorUpdateMode.UnscaledTime)
+                    {
+                        currentTime = Time.realtimeSinceStartup - startTime;
+                    }
                     else
-                        yield return new WaitForEndOfFrame();
+                    {
+                        if (updateMode == AnimatorUpdateMode.AnimatePhysics)
+                            yield return new WaitForFixedUpdate();
+                        else
+                            yield return new WaitForEndOfFrame();
 
-                    currentTime += Time.deltaTime;
+                        currentTime += Time.deltaTime;
+                    }
+
+                    CallOnUpdate();
                 }
-
-                CallOnUpdate();
             }
+
+            keeperCoroutine = null;
+            Stop();
         }
 
-        keeperCoroutine = null;
-        Stop();
-    }
+        public override void Reset()
+        {
+            currentTime = 0;
 
-    public override void Reset()
-    {
-        currentTime = 0;
-
-        base.Reset();
-    }
-
-    public override void Stop()
-    {
-        base.Stop();
-    }
-
-    /// <summary>
-    /// Stop the timer without notifying listeners of onComplete
-    /// </summary>
-    public override void Kill()
-    {
-        base.Kill();
-    }
-
-    protected override void Finished()
-    {
-        base.Finished();
+            base.Reset();
+        }
     }
 }

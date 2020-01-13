@@ -1,78 +1,78 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class UIExtentionTools : MonoBehaviour
+namespace PhenomTools
 {
-    [Space]
-    public Selectable[] allSelectables;
-    public Button[] allButtons;
-    public Toggle[] allToggles;
-    public Slider[] allSliders;
-
-    public void GatherSelectables()
+    public class UIExtentionTools : MonoBehaviour
     {
-        allSelectables = GetComponentsInChildren<Selectable>(true);
-        allButtons = GetComponentsInChildren<Button>(true);
-        allToggles = GetComponentsInChildren<Toggle>(true);
-        allSliders = GetComponentsInChildren<Slider>(true);
-    }
+        [Space]
+        public Selectable[] allSelectables;
+        public Button[] allButtons;
+        public Toggle[] allToggles;
+        public Slider[] allSliders;
 
-    public void ExtendButtons()
-    {
-        if (allButtons != null && allButtons.Length > 0)
+        public void GatherSelectables()
         {
-            foreach (Button b in allButtons)
+            allSelectables = GetComponentsInChildren<Selectable>(true);
+            allButtons = GetComponentsInChildren<Button>(true);
+            allToggles = GetComponentsInChildren<Toggle>(true);
+            allSliders = GetComponentsInChildren<Slider>(true);
+        }
+
+        public void ExtendButtons()
+        {
+            if (allButtons != null && allButtons.Length > 0)
             {
-                if (b.GetType() != typeof(ButtonExtended))
+                foreach (Button b in allButtons)
                 {
-                    GameObject go = b.gameObject;
-                    Button bCache = Instantiate(b);
-                    Graphic targetGraphic = b.targetGraphic;
-                    Button.ButtonClickedEvent onClick = b.onClick;
+                    if (b.GetType() != typeof(ButtonExtended))
+                    {
+                        GameObject go = b.gameObject;
+                        Button bCache = Instantiate(b);
+                        Graphic targetGraphic = b.targetGraphic;
+                        Button.ButtonClickedEvent onClick = b.onClick;
 
-                    DestroyImmediate(b);
-                    go.AddComponent<ButtonExtended>().SetParameters(bCache, targetGraphic, onClick);
+                        DestroyImmediate(b);
+                        go.AddComponent<ButtonExtended>().SetParameters(bCache, targetGraphic, onClick);
 
-                    DestroyImmediate(bCache.gameObject);
+                        DestroyImmediate(bCache.gameObject);
+                    }
+                    //else
+                    //{
+                    //    Debug.LogError("Button already Extended", b.gameObject);
+                    //}
                 }
-                //else
-                //{
-                //    Debug.LogError("Button already Extended", b.gameObject);
-                //}
             }
         }
-    }
 
-    public void ExtendToggles()
-    {
-        if (allToggles != null && allToggles.Length > 0)
+        public void ExtendToggles()
         {
-            foreach (Toggle t in allToggles)
+            if (allToggles != null && allToggles.Length > 0)
             {
-                if (t.GetType() != typeof(ToggleExtended))
+                foreach (Toggle t in allToggles)
                 {
-                    GameObject go = t.gameObject;
-                    Toggle tCache = Instantiate(t);
-                    Graphic targetGraphic = t.targetGraphic;
-                    Graphic graphic = t.graphic;
-                    Toggle.ToggleEvent onValueChanged = t.onValueChanged;
+                    if (t.GetType() != typeof(ToggleExtended))
+                    {
+                        GameObject go = t.gameObject;
+                        Toggle tCache = Instantiate(t);
+                        Graphic targetGraphic = t.targetGraphic;
+                        Graphic graphic = t.graphic;
+                        Toggle.ToggleEvent onValueChanged = t.onValueChanged;
 
-                    DestroyImmediate(t);
-                    go.AddComponent<ToggleExtended>().SetParameters(tCache, targetGraphic, graphic, onValueChanged);
+                        DestroyImmediate(t);
+                        go.AddComponent<ToggleExtended>().SetParameters(tCache, targetGraphic, graphic, onValueChanged);
 
-                    DestroyImmediate(tCache.gameObject);
+                        DestroyImmediate(tCache.gameObject);
+                    }
+                    //else
+                    //{
+                    //    Debug.LogError("Toggle already Extended", t.gameObject);
+                    //}
                 }
-                //else
-                //{
-                //    Debug.LogError("Toggle already Extended", t.gameObject);
-                //}
             }
         }
     }
 }
-
 
 
 

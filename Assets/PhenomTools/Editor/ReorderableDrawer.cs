@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace Malee.Editor {
+namespace PhenomTools {
 
 	[CustomPropertyDrawer(typeof(ReorderableAttribute))]
 	public class ReorderableDrawer : PropertyDrawer {

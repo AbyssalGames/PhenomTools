@@ -1,38 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(UIExtentionTools))]
-public class UIExtensionToolsEditor : Editor
+namespace PhenomTools
 {
-    public override void OnInspectorGUI()
+    [CustomEditor(typeof(UIExtentionTools))]
+    public class UIExtensionToolsEditor : UnityEditor.Editor
     {
-        UIExtentionTools tools = target as UIExtentionTools;
-
-        EditorGUI.BeginChangeCheck();
-
-        if (GUILayout.Button("Gather Selectables"))
+        public override void OnInspectorGUI()
         {
-            Undo.RecordObject(tools, "Gather Selectables");
-            tools.GatherSelectables();
+            UIExtentionTools tools = target as UIExtentionTools;
+
+            EditorGUI.BeginChangeCheck();
+
+            if (GUILayout.Button("Gather Selectables"))
+            {
+                Undo.RecordObject(tools, "Gather Selectables");
+                tools.GatherSelectables();
+            }
+
+            if (GUILayout.Button("Extend Buttons"))
+            {
+                Undo.RecordObject(tools, "Extend Buttons");
+                tools.ExtendButtons();
+            }
+
+            if (GUILayout.Button("Extend Toggles"))
+            {
+                Undo.RecordObject(tools, "Extend Toggles");
+                tools.ExtendToggles();
+            }
+
+            EditorGUI.EndChangeCheck();
+
+
+            base.OnInspectorGUI();
         }
-
-        if (GUILayout.Button("Extend Buttons"))
-        {
-            Undo.RecordObject(tools, "Extend Buttons");
-            tools.ExtendButtons();
-        }
-
-        if (GUILayout.Button("Extend Toggles"))
-        {
-            Undo.RecordObject(tools, "Extend Toggles");
-            tools.ExtendToggles();
-        }
-
-        EditorGUI.EndChangeCheck();
-
-
-        base.OnInspectorGUI();
     }
 }

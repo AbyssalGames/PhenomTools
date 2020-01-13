@@ -1,54 +1,101 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ButtonExtended : Button
+namespace PhenomTools
 {
-    [SerializeField]
-    private Sound clickSound = null;
-
-    private Animator anim;
-
-    protected override void Awake()
+    public class ButtonExtended : Button
     {
-        anim = animator;
-    }
+        [SerializeField]
+        private Sound clickSound = null;
 
-    public void SetParameters(Button b, Graphic targetGraphic, ButtonClickedEvent onClick)
-    {
-        interactable = b.interactable;
+        private Animator anim;
 
-        transition = b.transition;
-        this.targetGraphic = targetGraphic;
-        colors = b.colors;
+        protected override void Awake()
+        {
+            anim = animator;
+        }
 
-        spriteState = b.spriteState;
-        animationTriggers = b.animationTriggers;
+        public void SetParameters(Button b, Graphic targetGraphic, ButtonClickedEvent onClick)
+        {
+            interactable = b.interactable;
 
-        navigation = b.navigation;
+            transition = b.transition;
+            this.targetGraphic = targetGraphic;
+            colors = b.colors;
 
-        this.onClick = onClick;
-    }
+            spriteState = b.spriteState;
+            animationTriggers = b.animationTriggers;
 
-    public override void OnPointerClick(PointerEventData eventData)
-    {
-        base.OnPointerClick(eventData);
+            navigation = b.navigation;
 
-        anim?.SetBool("Pressed", false);
+            this.onClick = onClick;
+        }
 
-        if (!IsActive() || !IsInteractable())
-            return;
+        public override void OnPointerClick(PointerEventData eventData)
+        {
+            base.OnPointerClick(eventData);
 
-        SoundManager.Play2DSound(clickSound);
-    }
+            if (!IsActive() || !IsInteractable())
+                return;
 
-    public void OnPointerDown(BaseEventData eventData)
-    {
-        if (!IsActive() || !IsInteractable())
-            return;
+            SoundManager.Play2DSound(clickSound);
+        }
 
-        anim?.SetBool("Pressed", true);
+        public override void OnPointerUp(PointerEventData eventData)
+        {
+            base.OnPointerUp(eventData);
+
+            if(anim != null)
+                anim.SetBool("Pressed", false);
+        }
+
+        public void OnPointerDown(BaseEventData eventData)
+        {
+            if (!IsActive() || !IsInteractable())
+                return;
+
+            if (anim != null)
+                anim.SetBool("Pressed", true);
+        }
+
+        public void Click()
+        {
+            if (!IsActive() || !IsInteractable())
+                return;
+
+            if (anim != null)
+                anim.SetBool("Pressed", true);
+
+            SoundManager.Play2DSound(clickSound);
+
+            onClick?.Invoke();
+
+            PhenomUtils.DelayActionByTime(.1f, () =>
+            {
+                if (anim != null)
+                    anim.SetBool("Pressed", false);
+            });
+        }
+
+        /// <summary>
+        /// Play animations and sounds without invoking onClick
+        /// </summary>
+        public void GhostClick()
+        {
+            if (!IsActive() || !IsInteractable())
+                return;
+
+            if (anim != null)
+                anim.SetBool("Pressed", true);
+
+            SoundManager.Play2DSound(clickSound);
+
+            PhenomUtils.DelayActionByTime(.1f, () => 
+            {
+                if (anim != null)
+                    anim.SetBool("Pressed", false);
+            });
+        }
     }
 }

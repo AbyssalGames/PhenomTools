@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 
-public class EnumFlagAttribute : PropertyAttribute
+namespace PhenomTools
 {
-    public string enumName;
-
-    public EnumFlagAttribute() { }
-
-    public EnumFlagAttribute(string name)
+    public class EnumFlagAttribute : PropertyAttribute
     {
-        enumName = name;
+        public string enumName;
+
+        public EnumFlagAttribute() { }
+
+        public EnumFlagAttribute(string name)
+        {
+            enumName = name;
+        }
     }
 }

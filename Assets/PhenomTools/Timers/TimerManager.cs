@@ -1,32 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
-public static class TimerManager
+namespace PhenomTools
 {
-    public static List<TimeKeeperBase> activeTimeKeepers { get; private set; } = new List<TimeKeeperBase>();
-
-    public static void RegisterNewTimer(TimeKeeperBase timer)
+    public static class TimerManager
     {
-        PhenomExtensions.coroutineHolder.StartCoroutine(timer.keeperCoroutine);
+        public static List<TimeKeeperBase> activeTimeKeepers { get; private set; } = new List<TimeKeeperBase>();
 
-        if(!activeTimeKeepers.Contains(timer))
-            activeTimeKeepers.Add(timer);
+        public static void RegisterNewTimer(TimeKeeperBase timer)
+        {
+            CoroutineHolder.StartCoroutine(timer.keeperCoroutine);
 
-        UpdateActiveTimersList();
-    }
+            if(!activeTimeKeepers.Contains(timer))
+                activeTimeKeepers.Add(timer);
 
-    public static void RemoveTimer(TimeKeeperBase timer)
-    {
-        if (timer.isRunning)
-            timer.Stop();
+            UpdateActiveTimersList();
+        }
 
-        activeTimeKeepers.Remove(timer);
-    }
+        public static void RemoveTimer(TimeKeeperBase timer)
+        {
+            if (timer.isRunning)
+                timer.Stop();
 
-    public static void UpdateActiveTimersList()
-    {
-        activeTimeKeepers = activeTimeKeepers.OrderBy(t => t.currentTime).ToList();
+            activeTimeKeepers.Remove(timer);
+        }
+
+        public static void UpdateActiveTimersList()
+        {
+            activeTimeKeepers = activeTimeKeepers.OrderBy(t => t.currentTime).ToList();
+        }
     }
 }
