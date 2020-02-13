@@ -18,17 +18,22 @@
         <Literal>
           <ID>type</ID>
           <ToolTip>Field type</ToolTip>
-          <Default>int</Default>
+          <Default>string</Default>
         </Literal>
         <Literal>
           <ID>field</ID>
           <ToolTip>Field name</ToolTip>
           <Default>fieldName</Default>
         </Literal>
+        <Literal>
+          <ID>initial</ID>
+          <ToolTip>Initial Value</ToolTip>
+          <Default>null</Default>
+        </Literal>
       </Declarations>
       <Code Language="CSharp">
         <![CDATA[[SerializeField]
-        private $type$ $field$;$end$]]>
+        private $type$ $field$ = $initial$;$end$]]>
       </Code>
     </Snippet>
   </CodeSnippet>
