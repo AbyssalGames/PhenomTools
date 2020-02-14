@@ -78,10 +78,10 @@ namespace PhenomTools
                 string newString = "";
                 for (int n = 0; n < length - iLength; n++)
                 {
-                    string.Concat(newString, "0");
+                    newString = string.Concat(newString, "0");
                 }
 
-                string.Concat(newString, i.ToString());
+                newString = string.Concat(newString, i.ToString());
 
                 return newString;
             }
@@ -94,6 +94,29 @@ namespace PhenomTools
             {
                 return i.ToString();
             }
+        }
+
+        public static int[] SplitToEqualParts(int number, int parts)
+        {
+            if (parts > number)
+            {
+                Debug.LogWarning(string.Concat("Cannot split: ", number, " into: ", parts, " parts"));
+                return null;
+            }
+
+            int remainder = number % parts;
+            int floorNumber = Mathf.FloorToInt(number / (float)parts);
+
+            int[] split = new int[parts];
+
+            for (int p = 0; p < parts; p++)
+            {
+                split[p] = floorNumber;
+                if (p < remainder)
+                    split[p]++;
+            }
+
+            return split;
         }
 
         public static Vector2 CardinalDirectionToVector(CardinalDirection cardinalDirection, bool normalized = false)
