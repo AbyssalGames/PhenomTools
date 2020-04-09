@@ -4,6 +4,12 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
 
+namespace UnityEngine.Events
+{
+    [Serializable]
+    public class UnityEventBool : UnityEvent<bool> { }
+}
+
 namespace PhenomTools
 {
     public enum CardinalDirection
@@ -11,8 +17,6 @@ namespace PhenomTools
         North, NorthEast, East, SouthEast, South, SouthWest, West, NorthWest
     }
 
-    [Serializable]
-    public class UnityEventBool : UnityEvent<bool> { }
 
     public static class PhenomUtils
     {
@@ -46,121 +50,6 @@ namespace PhenomTools
             reader.Close();
 
             return text;
-        }
-
-        public static int GetDeviceOrientation(bool includeFaceUp = false, bool includeFaceDown = false)
-        {
-            switch (Input.deviceOrientation)
-            {
-                default:
-                case DeviceOrientation.Unknown:
-                case DeviceOrientation.Portrait:
-                    return 0;
-                case DeviceOrientation.LandscapeLeft:
-                    return 1;
-                case DeviceOrientation.LandscapeRight:
-                    return 2;
-                case DeviceOrientation.PortraitUpsideDown:
-                    return 3;
-                case DeviceOrientation.FaceUp:
-                    return includeFaceUp ? 4 : 0;
-                case DeviceOrientation.FaceDown:
-                    return includeFaceDown ? 5 : 0;
-            }
-        }
-
-        public static string ConvertIntToFixedLengthString(int i, int length)
-        {
-            int iLength = i.ToString().Length;
-
-            if (iLength < length)
-            {
-                string newString = "";
-                for (int n = 0; n < length - iLength; n++)
-                {
-                    newString = string.Concat(newString, "0");
-                }
-
-                newString = string.Concat(newString, i.ToString());
-
-                return newString;
-            }
-            else if (iLength > length)
-            {
-                string s = (i / Mathf.Pow(10, iLength)).ToString("F" + length.ToString());
-                return s.Remove(0, 2); // remove the 0 and decimal point
-            }
-            else
-            {
-                return i.ToString();
-            }
-        }
-
-        public static int[] SplitToEqualParts(int number, int parts)
-        {
-            if (parts > number)
-            {
-                Debug.LogWarning(string.Concat("Cannot split: ", number, " into: ", parts, " parts"));
-                return null;
-            }
-
-            int remainder = number % parts;
-            int floorNumber = Mathf.FloorToInt(number / (float)parts);
-
-            int[] split = new int[parts];
-
-            for (int p = 0; p < parts; p++)
-            {
-                split[p] = floorNumber;
-                if (p < remainder)
-                    split[p]++;
-            }
-
-            return split;
-        }
-
-        public static Vector2 CardinalDirectionToVector(CardinalDirection cardinalDirection, bool normalized = false)
-        {
-            switch (cardinalDirection)
-            {
-                default:
-                case CardinalDirection.North:
-                    return Vector2.up;
-                case CardinalDirection.NorthEast:
-                    return normalized ? Vector2.one.normalized : Vector2.one;
-                case CardinalDirection.East:
-                    return Vector2.right;
-                case CardinalDirection.SouthEast:
-                    return normalized ? new Vector2(1, -1).normalized : new Vector2(1, -1);
-                case CardinalDirection.South:
-                    return Vector2.down;
-                case CardinalDirection.SouthWest:
-                    return normalized ? -Vector2.one.normalized : -Vector2.one;
-                case CardinalDirection.West:
-                    return Vector2.left;
-                case CardinalDirection.NorthWest:
-                    return normalized ? new Vector2(-1,1).normalized : new Vector2(-1, 1);
-            }
-        }
-
-        public static int CardinalDirectionToQuadrant(CardinalDirection cardinalDirection)
-        {
-            switch (cardinalDirection)
-            {
-                default:
-                case CardinalDirection.North:
-                case CardinalDirection.NorthEast:
-                    return 0;
-                case CardinalDirection.East:
-                case CardinalDirection.SouthEast:
-                    return 1;
-                case CardinalDirection.South:
-                case CardinalDirection.SouthWest:
-                    return 2;
-                case CardinalDirection.West:
-                case CardinalDirection.NorthWest:
-                    return 3;
-            }
         }
 
         public static int GetDirectionOfRelativeObject(Vector3 baseObjectPos, Vector3 baseObjectAxis, Vector3 otherObjectPos)
@@ -198,15 +87,26 @@ namespace PhenomTools
             return finalNumber;
         }
 
-        public static IEnumerator DelayActionByTime(float time, Action callback)
+        public static IEnumerator DelayActionByTime(float time, Action callback, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
         {
-            IEnumerator routine = DelayActionByTimeCoroutine(time, callback);
+            IEnumerator routine;
+
+            if(updateMode == AnimatorUpdateMode.UnscaledTime)
+                routine = DelayActionByTimeUnscaledCoroutine(time, callback);
+            else
+                routine = DelayActionByTimeNormalCoroutine(time, callback);
+
             CoroutineHolder.StartCoroutine(routine);
             return routine;
         }
-        private static IEnumerator DelayActionByTimeCoroutine(float time, Action callback)
+        private static IEnumerator DelayActionByTimeNormalCoroutine(float time, Action callback)
         {
             yield return new WaitForSeconds(time);
+            callback();
+        }
+        private static IEnumerator DelayActionByTimeUnscaledCoroutine(float time, Action callback)
+        {
+            yield return new WaitForSecondsRealtime(time);
             callback();
         }
 

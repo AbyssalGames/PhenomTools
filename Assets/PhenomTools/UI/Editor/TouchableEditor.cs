@@ -6,5 +6,19 @@ using UnityEditor;
 [CustomEditor(typeof(Touchable))]
 public class TouchableEditor : Editor
 {
-    public override void OnInspectorGUI() { }
+    private SerializedProperty blockRaycastsProperty;
+
+    private void OnEnable()
+    {
+        blockRaycastsProperty = serializedObject.FindProperty("m_RaycastTarget");
+    }
+
+    public override void OnInspectorGUI() 
+    {
+        serializedObject.Update();
+
+        EditorGUILayout.PropertyField(blockRaycastsProperty);
+
+        serializedObject.ApplyModifiedProperties();
+    }
 }

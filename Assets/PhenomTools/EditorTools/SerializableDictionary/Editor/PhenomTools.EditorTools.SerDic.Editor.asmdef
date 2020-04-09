@@ -1,8 +1,7 @@
 {
-    "name": "PhenomTools.Editor",
+    "name": "PhenomTools.EditorTools.SerDic.Editor",
     "references": [
-        "GUID:ccf2d654365268a4eb08352a5f343d1c",
-        "GUID:0ba589267ed4d3a459dcc95f9cc6b1d0"
+        "GUID:ccf2d654365268a4eb08352a5f343d1c"
     ],
     "includePlatforms": [
         "Editor"

@@ -50,13 +50,11 @@ namespace PhenomTools
         public static event Action<SoundChannel> dynamicSoundGroupDestroyedEvent;
 
         [SerializeField]
-        private SoundChannel[] soundChannels = new SoundChannel[5]
+        private SoundChannel[] soundChannels = new SoundChannel[]
         {
-            new SoundChannel{ busName = "Master", defaultVolume = .5f },
-            new SoundChannel{ busName = "Slot", defaultVolume = .9f },
-            new SoundChannel{ busName = "Minigame", defaultVolume = .9f },
-            new SoundChannel{ busName = "Music", defaultVolume = .5f, createOnAwake = true },
-            new SoundChannel{ busName = "UI", defaultVolume = .3f, createOnAwake = true }
+            new SoundChannel{ busName = "Master", defaultVolume = 1f },
+            new SoundChannel{ busName = "SFX", defaultVolume = 1f, createOnAwake = true },
+            new SoundChannel{ busName = "Music", defaultVolume = 1f, createOnAwake = true }
         };
 
         public void Initialize()

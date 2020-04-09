@@ -57,6 +57,56 @@ public static class MathX
         return n;
     }
 
+    public static int[] SplitToEqualParts(this int number, int parts)
+    {
+        if (parts > number)
+        {
+            Debug.LogWarning(string.Concat("Cannot split: ", number, " into: ", parts, " parts"));
+            return null;
+        }
+
+        int remainder = number % parts;
+        int floorNumber = Mathf.FloorToInt(number / (float)parts);
+
+        int[] split = new int[parts];
+
+        for (int p = 0; p < parts; p++)
+        {
+            split[p] = floorNumber;
+            if (p < remainder)
+                split[p]++;
+        }
+
+        return split;
+    }
+
+    public static string ToFixedLengthString(this int i, int length)
+    {
+        int iLength = i.ToString().Length;
+
+        if (iLength < length)
+        {
+            string newString = "";
+            for (int n = 0; n < length - iLength; n++)
+            {
+                string.Concat(newString, "0");
+            }
+
+            string.Concat(newString, i.ToString());
+
+            return newString;
+        }
+        else if (iLength > length)
+        {
+            string s = (i / Mathf.Pow(10, iLength)).ToString("F" + length.ToString());
+            return s.Remove(0, 2); // remove the 0 and decimal point
+        }
+        else
+        {
+            return i.ToString();
+        }
+    }
+
     public static int Round(this int number, int multiple, MidpointRounding roundingType = MidpointRounding.AwayFromZero)
     {
         return (int)Math.Round(number / (double)multiple, roundingType) * multiple;

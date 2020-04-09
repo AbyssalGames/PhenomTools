@@ -9,10 +9,10 @@ namespace PhenomTools
     public static partial class PhenomExtensions
     {
         #region RectTransform
-        public static Tweener Grow(this RectTransform rectTransform, Vector2 endValue, float duration = .5f)
+        public static Tweener DODeltaScale(this RectTransform rectTransform, Vector2 endValue, float duration = .5f, bool ignoreTimescale = false)
         {
             DOTween.Kill(rectTransform);
-            return DOTween.To(() => rectTransform.sizeDelta, newSize => rectTransform.sizeDelta = newSize, endValue, duration);
+            return DOTween.To(() => rectTransform.sizeDelta, newSize => rectTransform.sizeDelta = newSize, endValue, duration).SetUpdate(UpdateType.Normal, ignoreTimescale);
         }
         #endregion
 
@@ -53,12 +53,12 @@ namespace PhenomTools
             group.blocksRaycasts = enabled;
         }
 
-        public static Tweener Fade(this CanvasGroup group, bool enabled, float duration = .5f, bool animateScale = false, bool disableOnFadeOut = false, bool destroyOnFadeOut = false, Action completeCallback = null)
+        public static Tweener Fade(this CanvasGroup group, bool enabled, float duration = .5f, float animateScale = 1f, bool disableOnFadeOut = false, bool destroyOnFadeOut = false, Action completeCallback = null, Action updateCallback = null, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
         {
-            return Fade(group, enabled ? 1f : 0f, duration, animateScale, disableOnFadeOut, destroyOnFadeOut, completeCallback);
+            return Fade(group, enabled ? 1f : 0f, duration, animateScale, disableOnFadeOut, destroyOnFadeOut, completeCallback, updateCallback, updateMode);
         }
 
-        public static Tweener Fade(this CanvasGroup group, float endValue, float duration = .5f, bool animateScale = false, bool disableOnFadeOut = false, bool destroyOnFadeOut = false, Action completeCallback = null)
+        public static Tweener Fade(this CanvasGroup group, float endValue, float duration = .5f, float animateScale = 1f, bool disableOnFadeOut = false, bool destroyOnFadeOut = false, Action completeCallback = null, Action updateCallback = null, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
         {
             if (group.alpha == endValue)
                 return null;
@@ -70,13 +70,48 @@ namespace PhenomTools
             if (endValue == 0)
                 group.SetInteractable(false);
 
-            return group.DOFade(endValue, duration).OnComplete(() =>
+            if (animateScale != 1f)
+            {
+                if(group.alpha > endValue)
+                {
+                    group.transform.DOScale(animateScale, duration);
+                }
+                else
+                {
+                    group.transform.localScale = Vector3.one * animateScale;
+                    group.transform.DOScale(1f, duration);
+                }
+            }
+
+            Tweener fadeTween = group.DOFade(endValue, duration);
+
+            fadeTween.onComplete += () =>
             {
                 if (endValue > 0)
                     group.SetInteractable(true);
 
+                if (endValue == 0)
+                {
+                    if (disableOnFadeOut)
+                        group.gameObject.SetActive(false);
+
+                    if (destroyOnFadeOut)
+                        UnityEngine.Object.Destroy(group.gameObject);
+                }
+
                 completeCallback?.Invoke();
-            });
+            };
+
+            fadeTween.onUpdate += () => updateCallback?.Invoke();
+
+            if (updateMode == AnimatorUpdateMode.AnimatePhysics)
+                fadeTween.SetUpdate(UpdateType.Fixed);
+            else if(updateMode == AnimatorUpdateMode.UnscaledTime)
+                fadeTween.SetUpdate(UpdateType.Normal, true);
+            else
+                fadeTween.SetUpdate(UpdateType.Normal);
+
+            return fadeTween;
         }
 
         //public static void Fade(this CanvasGroup canvasGroup, bool enabled, UnityEngine.Object customKey, float duration = .5f, bool animateScale = false, bool disableOnFadeOut = false, bool destroyOnFadeOut = false, Action completeCallback = null)

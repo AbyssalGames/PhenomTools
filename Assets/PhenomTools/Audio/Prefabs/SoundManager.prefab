@@ -62,41 +62,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundChannels:
   - busName: Master
-    defaultVolume: 0.5
+    defaultVolume: 1
     isMuted: 0
     createOnAwake: 0
     dynamicSoundGroupPrefab: {fileID: 0}
     dynamicSoundGroup: {fileID: 0}
-    currentVolume: 0.5
-  - busName: Slot
-    defaultVolume: 0.9
+    currentVolume: 0
+  - busName: SFX
+    defaultVolume: 1
     isMuted: 0
-    createOnAwake: 0
-    dynamicSoundGroupPrefab: {fileID: 517681533710375053, guid: 3f1a5009df4592143b3ab31689816e61,
-      type: 3}
-    dynamicSoundGroup: {fileID: 0}
-    currentVolume: 0.9
-  - busName: Minigame
-    defaultVolume: 0.9
-    isMuted: 0
-    createOnAwake: 0
+    createOnAwake: 1
     dynamicSoundGroupPrefab: {fileID: 0}
     dynamicSoundGroup: {fileID: 0}
-    currentVolume: 0.9
+    currentVolume: 0
   - busName: Music
-    defaultVolume: 0.5
+    defaultVolume: 1
     isMuted: 0
     createOnAwake: 1
     dynamicSoundGroupPrefab: {fileID: 0}
     dynamicSoundGroup: {fileID: 0}
-    currentVolume: 0.5
-  - busName: UI
-    defaultVolume: 0.3
-    isMuted: 0
-    createOnAwake: 1
-    dynamicSoundGroupPrefab: {fileID: 0}
-    dynamicSoundGroup: {fileID: 0}
-    currentVolume: 0.3
+    currentVolume: 0
 --- !u!114 &9035747582274409738
 MonoBehaviour:
   m_ObjectHideFlags: 0

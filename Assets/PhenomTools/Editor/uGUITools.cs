@@ -20,6 +20,8 @@ namespace PhenomTools
                 t.anchorMin = newAnchorsMin;
                 t.anchorMax = newAnchorsMax;
                 t.offsetMin = t.offsetMax = new Vector2(0, 0);
+
+                EditorUtility.SetDirty(t);
             }
         }
 
@@ -31,6 +33,8 @@ namespace PhenomTools
                 if(t == null) return;
 
                 t.offsetMin = t.offsetMax = new Vector2(0, 0);
+
+                EditorUtility.SetDirty(t);
             }
         }
 
@@ -62,6 +66,8 @@ namespace PhenomTools
                 t.offsetMax = new Vector2(-oldOffsetMin.x, t.offsetMax.y);
 
                 t.localScale = new Vector3(-t.localScale.x, t.localScale.y, t.localScale.z);
+
+                EditorUtility.SetDirty(t);
             }
         }
 
@@ -93,7 +99,22 @@ namespace PhenomTools
                 t.offsetMax = new Vector2(t.offsetMax.x, -oldOffsetMin.y);
 			
                 t.localScale = new Vector3(t.localScale.x, -t.localScale.y, t.localScale.z);
+
+                EditorUtility.SetDirty(t);
             }
         }
+
+        //private static void WrapChildren()
+        //{
+        //    foreach (Transform transform in Selection.transforms)
+        //    {
+        //        Transform[] children = transform.GetChildren();
+
+        //        foreach (Transform child in children)
+        //            child.SetParent(transform.parent);
+
+
+        //    }
+        //}
     }
 }

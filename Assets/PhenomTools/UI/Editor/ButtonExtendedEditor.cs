@@ -7,12 +7,28 @@ namespace PhenomTools
     [CanEditMultipleObjects]
     public class ButtonExtendedEditor : ButtonEditor
     {
-        SerializedProperty m_SoundProperty;
+        private SerializedProperty onHoverProperty;
+        private SerializedProperty onDownProperty;
+        private SerializedProperty onExitProperty;
+        private SerializedProperty onReenterProperty;
+        private SerializedProperty onGhostClickProperty;
+
+        private SerializedProperty onHoverSoundProperty;
+        private SerializedProperty onDownSoundProperty;
+        private SerializedProperty onClickSoundProperty;
 
         protected override void OnEnable()
         {
             base.OnEnable();
-            m_SoundProperty = serializedObject.FindProperty("clickSound");
+            onHoverProperty = serializedObject.FindProperty("onHover");
+            onDownProperty = serializedObject.FindProperty("onDown");
+            onExitProperty = serializedObject.FindProperty("onExit");
+            onReenterProperty = serializedObject.FindProperty("onReenter");
+            onGhostClickProperty = serializedObject.FindProperty("onGhostClick");
+
+            onHoverSoundProperty = serializedObject.FindProperty("hoverSound");
+            onDownSoundProperty = serializedObject.FindProperty("downSound");
+            onClickSoundProperty = serializedObject.FindProperty("clickSound");
         }
 
         public override void OnInspectorGUI()
@@ -21,7 +37,15 @@ namespace PhenomTools
 
             serializedObject.Update();
 
-            EditorGUILayout.PropertyField(m_SoundProperty);
+            EditorGUILayout.PropertyField(onHoverProperty);
+            EditorGUILayout.PropertyField(onDownProperty);
+            EditorGUILayout.PropertyField(onExitProperty);
+            EditorGUILayout.PropertyField(onReenterProperty);
+            EditorGUILayout.PropertyField(onGhostClickProperty);
+
+            EditorGUILayout.PropertyField(onHoverSoundProperty);
+            EditorGUILayout.PropertyField(onDownSoundProperty);
+            EditorGUILayout.PropertyField(onClickSoundProperty);
 
             serializedObject.ApplyModifiedProperties();
         }

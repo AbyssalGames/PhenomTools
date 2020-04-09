@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -6,15 +7,22 @@ namespace PhenomTools
 {
     public class ButtonExtended : Button
     {
+        public UnityEvent onHover = new UnityEvent();
+        public UnityEvent onDown = new UnityEvent();
+        public UnityEvent onUp = new UnityEvent();
+        public UnityEvent onExit = new UnityEvent();
+        public UnityEvent onReenter = new UnityEvent();
+        public UnityEvent onGhostClick = new UnityEvent();
+
+        [SerializeField]
+        private Sound hoverSound = null;
+        [SerializeField]
+        private Sound downSound = null;
         [SerializeField]
         private Sound clickSound = null;
 
-        private Animator anim;
-
-        protected override void Awake()
-        {
-            anim = animator;
-        }
+        [HideInInspector]
+        public bool isPressed;
 
         public void SetParameters(Button b, Graphic targetGraphic, ButtonClickedEvent onClick)
         {
@@ -32,6 +40,46 @@ namespace PhenomTools
             this.onClick = onClick;
         }
 
+        public override void OnPointerEnter(PointerEventData eventData)
+        {
+            base.OnPointerEnter(eventData);
+
+            onHover?.Invoke();
+            SoundManager.Play2DSound(hoverSound);
+
+            if (isPressed)
+                onReenter?.Invoke();
+        }
+
+        public override void OnPointerDown(PointerEventData eventData)
+        {
+            base.OnPointerDown(eventData);
+
+            if (!IsActive() || !IsInteractable())
+                return;
+
+            isPressed = true;
+            SoundManager.Play2DSound(downSound);
+
+            onDown?.Invoke();
+        }
+
+        public override void OnPointerExit(PointerEventData eventData)
+        {
+            base.OnPointerExit(eventData);
+
+            if(isPressed)
+                onExit?.Invoke();
+        }
+
+        public override void OnPointerUp(PointerEventData eventData)
+        {
+            base.OnPointerUp(eventData);
+
+            onUp?.Invoke();
+            isPressed = false;
+        }
+
         public override void OnPointerClick(PointerEventData eventData)
         {
             base.OnPointerClick(eventData);
@@ -42,40 +90,14 @@ namespace PhenomTools
             SoundManager.Play2DSound(clickSound);
         }
 
-        public override void OnPointerUp(PointerEventData eventData)
-        {
-            base.OnPointerUp(eventData);
-
-            if(anim != null)
-                anim.SetBool("Pressed", false);
-        }
-
-        public void OnPointerDown(BaseEventData eventData)
+        public void DoClick()
         {
             if (!IsActive() || !IsInteractable())
                 return;
-
-            if (anim != null)
-                anim.SetBool("Pressed", true);
-        }
-
-        public void Click()
-        {
-            if (!IsActive() || !IsInteractable())
-                return;
-
-            if (anim != null)
-                anim.SetBool("Pressed", true);
 
             SoundManager.Play2DSound(clickSound);
 
             onClick?.Invoke();
-
-            PhenomUtils.DelayActionByTime(.1f, () =>
-            {
-                if (anim != null)
-                    anim.SetBool("Pressed", false);
-            });
         }
 
         /// <summary>
@@ -86,16 +108,9 @@ namespace PhenomTools
             if (!IsActive() || !IsInteractable())
                 return;
 
-            if (anim != null)
-                anim.SetBool("Pressed", true);
-
             SoundManager.Play2DSound(clickSound);
 
-            PhenomUtils.DelayActionByTime(.1f, () => 
-            {
-                if (anim != null)
-                    anim.SetBool("Pressed", false);
-            });
+            onGhostClick?.Invoke();
         }
     }
 }

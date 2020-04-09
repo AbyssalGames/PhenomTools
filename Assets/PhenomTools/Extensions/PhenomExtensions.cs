@@ -32,10 +32,7 @@ namespace PhenomTools
 
         public static int ToIntBinary(this bool i)
         {
-            if (i == true)
-                return 1;
-            else
-                return 0;
+            return i == true ? 1 : 0;
         }
 
         public static int[] ToIntBinary(this bool[] boolArray)
@@ -65,6 +62,27 @@ namespace PhenomTools
         public static string ToFileFormat(this string s)
         {
             return s.Replace(' ', '_').ToLower();
+        }
+
+        public static string ToFixedLengthString(this int i, int length)
+        {
+            int currentCount = i.ToString().Length;
+            string text = "";
+
+            if (currentCount < length)
+            {
+                int dif = length - currentCount;
+                
+
+                for (int x = 0; x < dif; x++)
+                {
+                    text = string.Concat(text, "0");
+                }
+
+                text = string.Concat(text, i.ToString());
+            }
+
+            return text;
         }
 
         #endregion
@@ -164,6 +182,16 @@ namespace PhenomTools
             transform.localEulerAngles = Vector3.zero;
         }
 
+        public static Transform[] GetChildren(this Transform transform)
+        {
+            Transform[] array = new Transform[transform.childCount];
+
+            for (int i = 0; i < transform.childCount; i++)
+                array[i] = transform.GetChild(i);
+
+            return array;
+        }
+
         #endregion
 
         #region Collections
@@ -251,6 +279,73 @@ namespace PhenomTools
             videoPlayer.enabled = enabled;
         }
 
+        #endregion
+
+        #region Misc
+        public static int ToIndex(this DeviceOrientation orientation, bool includeFaceUp = false, bool includeFaceDown = false)
+        {
+            switch (orientation)
+            {
+                default:
+                case DeviceOrientation.Unknown:
+                case DeviceOrientation.Portrait:
+                    return 0;
+                case DeviceOrientation.LandscapeLeft:
+                    return 1;
+                case DeviceOrientation.PortraitUpsideDown:
+                    return 2;
+                case DeviceOrientation.LandscapeRight:
+                    return 3;
+                case DeviceOrientation.FaceUp:
+                    return includeFaceUp ? 4 : 0;
+                case DeviceOrientation.FaceDown:
+                    return includeFaceDown ? 5 : 0;
+            }
+        }
+
+        public static Vector2 ToVector(this CardinalDirection cardinalDirection, bool normalized = false)
+        {
+            switch (cardinalDirection)
+            {
+                default:
+                case CardinalDirection.North:
+                    return Vector2.up;
+                case CardinalDirection.NorthEast:
+                    return normalized ? Vector2.one.normalized : Vector2.one;
+                case CardinalDirection.East:
+                    return Vector2.right;
+                case CardinalDirection.SouthEast:
+                    return normalized ? new Vector2(1, -1).normalized : new Vector2(1, -1);
+                case CardinalDirection.South:
+                    return Vector2.down;
+                case CardinalDirection.SouthWest:
+                    return normalized ? -Vector2.one.normalized : -Vector2.one;
+                case CardinalDirection.West:
+                    return Vector2.left;
+                case CardinalDirection.NorthWest:
+                    return normalized ? new Vector2(-1, 1).normalized : new Vector2(-1, 1);
+            }
+        }
+
+        public static int ToQuadrant(this CardinalDirection cardinalDirection)
+        {
+            switch (cardinalDirection)
+            {
+                default:
+                case CardinalDirection.North:
+                case CardinalDirection.NorthEast:
+                    return 0;
+                case CardinalDirection.East:
+                case CardinalDirection.SouthEast:
+                    return 1;
+                case CardinalDirection.South:
+                case CardinalDirection.SouthWest:
+                    return 2;
+                case CardinalDirection.West:
+                case CardinalDirection.NorthWest:
+                    return 3;
+            }
+        }
         #endregion
     }
 }

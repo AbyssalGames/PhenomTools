@@ -14,8 +14,8 @@ namespace PhenomTools
 
         [Serializable]
         public class UnityEventFloat : UnityEvent<float> { }
-        public UnityEventFloat onUpdate;
-        public UnityEvent onComplete;
+        public UnityEventFloat onUpdate = new UnityEventFloat();
+        public UnityEvent onComplete = new UnityEvent();
 
         public bool isRunning { get; protected set; }
         public float currentTime { get; protected set; }
