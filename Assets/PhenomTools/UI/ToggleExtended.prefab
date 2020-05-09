@@ -140,12 +140,12 @@ MonoBehaviour:
   onReenter:
     m_PersistentCalls:
       m_Calls: []
-  onGhostClick:
+  onGhostToggle:
     m_PersistentCalls:
       m_Calls: []
   hoverSound: {fileID: 0}
   downSound: {fileID: 0}
   clickSound: {fileID: 0}
-  toggleOnSound: {fileID: 0}
-  toggleOffSound: {fileID: 0}
+  toggleOnSound: {fileID: 11400000, guid: 99b3b112451cb184e9bc1fe3e1420ff2, type: 2}
+  toggleOffSound: {fileID: 11400000, guid: 9c244876f27b15d449daa904e995cb06, type: 2}
   isPressed: 0

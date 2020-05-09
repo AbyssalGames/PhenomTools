@@ -15,7 +15,7 @@ namespace PhenomTools
         //}
 
         public string groupName;
-        public string clipName;
+        public AudioClip clip;
         public float volumePercent = 1f;
         public float pitch = 1f;
         public float delaySoundTime = 0f;

@@ -20,12 +20,12 @@ namespace PhenomTools
         }
 
         public static SoundChannelHandler channels => instance?._channels;
-        public static MusicHandler music => instance?._music;
+        //public static MusicHandler music => instance?._music;
 
         [SerializeField]
         private SoundChannelHandler _channels = null;
-        [SerializeField]
-        private MusicHandler _music = null;
+        //[SerializeField]
+        //private MusicHandler _music = null;
 
         private void Awake()
         {
@@ -36,7 +36,7 @@ namespace PhenomTools
                 SetAudioConfiguration();
 
                 channels?.Initialize();
-                music?.Initialize();
+                //music?.Initialize();
             }
             else
             {
@@ -61,7 +61,7 @@ namespace PhenomTools
         public static PlaySoundResult Play3DSoundFollowTransform(Sound sound, Transform trans)
         {
             if (sound == null) return null;
-            return Play3DSoundFollowTransform(sound.groupName, trans, sound.clipName, sound.volumePercent, sound.pitch, sound.delaySoundTime);
+            return Play3DSoundFollowTransform(sound.groupName, trans, sound.clip == null ? "" : sound.clip.name, sound.volumePercent, sound.pitch, sound.delaySoundTime);
         }
         public static PlaySoundResult Play3DSoundFollowTransform(string groupName, Transform trans, string clipName = null, float volumePercent = 1f, float? pitch = null, float delaySoundTime = 0f)
         {
@@ -72,7 +72,7 @@ namespace PhenomTools
         public static PlaySoundResult Play3DSoundAtPointAndFollowTransform(Sound sound, Vector3 point, Transform trans = null, Space space = Space.World)
         {
             if (sound == null) return null;
-            return Play3DSoundAtPointAndFollowTransform(sound.groupName, point, trans, sound.clipName, space, sound.volumePercent, sound.pitch, sound.delaySoundTime);
+            return Play3DSoundAtPointAndFollowTransform(sound.groupName, point, trans, sound.clip == null ? "" : sound.clip.name, space, sound.volumePercent, sound.pitch, sound.delaySoundTime);
         }
         public static PlaySoundResult Play3DSoundAtPointAndFollowTransform(string groupName, Vector3 point, Transform trans = null, string clipName = null, Space space = Space.World, float volumePercent = 1f, float? pitch = null, float delaySoundTime = 0f)
         {
@@ -90,7 +90,7 @@ namespace PhenomTools
         public static PlaySoundResult Play3DSoundAtTransform(Sound sound, Transform trans)
         {
             if (sound == null) return null;
-            return Play3DSoundAtTransform(sound.groupName, trans, sound.clipName, sound.volumePercent, sound.pitch, sound.delaySoundTime);
+            return Play3DSoundAtTransform(sound.groupName, trans, sound.clip == null ? "" : sound.clip.name, sound.volumePercent, sound.pitch, sound.delaySoundTime);
         }
         public static PlaySoundResult Play3DSoundAtTransform(string groupName, Transform trans, string clipName = null, float volumePercent = 1f, float? pitch = null, float delaySoundTime = 0f)
         {
@@ -101,7 +101,7 @@ namespace PhenomTools
         public static PlaySoundResult Play3DSoundAtPoint(Sound sound, Vector3 point)
         {
             if (sound == null) return null;
-            return Play3DSoundAtPoint(sound.groupName, point, sound.clipName, sound.volumePercent, sound.pitch, sound.delaySoundTime);
+            return Play3DSoundAtPoint(sound.groupName, point, sound.clip == null ? "" : sound.clip.name, sound.volumePercent, sound.pitch, sound.delaySoundTime);
         }
         public static PlaySoundResult Play3DSoundAtPoint(string groupName, Vector3 point, string clipName = null, float volumePercent = 1f, float? pitch = null, float delaySoundTime = 0f)
         {
@@ -112,7 +112,7 @@ namespace PhenomTools
         public static PlaySoundResult Play2DSound(Sound sound)
         {
             if (sound == null) return null;
-            return Play2DSound(sound.groupName, sound.clipName, sound.volumePercent, sound.pitch, sound.delaySoundTime);
+            return Play2DSound(sound.groupName, sound.clip == null ? "" : sound.clip.name, sound.volumePercent, sound.pitch, sound.delaySoundTime);
         }
         public static PlaySoundResult Play2DSound(string groupName, string clipName = null, float volumePercent = 1f, float pitch = 1f, float delaySoundTime = 0f)
         {

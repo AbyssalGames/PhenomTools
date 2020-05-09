@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _channels: {fileID: 4048398230774092878}
-  _music: {fileID: 9035747582274409738}
 --- !u!114 &4048398230774092878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,27 +60,90 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundChannels:
-  - busName: Master
-    defaultVolume: 1
-    isMuted: 0
-    createOnAwake: 0
-    dynamicSoundGroupPrefab: {fileID: 0}
-    dynamicSoundGroup: {fileID: 0}
-    currentVolume: 0
-  - busName: SFX
-    defaultVolume: 1
-    isMuted: 0
-    createOnAwake: 1
-    dynamicSoundGroupPrefab: {fileID: 0}
-    dynamicSoundGroup: {fileID: 0}
-    currentVolume: 0
-  - busName: Music
-    defaultVolume: 1
-    isMuted: 0
-    createOnAwake: 1
-    dynamicSoundGroupPrefab: {fileID: 0}
-    dynamicSoundGroup: {fileID: 0}
-    currentVolume: 0
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues:
+    - Master
+    - SFX
+    - Music
+    _keys:
+    - Master
+    - SFX
+    - Music
+    _values:
+    - defaultVolume: 1
+      isMuted: 0
+      currentVolume: 0
+    - defaultVolume: 1
+      isMuted: 0
+      currentVolume: 0
+    - defaultVolume: 1
+      isMuted: 0
+      currentVolume: 0
+  dynamicSoundGroups:
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues:
+    - SFX
+    - UI
+    - Music
+    _keys:
+    - SFX
+    - UI
+    - Music
+    _values:
+    - createOnAwake: 1
+      prefab: {fileID: 8922060290612651860, guid: 1e6af533259bd844a93ad4901b33e328,
+        type: 3}
+      group: {fileID: 0}
+    - createOnAwake: 1
+      prefab: {fileID: 8922060290612651860, guid: 8c23b589af795c246a1042da0efaf507,
+        type: 3}
+      group: {fileID: 0}
+    - createOnAwake: 1
+      prefab: {fileID: 4289463493456493489, guid: f3943fb51c9f78f4a925b407d09a90de,
+        type: 3}
+      group: {fileID: 0}
 --- !u!114 &9035747582274409738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +208,7 @@ MonoBehaviour:
   testLanguage: 10
   defaultLanguage: 10
   supportedLanguages: 0a000000
-  busFilter: 
+  busFilter: '[All]'
   useTextGroupFilter: 0
   textGroupFilter: 
   resourceClipsPauseDoNotUnload: 0
@@ -156,18 +218,44 @@ MonoBehaviour:
   persistBetweenScenes: 1
   shouldLogDestroys: 0
   showBusColors: 0
-  areGroupsExpanded: 0
+  areGroupsExpanded: 1
   soundGroupTemplate: {fileID: 400008, guid: 877a3a4bf0a4abf43aba41125e1d3101, type: 3}
   soundGroupVariationTemplate: {fileID: 400000, guid: 08eea2d8c4572c7479da53cfbc14bde6,
     type: 3}
-  groupBuses: []
+  groupBuses:
+  - busName: SFX
+    volume: 1
+    isSoloed: 0
+    isMuted: 0
+    voiceLimit: -1
+    stopOldest: 0
+    isExisting: 0
+    isTemporary: 0
+    isUsingOcclusion: 0
+    busColor: {r: 1, g: 1, b: 1, a: 1}
+    mixerChannel: {fileID: -1615367502040482769, guid: f5d586e49c2595a4ba115fa284902ec1,
+      type: 2}
+    forceTo2D: 0
+  - busName: Music
+    volume: 1
+    isSoloed: 0
+    isMuted: 0
+    voiceLimit: -1
+    stopOldest: 0
+    isExisting: 0
+    isTemporary: 0
+    isUsingOcclusion: 0
+    busColor: {r: 1, g: 1, b: 1, a: 1}
+    mixerChannel: {fileID: -7681437387452856984, guid: f5d586e49c2595a4ba115fa284902ec1,
+      type: 2}
+    forceTo2D: 1
   groupByBus: 1
   sortAlpha: 1
   showRangeSoundGizmos: 1
   showSelectedRangeSoundGizmos: 1
   rangeGizmoColor: {r: 0, g: 1, b: 0, a: 1}
   selectedRangeGizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  showAdvancedSettings: 1
+  showAdvancedSettings: 0
   showLocalization: 0
   playListExpanded: 0
   playlistsExpanded: 1

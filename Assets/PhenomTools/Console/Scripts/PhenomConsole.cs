@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
 namespace PhenomTools
@@ -23,11 +25,19 @@ namespace PhenomTools
         [SerializeField]
         private Animator animator = null;
         [SerializeField]
-        private RectTransform logRoot = null;
+        private Transform logRoot = null;
         [SerializeField]
-        private GameObject logItemPrefab = null;
+        private RectTransform logsRect = null;
+        [SerializeField]
+        private GameObject stackTraceObject = null;
+        [SerializeField]
+        private TextMeshProUGUI stackTraceText = null;
+        [SerializeField]
+        private ToggleGroup toggleGroup = null;
+        [SerializeField]
+        private PhenomConsoleLogItem logItemPrefab = null;
         //[SerializeField]
-        //private Scrollbar scrollbar = null;
+        //private GameObject openLogFileButton = null;
         [SerializeField]
         private int maxLines = 100;
 
@@ -43,21 +53,28 @@ namespace PhenomTools
         [SerializeField]
         private bool useConsoleWriteLine = false;
 
-        private Dictionary<string, int> logDict = new Dictionary<string, int>();
+        private Dictionary<string, PhenomConsoleLogItem> logDict = new Dictionary<string, PhenomConsoleLogItem>();
+        private List<PhenomConsoleLogItem> logItems = new List<PhenomConsoleLogItem>();
         private int currentLogCount;
-        private List<GameObject> logObjects = new List<GameObject>();
 
         private static string fileName;
 
         private void Awake()
         {
-            if(instance == null)
+#if !TEST
+            Destroy(gameObject);
+            return;
+#endif
+
+            if (instance == null)
             { 
                 instance = this;
 
 #if !UNITY_EDITOR
-            fileName = Application.dataPath + "/PhenomLog_" + DateTime.UtcNow.ToString("MM-dd_HH-mm-ss") + ".txt";
-            File.Create(fileName);
+                fileName = Application.persistentDataPath + "/PhenomLog_" + DateTime.UtcNow.ToString("MM-dd_HH-mm-ss") + ".txt";
+                File.Create(fileName);
+//#else
+                //openLogFileButton.SetActive(false);
 #endif
             }
             else
@@ -80,15 +97,15 @@ namespace PhenomTools
 
         private void SystemLogReceived(string log, string stackTrace, LogType type)
         {
-            Log(log, (PhenomLogType)type);
+            Log(log, (PhenomLogType)type, null, stackTrace, false, false, true);
         }
 
-        public static void Log(object log, PhenomLogType logType = PhenomLogType.Normal, Object context = null, bool useTimestamp = true, bool useTypePrefix = false)
+        public static void Log(object log, PhenomLogType logType = PhenomLogType.Normal, Object context = null, string stackTrace = null, bool useTimestamp = true, bool useTypePrefix = false, bool isSystemLog = false)
         {
-            if (useTypePrefix || instance?.useConsoleWriteLine == true)
+            if (useTypePrefix || (instance != null && instance.useConsoleWriteLine == true))
                 log = string.Concat(GetTypePrefix(logType), log);
 
-            if (useTimestamp && instance?.useTimestamp == true)
+            if (useTimestamp && instance != null && instance.useTimestamp == true)
             {
                 DateTime now = DateTime.Now;
                 log = string.Concat(now.Hour.ToString("00"), ":", now.Minute.ToString("00"), ":", now.Second.ToString("00"), ":", now.Millisecond.ToString("000"), " : ", log);
@@ -97,56 +114,96 @@ namespace PhenomTools
             switch (logType)
             {
                 case PhenomLogType.Normal:
-                    if (instance?.useConsoleWriteLine == true) System.Console.WriteLine(log); else Debug.Log(log, context);
+                    if (instance != null && instance.useConsoleWriteLine == true) Console.WriteLine(log); else Debug.Log(log, context);
                     break;
                 case PhenomLogType.Warning:
-                    if (instance?.useConsoleWriteLine == true) System.Console.WriteLine(log); else Debug.LogWarning(log, context);
+                    if (instance != null && instance.useConsoleWriteLine == true) Console.WriteLine(log); else Debug.LogWarning(log, context);
                     break;
                 case PhenomLogType.Error:
-                    if (instance?.useConsoleWriteLine == true) System.Console.WriteLine(log); else Debug.LogError(log, context);
+                    if (instance != null && instance.useConsoleWriteLine == true) Console.WriteLine(log); else Debug.LogError(log, context);
                     break;
                 case PhenomLogType.Assertion:
-                    if (instance?.useConsoleWriteLine == true) System.Console.WriteLine(log); else Debug.LogError(log, context);
+                    if (instance != null && instance.useConsoleWriteLine == true) Console.WriteLine(log); else Debug.LogError(log, context);
                     break;
                 case PhenomLogType.Boon:
-                    if (instance?.useConsoleWriteLine == true) System.Console.WriteLine(log); else Debug.Log(log, context);
+                    if (instance != null && instance.useConsoleWriteLine == true) Console.WriteLine(log); else Debug.Log(log, context);
                     break;
             }
 
-            if (instance)
+            if (instance != null && (!instance.listenForSystemLogs || (instance.listenForSystemLogs && isSystemLog)))
             {
-                instance.NewLine(log.ToString(), logType);
+                instance.NewLine(log.ToString(), logType, stackTrace);
 #if !UNITY_EDITOR
-            instance.WriteToFile(log.ToString());
+                instance.WriteToFile(log.ToString());
 #endif
             }
         }
-        public static void LogError(object log, Object context = null, bool useTimestamp = true, bool useTypePrefix = false) => Log(log, PhenomLogType.Error, context, useTimestamp, useTypePrefix);
-
-        private void NewLine(string log, PhenomLogType logType)
+        public static void LogError(object log, Object context = null, string stackTrace = null, bool useTimestamp = true, bool useTypePrefix = false, bool isSystemLog = false)
         {
-            if (currentLogCount >= maxLines)
+            Log(log, PhenomLogType.Error, context, stackTrace, useTimestamp, useTypePrefix, isSystemLog);
+        }
+
+        private void NewLine(string log, PhenomLogType logType, string stackTrace)
+        {
+            if (collapse && logDict.TryGetValue(log, out PhenomConsoleLogItem item))
             {
-                Destroy(logObjects[0]);
-                logObjects.RemoveAt(0);
+                IncrementLogCountBadge(item);
             }
-
-            if (collapse && logDict.TryGetValue(log, out int count))
-                logDict[log] = count;
             else
-                CreateNewLogObject(log, logType);
+            {
+                if (currentLogCount >= maxLines)
+                {
+                    if (collapse)
+                        logDict.Remove(logItems[0].log);
+
+                    Destroy(logItems[0]);
+                    logItems.RemoveAt(0);
+                }
+
+                CreateNewLogObject(log, logType, stackTrace);
+            }
         }
 
-        private void CreateNewLogObject(string log, PhenomLogType logType)
+        private void CreateNewLogObject(string log, PhenomLogType logType, string stackTrace)
         {
-            PhenomConsoleLogItem newLogItem = Instantiate(logItemPrefab, logRoot).GetComponent<PhenomConsoleLogItem>();
-            newLogItem.Init(log.ToString(), logType, currentLogCount++);
-            logObjects.Add(newLogItem.gameObject);
+            PhenomConsoleLogItem newLogItem = Instantiate(logItemPrefab, logRoot);
+            newLogItem.Init(log.ToString(), logType, currentLogCount++, stackTrace, toggleGroup);
+
+            logItems.Add(newLogItem);
+
+            if (collapse)
+                logDict.Add(log, newLogItem);
         }
 
-        private void IncrementLogCountBadge()
+        private void IncrementLogCountBadge(PhenomConsoleLogItem item)
         {
+            item.IncrementCountBadge();
+        }
 
+//        public void OpenLogFile()
+//        {
+//#if !UNITY_EDITOR
+//            Application.OpenURL(Application.persistentDataPath + "/PhenomLog_" + DateTime.UtcNow.ToString("MM-dd_HH-mm-ss") + ".txt");
+//#endif
+//        }
+
+        public static void ToggleStackTrace(string text)
+        {
+            if (instance == null)
+                return;
+
+            instance.stackTraceText.SetText(text);
+
+            if(instance.toggleGroup.AnyTogglesOn())
+            {
+                instance.logsRect.anchorMin = new Vector2(0f, .3f);
+                instance.stackTraceObject.SetActive(true);
+            }
+            else
+            {
+                instance.logsRect.anchorMin = new Vector2(0f, 0f);
+                instance.stackTraceObject.SetActive(false);
+            }
         }
 
 #if !UNITY_EDITOR

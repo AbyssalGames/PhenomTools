@@ -127,6 +127,9 @@ MonoBehaviour:
   onDown:
     m_PersistentCalls:
       m_Calls: []
+  onUp:
+    m_PersistentCalls:
+      m_Calls: []
   onExit:
     m_PersistentCalls:
       m_Calls: []
@@ -138,5 +141,5 @@ MonoBehaviour:
       m_Calls: []
   hoverSound: {fileID: 0}
   downSound: {fileID: 0}
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 11400000, guid: d8da5ce42960f4343a715db1ecc4598d, type: 2}
   isPressed: 0

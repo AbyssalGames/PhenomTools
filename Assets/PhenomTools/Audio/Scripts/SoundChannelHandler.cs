@@ -1,6 +1,7 @@
 ﻿using DarkTonic.MasterAudio;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace PhenomTools
@@ -8,36 +9,39 @@ namespace PhenomTools
     [Serializable]
     public class SoundChannel
     {
-        public string busName;
-
         public float defaultVolume;
-
         public bool isMuted;
-        public bool createOnAwake;
-
-        public GameObject dynamicSoundGroupPrefab;
-
-        [HideInInspector]
-        public GameObject dynamicSoundGroup;
-        [HideInInspector]
+        
+        //[HideInInspector]
         public float currentVolume;
 
         public IEnumerator fadeCoroutine;
+    }
+
+    [Serializable]
+    public class DSG
+    {
+        public bool createOnAwake;
+
+        public GameObject prefab;
+
+        [HideInInspector]
+        public GameObject group;
 
         public void CreateDynamicSoundGroup()
         {
-            if (dynamicSoundGroupPrefab != null && dynamicSoundGroup == null)
+            if (prefab != null && group == null)
             {
-                dynamicSoundGroup = UnityEngine.Object.Instantiate(dynamicSoundGroupPrefab);
+                group = UnityEngine.Object.Instantiate(prefab);
                 SoundChannelHandler.DynamicSoundGroupCreated(this);
             }
         }
 
         public void DestroyDynamicSoundGroup()
         {
-            if (dynamicSoundGroup != null)
+            if (group != null)
             {
-                UnityEngine.Object.Destroy(dynamicSoundGroup);
+                UnityEngine.Object.Destroy(group);
                 SoundChannelHandler.DynamicSoundGroupDestroyed(this);
             }
         }
@@ -46,141 +50,144 @@ namespace PhenomTools
     public class SoundChannelHandler : MonoBehaviour
     {
         public static event Action<SoundChannel> volumeUpdatedEvent;
-        public static event Action<SoundChannel> dynamicSoundGroupCreatedEvent;
-        public static event Action<SoundChannel> dynamicSoundGroupDestroyedEvent;
+        public static event Action<DSG> dynamicSoundGroupCreatedEvent;
+        public static event Action<DSG> dynamicSoundGroupDestroyedEvent;
 
-        [SerializeField]
-        private SoundChannel[] soundChannels = new SoundChannel[]
-        {
-            new SoundChannel{ busName = "Master", defaultVolume = 1f },
-            new SoundChannel{ busName = "SFX", defaultVolume = 1f, createOnAwake = true },
-            new SoundChannel{ busName = "Music", defaultVolume = 1f, createOnAwake = true }
+        [Serializable]
+        public class SoundChannelDict : SerializableDictionaryBase<string, SoundChannel> { }
+        public SoundChannelDict soundChannels = new SoundChannelDict() 
+        { 
+            { "Master", new SoundChannel { defaultVolume = 1f } },
+            { "SFX", new SoundChannel { defaultVolume = 1f } },
+            { "Music", new SoundChannel { defaultVolume = 1f } }
         };
+
+        [Serializable]
+        public class DSGDict : SerializableDictionaryBase<string, DSG> { }
+        [SerializeField]
+        private DSGDict dynamicSoundGroups = null;
 
         public void Initialize()
         {
-            AdjustChannelVolume("Master", soundChannels[GetChannelIndexByName("Master")].defaultVolume);
+            AdjustChannelVolume("Master", PlayerPrefs.GetFloat("Master_Volume", soundChannels["Master"].defaultVolume));
 
-            foreach (SoundChannel channel in soundChannels)
+            foreach (KeyValuePair<string, SoundChannel> channel in soundChannels)
             {
-                if (channel.createOnAwake)
-                {
-                    channel.currentVolume = channel.defaultVolume;
-                    channel.CreateDynamicSoundGroup();
-                }
+                if (channel.Key == "Master")
+                    continue;
+
+                AdjustChannelVolume(channel.Key, PlayerPrefs.GetFloat(channel.Key + "_Volume", channel.Value.defaultVolume));
+                //channel.Value.currentVolume = PlayerPrefs.GetFloat(channel.Key + "_Volume", channel.Value.defaultVolume);
+            }
+
+            foreach (DSG group in dynamicSoundGroups.Values)
+            {
+                if (group.createOnAwake)
+                    group.CreateDynamicSoundGroup();
             }
         }
+
         public void AdjustChannelVolume(string channelName, float newValue, bool overrideSettings = false, float fadeDuration = 0f)
         {
-            //if (channelName == "Master")
-            //{
-            //    if (TryGetChannelByName(channelName, out SoundChannel channel))
-            //        channel.currentVolume = newValue;
-
-            //    MasterAudio.MasterVolumeLevel = newValue;
-            //}
-            //else
-            //{
-            if (TryGetChannelByName(channelName, out SoundChannel channel))
-                AdjustChannelVolume(channel, newValue, overrideSettings, fadeDuration);
-            else
-                PhenomConsole.Log("No Sound Channel with bus name: " + channelName, PhenomLogType.Error);
-            //}
-        }
-        public void AdjustChannelVolume(SoundChannel channel, float newValue, bool overrideSettings = false, float fadeDuration = 0f)
-        {
-            if (!overrideSettings)
-                channel.currentVolume = newValue;
-
-            if (!channel.isMuted)
+            if (soundChannels.TryGetValue(channelName, out SoundChannel channel))
             {
-                if (channel.busName == "Master")
-                {
+                if (!overrideSettings)
                     channel.currentVolume = newValue;
-                    MasterAudio.MasterVolumeLevel = newValue;
-                }
-                else
-                {
-                    if (MasterAudio.GrabBusByName(channel.busName) != null)
-                    {
-                        if (fadeDuration == 0f)
-                            MasterAudio.SetBusVolumeByName(channel.busName, newValue);
-                        else
-                            MasterAudio.FadeBusToVolume(channel.busName, newValue, fadeDuration);
 
-                        volumeUpdatedEvent?.Invoke(channel);
+                if (!channel.isMuted)
+                {
+                    if (channelName == "Master")
+                    {
+                        channel.currentVolume = newValue;
+                        MasterAudio.MasterVolumeLevel = newValue;
+                        PlayerPrefs.SetFloat(channelName + "_Volume", newValue);
                     }
                     else
                     {
-                        PhenomConsole.Log("No Master Audio Bus with name: " + channel.busName, PhenomLogType.Error);
+                        if (MasterAudio.GrabBusByName(channelName) != null)
+                        {
+                            if (fadeDuration == 0f)
+                                MasterAudio.SetBusVolumeByName(channelName, newValue);
+                            else
+                                MasterAudio.FadeBusToVolume(channelName, newValue, fadeDuration);
+
+                            PlayerPrefs.SetFloat(channelName + "_Volume", newValue);
+                            volumeUpdatedEvent?.Invoke(channel);
+                        }
+                        else
+                        {
+                            PhenomConsole.Log("No Master Audio Bus with name: " + channelName, PhenomLogType.Error);
+                        }
                     }
                 }
             }
+            else
+                PhenomConsole.Log("No Sound Channel with bus name: " + channelName, PhenomLogType.Error);
         }
 
         public void ToggleChannelMute(string channelName, bool muted)
         {
-            if (TryGetChannelByName(channelName, out SoundChannel channel))
-                ToggleChannelMute(channel, muted);
-        }
-        public void ToggleChannelMute(SoundChannel channel, bool muted)
-        {
-            channel.isMuted = muted;
+            if (soundChannels.TryGetValue(channelName, out SoundChannel channel))
+            {
+                channel.isMuted = muted;
 
-            if (MasterAudio.GrabBusByName(channel.busName) == null)
-                return;
+                if (MasterAudio.GrabBusByName(channelName) == null)
+                    return;
 
-            if (muted)
-                MasterAudio.FadeBusToVolume(channel.busName, 0, .2f);
+                if (muted)
+                    MasterAudio.FadeBusToVolume(channelName, 0, .2f);
+                else
+                    MasterAudio.FadeBusToVolume(channelName, channel.currentVolume, .2f);
+            }
             else
-                MasterAudio.FadeBusToVolume(channel.busName, channel.currentVolume, .2f);
+                PhenomConsole.Log("No Sound Channel with bus name: " + channelName, PhenomLogType.Error);
         }
 
-        public bool TryGetChannelIndexByName(string channelName, out int index)
+        //public bool TryGetChannelIndexByName(string channelName, out int index)
+        //{
+        //    index = GetChannelIndexByName(channelName);
+        //    return index > -1;
+        //}
+
+        //public int GetChannelIndexByName(string channelName)
+        //{
+        //    for (int i = 0; i < soundChannels.Length; i++)
+        //    {
+        //        if (soundChannels[i].busName == channelName)
+        //            return i;
+        //    }
+
+        //    return -1;
+        //}
+
+        //public bool TryGetChannelByName(string channelName, out SoundChannel channel)
+        //{
+        //    channel = GetChannelByName(channelName);
+        //    return channel != null;
+        //}
+
+        //public SoundChannel GetChannelByName(string channelName)
+        //{
+        //    foreach (SoundChannel c in soundChannels.Values)
+        //    {
+        //        if (c.busName == channelName)
+        //            return c;
+        //    }
+
+        //    return null;
+        //}
+
+        public static void DynamicSoundGroupCreated(DSG group)
         {
-            index = GetChannelIndexByName(channelName);
-            return index > -1;
+            dynamicSoundGroupCreatedEvent?.Invoke(group);
+
+            //SoundManager.channels.AdjustChannelVolume(channel, channel.currentVolume);
+            //SoundManager.channels.ToggleChannelMute(channel, channel.isMuted);
         }
 
-        public int GetChannelIndexByName(string channelName)
+        public static void DynamicSoundGroupDestroyed(DSG group)
         {
-            for (int i = 0; i < soundChannels.Length; i++)
-            {
-                if (soundChannels[i].busName == channelName)
-                    return i;
-            }
-
-            return -1;
-        }
-
-        public bool TryGetChannelByName(string channelName, out SoundChannel channel)
-        {
-            channel = GetChannelByName(channelName);
-            return channel != null;
-        }
-
-        public SoundChannel GetChannelByName(string channelName)
-        {
-            foreach (SoundChannel c in soundChannels)
-            {
-                if (c.busName == channelName)
-                    return c;
-            }
-
-            return null;
-        }
-
-        public static void DynamicSoundGroupCreated(SoundChannel channel)
-        {
-            dynamicSoundGroupCreatedEvent?.Invoke(channel);
-
-            SoundManager.channels.AdjustChannelVolume(channel, channel.currentVolume);
-            SoundManager.channels.ToggleChannelMute(channel, channel.isMuted);
-        }
-
-        public static void DynamicSoundGroupDestroyed(SoundChannel channel)
-        {
-            dynamicSoundGroupDestroyedEvent?.Invoke(channel);
+            dynamicSoundGroupDestroyedEvent?.Invoke(group);
         }
     }
 }
