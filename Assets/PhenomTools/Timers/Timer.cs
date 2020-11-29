@@ -10,19 +10,22 @@ namespace PhenomTools
     [Serializable]
     public class Timer : TimeKeeperBase
     {
-        public Timer(float duration, bool useSeconds = true, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
+        public Timer(float duration, bool useSeconds = true, bool removeListenersOnFinished = false, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
         {
-            Begin(duration, useSeconds, updateMode);
+            Initialize(duration, useSeconds, removeListenersOnFinished, updateMode);
         }
 
-        public override void Begin(float duration, bool useSeconds = true, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
+        public override void Begin()
         {
+            if (isRunning)
+                Stop();
+
             currentTime = duration;
             keeperCoroutine = KeeperCoroutine();
 
             CallOnUpdate();
 
-            base.Begin(duration, useSeconds, updateMode);
+            base.Begin();
         }
 
         protected override IEnumerator KeeperCoroutine()
@@ -32,11 +35,11 @@ namespace PhenomTools
                 if (useSeconds)
                 {
                     if(updateMode == AnimatorUpdateMode.Normal || updateMode == AnimatorUpdateMode.AnimatePhysics)
-                        yield return new WaitForSeconds(1);
+                        yield return waitSecond;
                     else if(updateMode == AnimatorUpdateMode.UnscaledTime)
-                        yield return new WaitForSecondsRealtime(1);
+                        yield return waitRealSecond;
 
-                    currentTime = (int)currentTime - 1;
+                    currentTime = Mathf.Clamp((int)currentTime - 1, 0, duration);
 
                     CallOnUpdate();
                 }
@@ -44,33 +47,32 @@ namespace PhenomTools
                 {
                     if (updateMode == AnimatorUpdateMode.UnscaledTime)
                     {
-                        currentTime = startTime + duration - Time.realtimeSinceStartup;
+                        currentTime = Mathf.Clamp(startTime + duration - Time.realtimeSinceStartup, 0, duration);
+                    }
+                    else if (updateMode == AnimatorUpdateMode.AnimatePhysics)
+                    {
+                        yield return waitFixed;
+                        currentTime = Mathf.Clamp(currentTime - Time.fixedDeltaTime, 0, duration);
                     }
                     else
-                    {
-                        if (updateMode == AnimatorUpdateMode.AnimatePhysics)
-                            yield return new WaitForFixedUpdate();
-                        else
-                            yield return new WaitForEndOfFrame();
-
-                        currentTime -= Time.deltaTime;
+                    { 
+                        yield return waitFrame;
+                        currentTime = Mathf.Clamp(currentTime - Time.deltaTime, 0, duration);
                     }
 
                     CallOnUpdate();
                 }
             }
 
-            currentTime = 0f;
-
             keeperCoroutine = null;
             Stop();
         }
 
-        public override void Reset()
+        public override void DoReset()
         {
             currentTime = duration;
 
-            base.Reset();
+            base.DoReset();
         }
     }
 }

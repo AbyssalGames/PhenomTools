@@ -3,12 +3,7 @@ using System.Collections;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
-
-namespace UnityEngine.Events
-{
-    [Serializable]
-    public class UnityEventBool : UnityEvent<bool> { }
-}
+using System.Linq;
 
 namespace PhenomTools
 {
@@ -62,12 +57,13 @@ namespace PhenomTools
                 return 1;
         }
 
-        public static int GetWeightedValue(int value, int[] finalValues, int[] weights)
+        public static int GetWeightedNumber(int[] finalValues, float[] weights)
         {
-            int[] weightIndex = new int[finalValues.Length];
+            float[] weightIndex = new float[finalValues.Length];
 
-            int finalNumber = 0;
-            int counter = 0;
+            int finalNumber = finalValues[0];
+            float randomNumber = UnityEngine.Random.Range(0, weights.Sum());
+            float counter = 0;
 
             for (int i = 0; i < finalValues.Length; i++)
             {
@@ -77,7 +73,7 @@ namespace PhenomTools
 
             for (int i = 0; i < finalValues.Length; i++)
             {
-                if (value < weightIndex[i])
+                if (randomNumber < weightIndex[i])
                 {
                     finalNumber = finalValues[i];
                     break;
@@ -85,6 +81,45 @@ namespace PhenomTools
             }
 
             return finalNumber;
+        }
+
+        public static T GetWeightedValue<T>(T[] finalValues, float[] weights)
+        {
+            float[] weightIndex = new float[finalValues.Length];
+
+            T finalValue = finalValues[0];
+            float randomNumber = UnityEngine.Random.Range(0, weights.Sum());
+            float counter = 0;
+
+            for (int i = 0; i < finalValues.Length; i++)
+            {
+                counter += weights[i];
+                weightIndex[i] = counter;
+            }
+
+            for (int i = 0; i < finalValues.Length; i++)
+            {
+                if (randomNumber < weightIndex[i])
+                {
+                    finalValue = finalValues[i];
+                    break;
+                }
+            }
+
+            return finalValue;
+        }
+
+        public static string GetRandomString(int length, UnityEngine.UI.InputField.ContentType contentType = UnityEngine.UI.InputField.ContentType.Alphanumeric)
+        {
+            string newString = "";
+            const string availableChars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+            for (int i = 0; i < length; i++)
+            {
+                newString = string.Concat(newString, availableChars[UnityEngine.Random.Range(0, availableChars.Length)]);
+            }
+
+            return newString;
         }
 
         public static IEnumerator DelayActionByTime(float time, Action callback, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)

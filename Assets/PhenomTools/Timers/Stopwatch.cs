@@ -7,19 +7,21 @@ namespace PhenomTools
     [Serializable]
     public class Stopwatch : TimeKeeperBase
     {
-        public Stopwatch(float duration = 0, bool useSeconds = true, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
+        public Stopwatch(float duration = 0, bool useSeconds = true, bool removeListenersOnFinished = false, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
         {
-            Begin(duration, useSeconds, updateMode);
+            Initialize(duration, useSeconds, removeListenersOnFinished, updateMode);
         }
 
-        public override void Begin(float duration = 0, bool useSeconds = true, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
+        public override void Begin()
         {
+            if (isRunning)
+                Stop();
+
             currentTime = 0;
             keeperCoroutine = KeeperCoroutine();
 
             CallOnUpdate();
-
-            base.Begin(duration, useSeconds, updateMode);
+            base.Begin();
         }
 
         protected override IEnumerator KeeperCoroutine()
@@ -29,11 +31,18 @@ namespace PhenomTools
                 if (useSeconds)
                 {
                     if (updateMode == AnimatorUpdateMode.Normal || updateMode == AnimatorUpdateMode.AnimatePhysics)
-                        yield return new WaitForSeconds(1);
+                    {
+                        yield return waitSecond;
+                    }
                     else if (updateMode == AnimatorUpdateMode.UnscaledTime)
-                        yield return new WaitForSecondsRealtime(1);
+                    {
+                        yield return waitRealSecond;
+                    }
 
-                    currentTime = (int)currentTime + 1;
+                    currentTime += 1;
+
+                    if (duration > 0)
+                        currentTime = Mathf.Clamp(currentTime, 0, duration);
 
                     CallOnUpdate();
                 }
@@ -43,15 +52,19 @@ namespace PhenomTools
                     {
                         currentTime = Time.realtimeSinceStartup - startTime;
                     }
-                    else
+                    else if (updateMode == AnimatorUpdateMode.AnimatePhysics)
                     {
-                        if (updateMode == AnimatorUpdateMode.AnimatePhysics)
-                            yield return new WaitForFixedUpdate();
-                        else
-                            yield return new WaitForEndOfFrame();
-
+                        yield return waitFixed;
+                        currentTime += Time.fixedDeltaTime;
+                    }
+                    else
+                    { 
+                        yield return waitFrame;
                         currentTime += Time.deltaTime;
                     }
+
+                    if (duration > 0)
+                        currentTime = Mathf.Clamp(currentTime, 0, duration);
 
                     CallOnUpdate();
                 }
@@ -61,11 +74,11 @@ namespace PhenomTools
             Stop();
         }
 
-        public override void Reset()
+        public override void DoReset()
         {
             currentTime = 0;
 
-            base.Reset();
+            base.DoReset();
         }
     }
 }

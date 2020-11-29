@@ -9,6 +9,7 @@ namespace PhenomTools
     {
         private SerializedProperty onHoverProperty;
         private SerializedProperty onDownProperty;
+        private SerializedProperty onUpProperty;
         private SerializedProperty onExitProperty;
         private SerializedProperty onReenterProperty;
         private SerializedProperty onGhostClickProperty;
@@ -22,6 +23,7 @@ namespace PhenomTools
             base.OnEnable();
             onHoverProperty = serializedObject.FindProperty("onHover");
             onDownProperty = serializedObject.FindProperty("onDown");
+            onUpProperty = serializedObject.FindProperty("onUp");
             onExitProperty = serializedObject.FindProperty("onExit");
             onReenterProperty = serializedObject.FindProperty("onReenter");
             onGhostClickProperty = serializedObject.FindProperty("onGhostClick");
@@ -39,6 +41,7 @@ namespace PhenomTools
 
             EditorGUILayout.PropertyField(onHoverProperty);
             EditorGUILayout.PropertyField(onDownProperty);
+            EditorGUILayout.PropertyField(onUpProperty);
             EditorGUILayout.PropertyField(onExitProperty);
             EditorGUILayout.PropertyField(onReenterProperty);
             EditorGUILayout.PropertyField(onGhostClickProperty);

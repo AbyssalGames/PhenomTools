@@ -66,24 +66,51 @@ namespace PhenomTools
 
         public static string ToFixedLengthString(this int i, int length)
         {
-            int currentCount = i.ToString().Length;
-            string text = "";
+            int iLength = i.ToString().Length;
 
-            if (currentCount < length)
+            if (iLength < length)
             {
-                int dif = length - currentCount;
-                
-
-                for (int x = 0; x < dif; x++)
+                string newString = "";
+                for (int n = 0; n < length - iLength; n++)
                 {
-                    text = string.Concat(text, "0");
+                    string.Concat(newString, "0");
                 }
 
-                text = string.Concat(text, i.ToString());
-            }
+                string.Concat(newString, i.ToString());
 
-            return text;
+                return newString;
+            }
+            else if (iLength > length)
+            {
+                string s = (i / Mathf.Pow(10, iLength)).ToString("F" + length.ToString());
+                return s.Remove(0, 2); // remove the 0 and decimal point
+            }
+            else
+            {
+                return i.ToString();
+            }
         }
+
+        //public static string ToFixedLengthString(this int i, int length)
+        //{
+        //    int currentCount = i.ToString().Length;
+        //    string text = "";
+
+        //    if (currentCount < length)
+        //    {
+        //        int dif = length - currentCount;
+
+
+        //        for (int x = 0; x < dif; x++)
+        //        {
+        //            text = string.Concat(text, "0");
+        //        }
+
+        //        text = string.Concat(text, i.ToString());
+        //    }
+
+        //    return text;
+        //}
 
         #endregion
 
@@ -102,6 +129,11 @@ namespace PhenomTools
         public static Vector2Int ToVector2Int(this Vector3Int vector)
         {
             return new Vector2Int(vector.x, vector.y);
+        }
+
+        public static Vector3 ToVector3(this Vector3Int vector)
+        {
+            return new Vector3(vector.x, vector.y, vector.z);
         }
 
         public static Vector3 ToVector3(this Vector2 vector)
@@ -162,7 +194,6 @@ namespace PhenomTools
         #endregion
 
         #region GameObject
-
         public static Transform EmptyInstantiate(this GameObject obj, Vector3 position, Quaternion rotation)
         {
             Transform t = obj.transform;
@@ -171,10 +202,28 @@ namespace PhenomTools
             return t;
         }
 
+        public static void DestroyDelayed(this MonoBehaviour _, UnityEngine.Object obj, float time)
+        {
+            obj.DestroyDelayed(time);
+        }
+
+        public static void DestroyDelayed(this UnityEngine.Object obj, float time)
+        {
+            PhenomUtils.DelayActionByTime(time, () => UnityEngine.Object.Destroy(obj));
+        }
+
+        public static bool ContainsLayer(this LayerMask mask, int layer)
+        {
+            return mask == (mask | (1 << layer));
+        }
+
+        public static int ToLayer(this LayerMask layerMask)
+        {
+            return (int)Mathf.Log(layerMask.value, 2);
+        }
         #endregion
 
         #region Transform
-
         public static void SetParentAndReset(this Transform transform, Transform parent)
         {
             transform.SetParent(parent);
@@ -192,6 +241,24 @@ namespace PhenomTools
             return array;
         }
 
+        public static void RotateYTowards(this Transform transform, Vector3 target, float speed)
+        {
+            Vector3 direction = (target - transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * speed);
+        }
+        #endregion
+
+        #region Animation
+        public static bool HasParameter(this Animator anim, string parameterName)
+        {
+            foreach (AnimatorControllerParameter param in anim.parameters)
+            {
+                if (param.name == parameterName) 
+                    return true;
+            }
+            return false;
+        }
         #endregion
 
         #region Collections

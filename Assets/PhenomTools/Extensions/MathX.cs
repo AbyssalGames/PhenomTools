@@ -48,11 +48,13 @@ public static class MathX
             return false;
     }
 
-    public static int Loop(this int i, int m)
+    public static int Loop(this int i, int max, int min = 0)
     {
-        int n = i % m;
-        if (n < 0)
-            n = m + i;
+        int n = i % max;
+        if (n < min)
+            n = max;
+        else if (n > max)
+            n = min;
 
         return n;
     }
@@ -80,33 +82,6 @@ public static class MathX
         return split;
     }
 
-    public static string ToFixedLengthString(this int i, int length)
-    {
-        int iLength = i.ToString().Length;
-
-        if (iLength < length)
-        {
-            string newString = "";
-            for (int n = 0; n < length - iLength; n++)
-            {
-                string.Concat(newString, "0");
-            }
-
-            string.Concat(newString, i.ToString());
-
-            return newString;
-        }
-        else if (iLength > length)
-        {
-            string s = (i / Mathf.Pow(10, iLength)).ToString("F" + length.ToString());
-            return s.Remove(0, 2); // remove the 0 and decimal point
-        }
-        else
-        {
-            return i.ToString();
-        }
-    }
-
     public static int Round(this int number, int multiple, MidpointRounding roundingType = MidpointRounding.AwayFromZero)
     {
         return (int)Math.Round(number / (double)multiple, roundingType) * multiple;
@@ -126,6 +101,14 @@ public static class MathX
     {
         DOTween.Kill(i);
         return DOTween.To(getter, setter, endValue, duration).SetAs(tweenParams_Sine);
+    }
+
+    public static int Invert(this int i, int max, int min = 0)
+    {
+        if (i < min) i = min;
+        else if (i > max) i = max;
+
+        return (max + min) - i;
     }
     #endregion
 
@@ -181,9 +164,15 @@ public static class MathX
         DOTween.Kill(i);
         return DOTween.To(getter, setter, endValue, duration).SetAs(tweenParams_Sine);
     }
+
+    public static float ToFeet(this float meters, bool precise = false)
+    {
+        return meters * (precise ? 3.28084f : 3f);
+    }
+
+    public static float ToMeters(this float feet, bool precise = false)
+    {
+        return feet / (precise ? 3.28084f : 3f);
+    }
     #endregion
-
-
-    
-
 }

@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace PhenomTools
 {
-    [InitializeOnLoad]
+    //[InitializeOnLoad]
     public class Definer
     {
         static Definer()

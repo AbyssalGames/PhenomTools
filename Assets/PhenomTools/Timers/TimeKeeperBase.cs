@@ -9,11 +9,14 @@ namespace PhenomTools
     public class TimeKeeperBase
     {
         public float duration = 30f;
-        public bool useSeconds = true; // Optimize to 1 per second vs frames per second
+
+        /// <summary>
+        /// Optimize to 1 per second vs frames per second
+        /// </summary>
+        public bool useSeconds = true;
+        public bool removeListenersOnFinished;
         public AnimatorUpdateMode updateMode;
 
-        [Serializable]
-        public class UnityEventFloat : UnityEvent<float> { }
         public UnityEventFloat onUpdate = new UnityEventFloat();
         public UnityEvent onComplete = new UnityEvent();
 
@@ -23,16 +26,20 @@ namespace PhenomTools
 
         public IEnumerator keeperCoroutine;
 
-        public virtual void Begin() => Begin(duration, useSeconds, updateMode);
-        public virtual void Begin(float duration, bool useSeconds = true, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
-        {
-            if (isRunning)
-                Stop();
+        protected WaitForEndOfFrame waitFrame = new WaitForEndOfFrame();
+        protected WaitForFixedUpdate waitFixed = new WaitForFixedUpdate();
+        protected WaitForSeconds waitSecond = new WaitForSeconds(1f);
+        protected WaitForSecondsRealtime waitRealSecond = new WaitForSecondsRealtime(1f);
 
+        public virtual void Initialize(float duration, bool useSeconds = true, bool removeListenersOnFinished = false, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
+        {
             this.useSeconds = useSeconds;
             this.duration = duration;
             this.updateMode = updateMode;
+        }
 
+        public virtual void Begin()
+        { 
             startTime = Time.realtimeSinceStartup;
             isRunning = true;
 
@@ -74,9 +81,9 @@ namespace PhenomTools
             onComplete?.Invoke();
         }
 
-        public virtual void Reset()
+        public virtual void DoReset()
         {
-            TimerManager.UpdateActiveTimersList();
+            //TimerManager.UpdateActiveTimersList();
         }
 
         protected virtual void Finished()
@@ -90,8 +97,11 @@ namespace PhenomTools
                 keeperCoroutine = null;
             }
 
-            onUpdate?.RemoveAllListeners();
-            onComplete?.RemoveAllListeners();
+            if (removeListenersOnFinished)
+            {
+                onUpdate?.RemoveAllListeners();
+                onComplete?.RemoveAllListeners();
+            }
         }
     }
 }

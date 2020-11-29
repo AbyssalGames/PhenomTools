@@ -14,7 +14,7 @@ namespace PhenomTools
             if(!activeTimeKeepers.Contains(timer))
                 activeTimeKeepers.Add(timer);
 
-            UpdateActiveTimersList();
+            //UpdateActiveTimersList();
         }
 
         public static void RemoveTimer(TimeKeeperBase timer)
@@ -25,9 +25,9 @@ namespace PhenomTools
             activeTimeKeepers.Remove(timer);
         }
 
-        public static void UpdateActiveTimersList()
-        {
-            activeTimeKeepers = activeTimeKeepers.OrderBy(t => t.currentTime).ToList();
-        }
+        //public static void UpdateActiveTimersList()
+        //{
+        //    activeTimeKeepers = activeTimeKeepers.OrderBy(t => t.currentTime).ToList();
+        //}
     }
 }

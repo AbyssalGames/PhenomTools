@@ -4,12 +4,11 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 using Object = UnityEngine.Object;
 
 namespace PhenomTools
 {
-    // TODO: Add a toggle group and make every log item a toggle so that they can be clicked on in order to see the whole message, like the regular console
-
     public enum PhenomLogType
     {
         Error, Assertion, Warning, Normal, Exception, Boon
@@ -23,13 +22,19 @@ namespace PhenomTools
         private static PhenomConsole instance;
 
         [SerializeField]
-        private Animator animator = null;
+        private RectTransform consoleTransform = null;
+        [SerializeField]
+        private RectTransform showButtonTransform = null;
+        [SerializeField]
+        private CanvasGroup consoleCanvasGroup = null;
         [SerializeField]
         private Transform logRoot = null;
         [SerializeField]
         private RectTransform logsRect = null;
         [SerializeField]
         private GameObject stackTraceObject = null;
+        [SerializeField]
+        private RectTransform stackTraceRect = null;
         [SerializeField]
         private TextMeshProUGUI stackTraceText = null;
         [SerializeField]
@@ -64,11 +69,12 @@ namespace PhenomTools
 #if !TEST
             Destroy(gameObject);
             return;
-#endif
+#else
 
             if (instance == null)
             { 
                 instance = this;
+                DontDestroyOnLoad(gameObject);
 
 #if !UNITY_EDITOR
                 fileName = Application.persistentDataPath + "/PhenomLog_" + DateTime.UtcNow.ToString("MM-dd_HH-mm-ss") + ".txt";
@@ -81,6 +87,7 @@ namespace PhenomTools
             {
                 Destroy(gameObject);
             }
+#endif
         }
 
         private void OnEnable()
@@ -189,14 +196,14 @@ namespace PhenomTools
 
         public static void ToggleStackTrace(string text)
         {
-            if (instance == null)
+            if (instance == null || !instance.listenForSystemLogs || string.IsNullOrWhiteSpace(text))
                 return;
 
             instance.stackTraceText.SetText(text);
 
             if(instance.toggleGroup.AnyTogglesOn())
             {
-                instance.logsRect.anchorMin = new Vector2(0f, .3f);
+                instance.logsRect.anchorMin = new Vector2(0f, instance.stackTraceRect.anchorMax.y);
                 instance.stackTraceObject.SetActive(true);
             }
             else
@@ -249,9 +256,36 @@ namespace PhenomTools
             }
         }
 
+        private Vector3 consoleOriginalPos;
+        private Vector3 showButtonOriginalPos;
+        private Vector3 showButtonOffsetPos;
+
         public void ToggleConsoleDisplay(bool on)
         {
-            animator.SetBool("On", on);
+            if (showButtonOffsetPos == Vector3.zero)
+                showButtonOffsetPos = showButtonTransform.localPosition - Vector3.right * 200f;
+
+            if (on)
+            {
+                DOTween.To(() => consoleCanvasGroup.alpha, a => consoleCanvasGroup.alpha = a, 1f, .5f);
+                consoleCanvasGroup.blocksRaycasts = true; 
+                consoleCanvasGroup.interactable = true;
+
+                consoleOriginalPos = consoleTransform.localPosition;
+                consoleTransform.DOLocalMove(Vector3.zero, .5f);
+
+                showButtonOriginalPos = showButtonTransform.localPosition;
+                showButtonTransform.DOLocalMove(showButtonOffsetPos, .5f);
+            }
+            else
+            {
+                DOTween.To(() => consoleCanvasGroup.alpha, a => consoleCanvasGroup.alpha = a, 0f, .5f);
+                consoleCanvasGroup.blocksRaycasts = false;
+                consoleCanvasGroup.interactable = false;
+
+                consoleTransform.DOLocalMove(consoleOriginalPos, .5f);
+                showButtonTransform.DOLocalMove(showButtonOriginalPos, .5f);
+            }
         }
     }
 }

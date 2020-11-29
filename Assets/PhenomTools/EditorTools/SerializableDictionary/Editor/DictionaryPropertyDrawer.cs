@@ -762,6 +762,9 @@ namespace PhenomTools
                 case SerializedPropertyType.Generic:
                     obj = GetTargetObjectOfProperty(prop);
                     break;
+                case SerializedPropertyType.Vector3Int:
+                    obj = prop.vector3IntValue;
+                    break;
                 default:
                     Debug.LogError("Key Type not implemented: " + prop.propertyType);
                     break;
