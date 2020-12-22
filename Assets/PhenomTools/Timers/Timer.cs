@@ -8,7 +8,7 @@ namespace PhenomTools
     /// Counts down from given duration. Calls onComplete when it reaches 0.
     /// </summary>
     [Serializable]
-    public class Timer : TimeKeeperBase
+    public class Timer : TimeKeeper
     {
         public Timer(float duration, bool useSeconds = true, bool removeListenersOnFinished = false, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
         {

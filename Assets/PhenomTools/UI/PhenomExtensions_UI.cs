@@ -9,10 +9,10 @@ namespace PhenomTools
     public static partial class PhenomExtensions
     {
         #region RectTransform
-        public static Tweener DODeltaScale(this RectTransform rectTransform, Vector2 endValue, float duration = .5f, bool ignoreTimescale = false)
+        public static Tweener DODeltaScale(this RectTransform rectTransform, Vector2 endValue, float duration = .5f/*, bool ignoreTimescale = false*/)
         {
-            DOTween.Kill(rectTransform);
-            return DOTween.To(() => rectTransform.sizeDelta, newSize => rectTransform.sizeDelta = newSize, endValue, duration).SetUpdate(UpdateType.Normal, ignoreTimescale);
+            //DOTween.Kill(rectTransform);
+            return DOTween.To(() => rectTransform.sizeDelta, newSize => rectTransform.sizeDelta = newSize, endValue, duration);//.SetUpdate(UpdateType.Normal, ignoreTimescale);
         }
 
         /// <summary>

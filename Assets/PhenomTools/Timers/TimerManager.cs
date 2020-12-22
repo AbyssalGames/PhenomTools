@@ -5,9 +5,9 @@ namespace PhenomTools
 {
     public static class TimerManager
     {
-        public static List<TimeKeeperBase> activeTimeKeepers { get; private set; } = new List<TimeKeeperBase>();
+        public static List<TimeKeeper> activeTimeKeepers { get; private set; } = new List<TimeKeeper>();
 
-        public static void RegisterNewTimer(TimeKeeperBase timer)
+        public static void RegisterNewTimer(TimeKeeper timer)
         {
             CoroutineHolder.StartCoroutine(timer.keeperCoroutine);
 
@@ -17,7 +17,7 @@ namespace PhenomTools
             //UpdateActiveTimersList();
         }
 
-        public static void RemoveTimer(TimeKeeperBase timer)
+        public static void RemoveTimer(TimeKeeper timer)
         {
             if (timer.isRunning)
                 timer.Stop();

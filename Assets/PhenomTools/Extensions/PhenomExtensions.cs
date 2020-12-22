@@ -91,6 +91,44 @@ namespace PhenomTools
             }
         }
 
+        public static string ToBigNumberString(this int num) => ToBigNumberString((ulong)num);
+        public static string ToBigNumberString(this uint num) => ToBigNumberString((ulong)num);
+        public static string ToBigNumberString(this ulong num)
+        {
+            // Ensure number has max 3 significant digits (no rounding up can happen)
+            ulong i = (ulong)Math.Pow(10, (int)Math.Max(0, Math.Log10(num) - 2));
+            num = num / i * i;
+
+            if (num >= 1000000000000)
+                return (num / 1000000000000D).ToString("0.##") + "T";
+            else if (num >= 1000000000)
+                return (num / 1000000000D).ToString("0.##") + "B";
+            else if(num >= 1000000)
+                return (num / 1000000D).ToString("0.##") + "M";
+            else if (num >= 1000)
+                return (num / 1000D).ToString("0.##") + "K";
+
+            return num.ToString("#,0");
+        }
+
+        //public static string ToBigNumberString(this ulong i)
+        //{
+        //    char[] suffixes = new char[] { 'K', 'M', 'B', 'T', 'Q' };
+
+        //    string fullString = i.ToString();
+        //    int length = fullString.Length;
+
+        //    if(length > 4)
+        //    {
+        //        if(length < 7)
+        //            return fullString.Substring(0, )
+        //    }
+        //    else
+        //    {
+        //        return i.ToString("N"/*, System.Globalization.CultureInfo.InvariantCulture*/);
+        //    }
+        //}
+
         //public static string ToFixedLengthString(this int i, int length)
         //{
         //    int currentCount = i.ToString().Length;

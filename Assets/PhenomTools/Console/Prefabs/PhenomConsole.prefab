@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 3154748354622371774}
   - component: {fileID: 2299860118436089691}
   - component: {fileID: 2629164435333600873}
+  - component: {fileID: 7862674422893671187}
   m_Layer: 5
   m_Name: ShowConsoleButton
   m_TagString: Untagged
@@ -250,10 +251,10 @@ RectTransform:
   m_Father: {fileID: 8135953766571488708}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 30, y: 30}
-  m_SizeDelta: {x: 136, y: 136}
+  m_AnchorMin: {x: 0.015625, y: 0.027777778}
+  m_AnchorMax: {x: 0.08645833, y: 0.1537037}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &3154748354622371774
 CanvasRenderer:
@@ -346,6 +347,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!225 &7862674422893671187
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252665743508592369}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1502527303662032501
 GameObject:
   m_ObjectHideFlags: 0
@@ -2117,11 +2130,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   consoleTransform: {fileID: 7713816430784978765}
-  showButtonTransform: {fileID: 9098143779168251822}
   consoleCanvasGroup: {fileID: 4068981681049308314}
+  showButtonCanvasGroup: {fileID: 7862674422893671187}
   logRoot: {fileID: 8135953765753274181}
   logsRect: {fileID: 8135953766905316755}
   stackTraceObject: {fileID: 3375691241645161820}
+  stackTraceRect: {fileID: 8483165038527379282}
   stackTraceText: {fileID: 3800175908158505163}
   toggleGroup: {fileID: 5076771024950244465}
   logItemPrefab: {fileID: 2710275085403324355, guid: a9ba68368c79f6242a080b732b8dd5e5,

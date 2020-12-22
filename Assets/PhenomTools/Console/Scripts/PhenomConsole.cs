@@ -24,9 +24,9 @@ namespace PhenomTools
         [SerializeField]
         private RectTransform consoleTransform = null;
         [SerializeField]
-        private RectTransform showButtonTransform = null;
-        [SerializeField]
         private CanvasGroup consoleCanvasGroup = null;
+        [SerializeField]
+        private CanvasGroup showButtonCanvasGroup = null;
         [SerializeField]
         private Transform logRoot = null;
         [SerializeField]
@@ -257,13 +257,18 @@ namespace PhenomTools
         }
 
         private Vector3 consoleOriginalPos;
-        private Vector3 showButtonOriginalPos;
-        private Vector3 showButtonOffsetPos;
+        //private Vector3 showButtonOriginalPos;
+        //private Vector3 showButtonOffsetPos;
 
         public void ToggleConsoleDisplay(bool on)
         {
-            if (showButtonOffsetPos == Vector3.zero)
-                showButtonOffsetPos = showButtonTransform.localPosition - Vector3.right * 200f;
+            //if (showButtonOffsetPos == Vector3.zero)
+            //    showButtonOffsetPos = showButtonTransform.localPosition - Vector3.right * 200f;
+
+            DOTween.Kill(consoleCanvasGroup);
+            DOTween.Kill(consoleTransform);
+            DOTween.Kill(showButtonCanvasGroup);
+            //DOTween.Kill(showButtonTransform);
 
             if (on)
             {
@@ -271,11 +276,15 @@ namespace PhenomTools
                 consoleCanvasGroup.blocksRaycasts = true; 
                 consoleCanvasGroup.interactable = true;
 
+                DOTween.To(() => showButtonCanvasGroup.alpha, a => showButtonCanvasGroup.alpha = a, 0f, .25f);
+                showButtonCanvasGroup.blocksRaycasts = false;
+                showButtonCanvasGroup.interactable = false;
+
                 consoleOriginalPos = consoleTransform.localPosition;
                 consoleTransform.DOLocalMove(Vector3.zero, .5f);
 
-                showButtonOriginalPos = showButtonTransform.localPosition;
-                showButtonTransform.DOLocalMove(showButtonOffsetPos, .5f);
+                //showButtonOriginalPos = showButtonTransform.localPosition;
+                //showButtonTransform.DOLocalMove(showButtonOffsetPos, .5f);
             }
             else
             {
@@ -283,8 +292,12 @@ namespace PhenomTools
                 consoleCanvasGroup.blocksRaycasts = false;
                 consoleCanvasGroup.interactable = false;
 
+                DOTween.To(() => showButtonCanvasGroup.alpha, a => showButtonCanvasGroup.alpha = a, 1f, .25f);
+                showButtonCanvasGroup.blocksRaycasts = true;
+                showButtonCanvasGroup.interactable = true;
+
                 consoleTransform.DOLocalMove(consoleOriginalPos, .5f);
-                showButtonTransform.DOLocalMove(showButtonOriginalPos, .5f);
+                //showButtonTransform.DOLocalMove(showButtonOriginalPos, .5f);
             }
         }
     }

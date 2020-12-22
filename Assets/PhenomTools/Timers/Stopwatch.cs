@@ -5,7 +5,7 @@ using UnityEngine;
 namespace PhenomTools
 {
     [Serializable]
-    public class Stopwatch : TimeKeeperBase
+    public class Stopwatch : TimeKeeper
     {
         public Stopwatch(float duration = 0, bool useSeconds = true, bool removeListenersOnFinished = false, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
         {

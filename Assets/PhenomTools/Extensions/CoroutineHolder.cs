@@ -9,7 +9,7 @@ namespace PhenomTools
         public Dictionary<Object, IEnumerator> coroutines = new Dictionary<Object, IEnumerator>();
 
         private static CoroutineHolder _instance;
-        private static CoroutineHolder instance
+        public static CoroutineHolder instance
         {
             get
             {

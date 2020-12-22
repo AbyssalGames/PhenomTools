@@ -6,7 +6,7 @@ using UnityEngine.Events;
 namespace PhenomTools
 {
     [Serializable]
-    public class TimeKeeperBase
+    public class TimeKeeper
     {
         public float duration = 30f;
 
@@ -26,10 +26,10 @@ namespace PhenomTools
 
         public IEnumerator keeperCoroutine;
 
-        protected WaitForEndOfFrame waitFrame = new WaitForEndOfFrame();
-        protected WaitForFixedUpdate waitFixed = new WaitForFixedUpdate();
-        protected WaitForSeconds waitSecond = new WaitForSeconds(1f);
-        protected WaitForSecondsRealtime waitRealSecond = new WaitForSecondsRealtime(1f);
+        public static WaitForEndOfFrame waitFrame = new WaitForEndOfFrame();
+        public static WaitForFixedUpdate waitFixed = new WaitForFixedUpdate();
+        public static WaitForSeconds waitSecond = new WaitForSeconds(1f);
+        public static WaitForSecondsRealtime waitRealSecond = new WaitForSecondsRealtime(1f);
 
         public virtual void Initialize(float duration, bool useSeconds = true, bool removeListenersOnFinished = false, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
         {

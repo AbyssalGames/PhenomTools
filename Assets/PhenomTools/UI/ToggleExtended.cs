@@ -31,11 +31,13 @@ namespace PhenomTools
         protected override void OnEnable()
         {
             onValueChanged.AddListener(OnValueChanged);
+            base.OnEnable();
         }
 
         protected override void OnDisable()
         {
             onValueChanged.RemoveListener(OnValueChanged);
+            base.OnDisable();
         }
 
         public void SetParameters(Toggle t, Graphic targetGraphic, Graphic graphic, ToggleEvent onValueChanged)

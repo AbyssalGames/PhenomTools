@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(Touchable))]
+[CanEditMultipleObjects]
 public class TouchableEditor : Editor
 {
     private SerializedProperty blockRaycastsProperty;
