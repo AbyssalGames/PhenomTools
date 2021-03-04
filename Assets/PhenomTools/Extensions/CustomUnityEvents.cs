@@ -18,4 +18,7 @@ namespace UnityEngine.Events
 
     [Serializable]
     public class UnityEventGameObject : UnityEvent<GameObject> { }
+
+    [Serializable]
+    public class UnityEventColor : UnityEvent<Color> { }
 }

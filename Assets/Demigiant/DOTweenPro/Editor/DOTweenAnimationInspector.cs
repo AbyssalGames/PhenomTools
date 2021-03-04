@@ -67,7 +67,7 @@ namespace DG.DOTweenEditor
                 typeof(SpriteRenderer),
 #endif
 #if true // UI_MARKER
-                typeof(Image), typeof(Text), typeof(RawImage), typeof(Graphic),
+                typeof(Image), typeof(Text), typeof(RawImage),
 #endif
                 typeof(Renderer),
             }},
@@ -77,7 +77,7 @@ namespace DG.DOTweenEditor
                 typeof(SpriteRenderer),
 #endif
 #if true // UI_MARKER
-                typeof(Image), typeof(Text), typeof(CanvasGroup), typeof(RawImage), typeof(Graphic),
+                typeof(Image), typeof(Text), typeof(CanvasGroup), typeof(RawImage),
 #endif
                 typeof(Renderer),
             }},

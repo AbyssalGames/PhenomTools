@@ -286,6 +286,22 @@ namespace PhenomTools
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * speed);
         }
+
+        public static Transform[] GetChildrenRecursive(this Transform parent)
+        {
+            List<Transform> children = new List<Transform>();
+            foreach (Transform t in parent)
+            {
+                children.Add(t);
+
+                Transform[] second = t.GetChildrenRecursive();
+
+                if (second.Length > 0)
+                    children.AddRange(second);
+            }
+
+            return children.ToArray();
+        }
         #endregion
 
         #region Animation
@@ -388,6 +404,18 @@ namespace PhenomTools
         #endregion
 
         #region Misc
+        public static byte[] ToBytes(this bool[] bools)
+        {
+            return ToBytes(new BitArray(bools));
+        }
+        public static byte[] ToBytes(this BitArray bits)
+        {
+            byte[] bytes = new byte[(bits.Length - 1) / 8 + 1];
+            bits.CopyTo(bytes, 0);
+
+            return bytes;
+        }
+
         public static int ToIndex(this DeviceOrientation orientation, bool includeFaceUp = false, bool includeFaceDown = false)
         {
             switch (orientation)
