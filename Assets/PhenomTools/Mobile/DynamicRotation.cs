@@ -27,9 +27,11 @@ namespace PhenomTools
         protected override void OnDeviceOrientationChanged(int index)
         {
             if (local)
-                transform.DOLocalRotateQuaternion(Quaternion.Euler(rotations[index]), .5f).SetUpdate(UpdateType.Normal, true);
+                transform.DOLocalRotate(rotations[index], .5f).SetUpdate(UpdateType.Normal, true);
+            //transform.DOLocalRotateQuaternion(Quaternion.Euler(rotations[index]), .5f).SetUpdate(UpdateType.Normal, true);
             else
-                transform.DORotateQuaternion(Quaternion.Euler(rotations[index]), .5f).SetUpdate(UpdateType.Normal, true);
+                transform.DORotate(rotations[index], .5f).SetUpdate(UpdateType.Normal, true);
+            //transform.DORotateQuaternion(Quaternion.Euler(rotations[index]), .5f).SetUpdate(UpdateType.Normal, true);
         }
 
         public void Reset()

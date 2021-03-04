@@ -91,6 +91,7 @@ namespace PhenomTools
             }
         }
 
+        public static string ToBigNumberString(this byte num) => ToBigNumberString((ulong)num);
         public static string ToBigNumberString(this int num) => ToBigNumberString((ulong)num);
         public static string ToBigNumberString(this uint num) => ToBigNumberString((ulong)num);
         public static string ToBigNumberString(this ulong num)

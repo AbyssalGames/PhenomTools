@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3695454361638627437}
   - component: {fileID: 563397294942372999}
   - component: {fileID: 4048398230774092878}
-  - component: {fileID: 9035747582274409738}
   - component: {fileID: 3695454361638627434}
   m_Layer: 2
   m_Name: SoundManager
@@ -144,18 +143,6 @@ MonoBehaviour:
       prefab: {fileID: 4289463493456493489, guid: f3943fb51c9f78f4a925b407d09a90de,
         type: 3}
       group: {fileID: 0}
---- !u!114 &9035747582274409738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3695454361638627435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23e7b26a54dc81849a89547966c9da2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3695454361638627434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,8 +220,7 @@ MonoBehaviour:
     isTemporary: 0
     isUsingOcclusion: 0
     busColor: {r: 1, g: 1, b: 1, a: 1}
-    mixerChannel: {fileID: -1615367502040482769, guid: f5d586e49c2595a4ba115fa284902ec1,
-      type: 2}
+    mixerChannel: {fileID: 0}
     forceTo2D: 0
   - busName: Music
     volume: 1
@@ -246,8 +232,7 @@ MonoBehaviour:
     isTemporary: 0
     isUsingOcclusion: 0
     busColor: {r: 1, g: 1, b: 1, a: 1}
-    mixerChannel: {fileID: -7681437387452856984, guid: f5d586e49c2595a4ba115fa284902ec1,
-      type: 2}
+    mixerChannel: {fileID: 0}
     forceTo2D: 1
   groupByBus: 1
   sortAlpha: 1

@@ -233,6 +233,7 @@ namespace PhenomTools
                 case PhenomLogType.Warning:
                     return new Color(1 * value, .92f * value, .016f * value, alpha);
                 case PhenomLogType.Error:
+                case PhenomLogType.Exception:
                     return new Color(1 * value, 0 * value, 0 * value, alpha);
                 case PhenomLogType.Boon:
                     return new Color(0 * value, 1 * value, 0 * value, alpha);
@@ -272,7 +273,7 @@ namespace PhenomTools
 
             if (on)
             {
-                DOTween.To(() => consoleCanvasGroup.alpha, a => consoleCanvasGroup.alpha = a, 1f, .5f);
+                DOTween.To(() => consoleCanvasGroup.alpha, a => consoleCanvasGroup.alpha = a, 1f, .25f);
                 consoleCanvasGroup.blocksRaycasts = true; 
                 consoleCanvasGroup.interactable = true;
 
@@ -281,14 +282,14 @@ namespace PhenomTools
                 showButtonCanvasGroup.interactable = false;
 
                 consoleOriginalPos = consoleTransform.localPosition;
-                consoleTransform.DOLocalMove(Vector3.zero, .5f);
+                consoleTransform.DOLocalMove(Vector3.zero, .25f);
 
                 //showButtonOriginalPos = showButtonTransform.localPosition;
                 //showButtonTransform.DOLocalMove(showButtonOffsetPos, .5f);
             }
             else
             {
-                DOTween.To(() => consoleCanvasGroup.alpha, a => consoleCanvasGroup.alpha = a, 0f, .5f);
+                DOTween.To(() => consoleCanvasGroup.alpha, a => consoleCanvasGroup.alpha = a, 0f, .25f);
                 consoleCanvasGroup.blocksRaycasts = false;
                 consoleCanvasGroup.interactable = false;
 
@@ -296,7 +297,7 @@ namespace PhenomTools
                 showButtonCanvasGroup.blocksRaycasts = true;
                 showButtonCanvasGroup.interactable = true;
 
-                consoleTransform.DOLocalMove(consoleOriginalPos, .5f);
+                consoleTransform.DOLocalMove(consoleOriginalPos, .25f);
                 //showButtonTransform.DOLocalMove(showButtonOriginalPos, .5f);
             }
         }
