@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace PhenomTools
 {
-    [CustomEditor(typeof(UIExtentionTools))]
+    [CustomEditor(typeof(UIExtender))]
     public class UIExtensionToolsEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {
-            UIExtentionTools tools = target as UIExtentionTools;
+            UIExtender tools = target as UIExtender;
 
             EditorGUI.BeginChangeCheck();
 

@@ -7,6 +7,7 @@ using DG.Tweening;
 
 namespace PhenomTools
 {
+    [RequireComponent(typeof(RectTransform))]
     public class DynamicRect : DynamicBase
     {
         public Vector2 portraitRect;

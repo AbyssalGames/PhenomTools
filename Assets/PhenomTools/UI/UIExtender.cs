@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace PhenomTools
 {
-    public class UIExtentionTools : MonoBehaviour
+    public class UIExtender : MonoBehaviour
     {
         [Space]
         public Selectable[] allSelectables;

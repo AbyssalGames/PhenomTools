@@ -1,5 +1,7 @@
 ﻿using UnityEditor;
 using UnityEditor.UI;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace PhenomTools
 {
@@ -56,5 +58,18 @@ namespace PhenomTools
 
             serializedObject.ApplyModifiedProperties();
         }
+
+        //[MenuItem("GameObject/UI/Toggle Extended", priority = 2032)]
+        //public static void Create(MenuCommand menuCommand)
+        //{
+        //    GameObject newGo = new GameObject("New Toggle");
+        //    newGo.transform.SetParent((menuCommand.context as GameObject).transform);
+        //    newGo.transform.localPosition = Vector3.zero;
+        //    newGo.transform.localRotation = Quaternion.identity;
+
+        //    Image graphic = newGo.AddComponent<Image>();
+        //    ToggleExtended toggle = newGo.AddComponent<ToggleExtended>();
+        //    toggle.targetGraphic = graphic;
+        //}
     }
 }
