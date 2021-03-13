@@ -136,11 +136,13 @@ public static class MathX
 
     public static float Loop(this float i, float min, float max)
     {
-        float n = i % max;
-        if (n < min)
-            n = min + i;
+        if (min >= max)
+            return 0;
 
-        return n;
+        if (i < min)
+            return max - Math.Abs((i - min) % (max - min));
+        else
+            return (i - min) % (max - min) + min;
     }
 
     public static float Round(this float number, float multiple = 1f, MidpointRounding roundingType = MidpointRounding.AwayFromZero)
