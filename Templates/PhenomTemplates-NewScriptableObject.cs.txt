@@ -6,7 +6,8 @@ using PhenomTools;
 
 namespace NAMESPACE
 {
-    public class #SCRIPTNAME#
+    [CreateAssetMenu(menuName = "MyGame/Data/#SCRIPTNAME#", fileName = "New #SCRIPTNAME#", order = 0)]
+    public struct #SCRIPTNAME# : ScriptableObject
     {
         #NOTRIM#
     }

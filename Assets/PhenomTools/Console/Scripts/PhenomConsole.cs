@@ -71,8 +71,8 @@ namespace PhenomTools
             return;
 #else
 
-            if (instance == null)
-            { 
+            if (!Application.isBatchMode && instance == null)
+            {
                 instance = this;
                 DontDestroyOnLoad(gameObject);
 
@@ -86,13 +86,14 @@ namespace PhenomTools
             else
             {
                 Destroy(gameObject);
+                return;
             }
 #endif
         }
 
         private void OnEnable()
         {
-            if(listenForSystemLogs)
+            if (listenForSystemLogs)
                 Application.logMessageReceived += SystemLogReceived;
         }
 
@@ -102,12 +103,18 @@ namespace PhenomTools
                 Application.logMessageReceived -= SystemLogReceived;
         }
 
-        private void SystemLogReceived(string log, string stackTrace, LogType type)
+        private void SystemLogReceived(string log, string stackTrace, LogType logType)
         {
-            Log(log, (PhenomLogType)type, null, stackTrace, false, false, true);
+            if (instance != null)
+            {
+                instance.NewLine(log.ToString(), (PhenomLogType)logType, stackTrace);
+#if !UNITY_EDITOR
+                instance.WriteToFile(log.ToString());
+#endif
+            }
         }
 
-        public static void Log(object log, PhenomLogType logType = PhenomLogType.Normal, Object context = null, string stackTrace = null, bool useTimestamp = true, bool useTypePrefix = false, bool isSystemLog = false)
+        public static void Log(object log, PhenomLogType logType = PhenomLogType.Normal, Object context = null, string stackTrace = null, bool useTimestamp = true, bool useTypePrefix = false)
         {
             if (useTypePrefix || (instance != null && instance.useConsoleWriteLine == true))
                 log = string.Concat(GetTypePrefix(logType), log);
@@ -117,7 +124,7 @@ namespace PhenomTools
                 DateTime now = DateTime.Now;
                 log = string.Concat(now.Hour.ToString("00"), ":", now.Minute.ToString("00"), ":", now.Second.ToString("00"), ":", now.Millisecond.ToString("000"), " : ", log);
             }
-        
+
             switch (logType)
             {
                 case PhenomLogType.Normal:
@@ -137,7 +144,7 @@ namespace PhenomTools
                     break;
             }
 
-            if (instance != null && (!instance.listenForSystemLogs || (instance.listenForSystemLogs && isSystemLog)))
+            if (instance != null && !instance.listenForSystemLogs)
             {
                 instance.NewLine(log.ToString(), logType, stackTrace);
 #if !UNITY_EDITOR
@@ -145,9 +152,9 @@ namespace PhenomTools
 #endif
             }
         }
-        public static void LogError(object log, Object context = null, string stackTrace = null, bool useTimestamp = true, bool useTypePrefix = false, bool isSystemLog = false)
+        public static void LogError(object log, Object context = null, string stackTrace = null, bool useTimestamp = true, bool useTypePrefix = false)
         {
-            Log(log, PhenomLogType.Error, context, stackTrace, useTimestamp, useTypePrefix, isSystemLog);
+            Log(log, PhenomLogType.Error, context, stackTrace, useTimestamp, useTypePrefix);
         }
 
         private void NewLine(string log, PhenomLogType logType, string stackTrace)
@@ -187,12 +194,12 @@ namespace PhenomTools
             item.IncrementCountBadge();
         }
 
-//        public void OpenLogFile()
-//        {
-//#if !UNITY_EDITOR
-//            Application.OpenURL(Application.persistentDataPath + "/PhenomLog_" + DateTime.UtcNow.ToString("MM-dd_HH-mm-ss") + ".txt");
-//#endif
-//        }
+        //        public void OpenLogFile()
+        //        {
+        //#if !UNITY_EDITOR
+        //            Application.OpenURL(Application.persistentDataPath + "/PhenomLog_" + DateTime.UtcNow.ToString("MM-dd_HH-mm-ss") + ".txt");
+        //#endif
+        //        }
 
         public static void ToggleStackTrace(string text)
         {
@@ -201,7 +208,7 @@ namespace PhenomTools
 
             instance.stackTraceText.SetText(text);
 
-            if(instance.toggleGroup.AnyTogglesOn())
+            if (instance.toggleGroup.AnyTogglesOn())
             {
                 instance.logsRect.anchorMin = new Vector2(0f, instance.stackTraceRect.anchorMax.y);
                 instance.stackTraceObject.SetActive(true);
@@ -274,7 +281,7 @@ namespace PhenomTools
             if (on)
             {
                 DOTween.To(() => consoleCanvasGroup.alpha, a => consoleCanvasGroup.alpha = a, 1f, .25f);
-                consoleCanvasGroup.blocksRaycasts = true; 
+                consoleCanvasGroup.blocksRaycasts = true;
                 consoleCanvasGroup.interactable = true;
 
                 DOTween.To(() => showButtonCanvasGroup.alpha, a => showButtonCanvasGroup.alpha = a, 0f, .25f);

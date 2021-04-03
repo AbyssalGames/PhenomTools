@@ -6,7 +6,7 @@ using PhenomTools;
 
 namespace NAMESPACE
 {
-    public class #SCRIPTNAME#
+    public struct #SCRIPTNAME#
     {
         #NOTRIM#
     }
