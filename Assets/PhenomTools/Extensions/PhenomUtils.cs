@@ -145,17 +145,21 @@ namespace PhenomTools
             callback();
         }
 
-        public static void DelayActionByFrames(int frames, Action callback)
+        public static void DelayActionByFrames(int frames, Action callback, bool fixedUpdate = false)
         {
-            CoroutineHolder.StartCoroutine(DelayActionByFramesCoroutine(frames, callback));
+            CoroutineHolder.StartCoroutine(DelayActionByFramesCoroutine(frames, callback, fixedUpdate));
         }
-        private static IEnumerator DelayActionByFramesCoroutine(int frames, Action callback)
+        private static IEnumerator DelayActionByFramesCoroutine(int frames, Action callback, bool fixedUpdate = false)
         {
             int count = 0;
 
             while (count < frames)
             {
-                yield return null;
+                if (fixedUpdate)
+                    yield return new WaitForFixedUpdate();
+                else
+                    yield return null;
+
                 count++;
             }
 
