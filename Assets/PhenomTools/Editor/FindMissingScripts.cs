@@ -5,7 +5,7 @@ namespace PhenomTools
 {
     public class FindMissingScripts : EditorWindow
     {
-        [MenuItem("Window/FindMissingScripts")]
+        [MenuItem("PhenomTools/FindMissingScripts")]
         public static void ShowWindow()
         {
             GetWindow(typeof(FindMissingScripts));

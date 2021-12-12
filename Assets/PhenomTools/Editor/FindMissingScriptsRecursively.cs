@@ -7,7 +7,7 @@ namespace PhenomTools
     {
         static int go_count = 0, components_count = 0, missing_count = 0;
 
-        [MenuItem("Window/FindMissingScriptsRecursively")]
+        [MenuItem("PhenomTools/FindMissingScriptsRecursively")]
         public static void ShowWindow()
         {
             GetWindow(typeof(FindMissingScriptsRecursively));
