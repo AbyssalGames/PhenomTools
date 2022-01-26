@@ -1,0 +1,13 @@
+{
+  "name": "com.AbyssalGames.PhenomTools",
+  "displayName": "PhenomTools",
+  "version": "1.0.0",
+  "unity": "2020.3",
+  "description": "PhenomTools is a collection of many useful tools and extensions for Unity.",
+  "category": "extensions",
+  "dependencies": {},
+  "author": {
+    "name": "Abyssal Games",
+    "url": "https://github.com/AbyssalGames"
+  }
+}
