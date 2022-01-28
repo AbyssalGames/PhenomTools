@@ -64,18 +64,41 @@ namespace PhenomTools
             return CountCornersVisibleFrom(rectTransform, camera) > 0; // True if any corners are visible
         }
 
-        public static Rect GetWorldSpaceRect(this RectTransform rt)
+        // This one doesn't seem to work as intended
+        //public static Rect GetWorldSpaceRect(this RectTransform rt)
+        //{
+        //    var r = rt.rect;
+        //    r.center = rt.TransformPoint(r.center);
+        //    r.size = rt.TransformVector(r.size);
+        //    return r;
+        //}
+
+        //public static bool Overlaps(this RectTransform rectTrans1, RectTransform rectTrans2)
+        //{
+        //    Rect rect1 = new Rect(rectTrans1.localPosition.x, rectTrans1.localPosition.y, rectTrans1.rect.width, rectTrans1.rect.height);
+        //    Rect rect2 = new Rect(rectTrans2.localPosition.x, rectTrans2.localPosition.y, rectTrans2.rect.width, rectTrans2.rect.height);
+
+        //    return rect1.Overlaps(rect2);
+        //}
+
+        public static Rect GetWorldSpaceRect(this RectTransform rectTransform)
         {
-            var r = rt.rect;
-            r.center = rt.TransformPoint(r.center);
-            r.size = rt.TransformVector(r.size);
-            return r;
+            Vector3[] corners = new Vector3[4];
+            rectTransform.GetWorldCorners(corners);
+            // Get the bottom left corner.
+            Vector3 position = corners[0];
+
+            Vector2 size = new Vector2(
+                rectTransform.lossyScale.x * rectTransform.rect.size.x,
+                rectTransform.lossyScale.y * rectTransform.rect.size.y);
+
+            return new Rect(position, size);
         }
 
-        public static bool Overlaps(this RectTransform rectTrans1, RectTransform rectTrans2)
+        public static bool Overlaps(this RectTransform rt1, RectTransform rt2)
         {
-            Rect rect1 = new Rect(rectTrans1.localPosition.x, rectTrans1.localPosition.y, rectTrans1.rect.width, rectTrans1.rect.height);
-            Rect rect2 = new Rect(rectTrans2.localPosition.x, rectTrans2.localPosition.y, rectTrans2.rect.width, rectTrans2.rect.height);
+            Rect rect1 = GetWorldSpaceRect(rt1);
+            Rect rect2 = GetWorldSpaceRect(rt2);
 
             return rect1.Overlaps(rect2);
         }
