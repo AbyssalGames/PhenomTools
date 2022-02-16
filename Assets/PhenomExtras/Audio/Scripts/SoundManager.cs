@@ -1,4 +1,6 @@
-﻿using DarkTonic.MasterAudio;
+﻿#define PhenomAudio
+
+using DarkTonic.MasterAudio;
 using UnityEngine;
 
 namespace PhenomTools

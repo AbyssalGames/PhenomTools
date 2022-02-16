@@ -14,12 +14,14 @@ namespace PhenomTools
         public UnityEvent onReenter = new UnityEvent();
         public UnityEvent onGhostClick = new UnityEvent();
 
+#if PhenomAudio
         [SerializeField]
         private Sound hoverSound = null;
         [SerializeField]
         private Sound downSound = null;
         [SerializeField]
         private Sound clickSound = null;
+#endif
 
         [HideInInspector]
         public bool isPressed;
@@ -45,7 +47,9 @@ namespace PhenomTools
             base.OnPointerEnter(eventData);
 
             onHover?.Invoke();
+#if PhenomAudio
             SoundManager.Play2DSound(hoverSound);
+#endif
 
             if (isPressed)
                 onReenter?.Invoke();
@@ -59,7 +63,9 @@ namespace PhenomTools
                 return;
 
             isPressed = true;
+#if PhenomAudio
             SoundManager.Play2DSound(downSound);
+#endif
 
             onDown?.Invoke();
         }
@@ -87,7 +93,9 @@ namespace PhenomTools
             if (!IsActive() || !IsInteractable())
                 return;
 
+#if PhenomAudio
             SoundManager.Play2DSound(clickSound);
+#endif
         }
 
         public void DoClick()
@@ -95,7 +103,9 @@ namespace PhenomTools
             if (!IsActive() || !IsInteractable())
                 return;
 
+#if PhenomAudio
             SoundManager.Play2DSound(clickSound);
+#endif
 
             onClick?.Invoke();
         }
@@ -108,7 +118,9 @@ namespace PhenomTools
             if (!IsActive() || !IsInteractable())
                 return;
 
+#if PhenomAudio
             SoundManager.Play2DSound(clickSound);
+#endif
 
             onGhostClick?.Invoke();
         }
