@@ -166,17 +166,27 @@ namespace PhenomTools
             callback();
         }
 
-        public static IEnumerator RepeatAction(float time, int count, Action callback1, Action callback2)
+        public static IEnumerator RepeatAction(float timeBetween, Action onRepeat)
         {
-            WaitForSeconds waitDuration = new WaitForSeconds(time);
-            while (count > 0)
+            WaitForSeconds waitDuration = new WaitForSeconds(timeBetween);
+            while (true)
             {
-                callback1();
-                count--;
+                onRepeat();
+                yield return waitDuration;
+            }
+        }
+
+        public static IEnumerator RepeatAction(float timeBetween, int timesToRepeat, Action onRepeat, Action onComplete)
+        {
+            WaitForSeconds waitDuration = new WaitForSeconds(timeBetween);
+            while (timesToRepeat > 0)
+            {
+                onRepeat();
+                timesToRepeat--;
                 yield return waitDuration;
             }
 
-            callback2();
+            onComplete();
         }
     }
 }
