@@ -1,5 +1,6 @@
 {
     "name": "PhenomTools.Extensions",
+    "rootNamespace": "",
     "references": [
         "GUID:4072e69d6652ce745b2e5e7801c9040a"
     ],
@@ -8,7 +9,7 @@
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
-    "autoReferenced": false,
+    "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false

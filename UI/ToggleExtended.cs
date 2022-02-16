@@ -14,6 +14,7 @@ namespace PhenomTools
         public UnityEvent onReenter = new UnityEvent();
         public UnityEventBool onGhostToggle = new UnityEventBool();
 
+#if PhenomAudio
         [SerializeField]
         private Sound hoverSound = null;
         [SerializeField]
@@ -24,6 +25,7 @@ namespace PhenomTools
         private Sound toggleOnSound = null;
         [SerializeField]
         private Sound toggleOffSound = null;
+#endif
 
         [HideInInspector]
         public bool isPressed;
@@ -66,7 +68,9 @@ namespace PhenomTools
             base.OnPointerEnter(eventData);
 
             onHover?.Invoke();
+#if PhenomAudio
             SoundManager.Play2DSound(hoverSound);
+#endif
 
             if (isPressed)
                 onReenter?.Invoke();
@@ -80,7 +84,9 @@ namespace PhenomTools
                 return;
 
             isPressed = true;
+#if PhenomAudio
             SoundManager.Play2DSound(downSound);
+#endif
 
             onDown?.Invoke();
         }
@@ -108,12 +114,16 @@ namespace PhenomTools
             if (!IsActive() || !IsInteractable())
                 return;
 
+#if PhenomAudio
             SoundManager.Play2DSound(clickSound);
+#endif
         }
 
         private void OnValueChanged(bool on)
         {
+#if PhenomAudio
             SoundManager.Play2DSound(on ? toggleOnSound : toggleOffSound);
+#endif
         }
 
         public void DoClick(bool? on = null)
@@ -123,8 +133,10 @@ namespace PhenomTools
 
             bool newValue = on == null ? !isOn : on.Value;
 
+#if PhenomAudio
             SoundManager.Play2DSound(clickSound);
             SoundManager.Play2DSound(newValue ? toggleOnSound : toggleOffSound);
+#endif
 
             onValueChanged?.Invoke(newValue);
         }
@@ -137,11 +149,13 @@ namespace PhenomTools
             if (!IsActive() || !IsInteractable() || on == isOn)
                 return;
 
+#if PhenomAudio
             if (playSounds)
             {
                 SoundManager.Play2DSound(clickSound);
                 SoundManager.Play2DSound(on ? toggleOnSound : toggleOffSound);
             }
+#endif
 
             onGhostToggle?.Invoke(on);
             SetIsOnWithoutNotify(on);
