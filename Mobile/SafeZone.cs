@@ -8,10 +8,13 @@ namespace PhenomTools
         public static float height;
 
         [SerializeField]
-        private RectTransform Panel;
+        private RectTransform panel;
 
         private void Start()
         {
+            if (panel == null)
+                panel = GetComponent<RectTransform>();
+
             Refresh();
         }
 
@@ -31,13 +34,13 @@ namespace PhenomTools
             anchorMin.y /= Screen.height;
             anchorMax.x /= Screen.width;
             anchorMax.y /= Screen.height;
-            Panel.anchorMin = anchorMin;
-            Panel.anchorMax = anchorMax;
+            panel.anchorMin = anchorMin;
+            panel.anchorMax = anchorMax;
         }
 
         private void Reset()
         {
-            Panel = GetComponent<RectTransform>();
+            panel = GetComponent<RectTransform>();
         }
     }
 }
