@@ -145,9 +145,11 @@ namespace PhenomTools
             callback();
         }
 
-        public static void DelayActionByFrames(int frames, Action callback, bool fixedUpdate = false)
+        public static IEnumerator DelayActionByFrames(int frames, Action callback, bool fixedUpdate = false)
         {
-            CoroutineHolder.StartCoroutine(DelayActionByFramesCoroutine(frames, callback, fixedUpdate));
+            IEnumerator routine = DelayActionByFramesCoroutine(frames, callback, fixedUpdate);
+            CoroutineHolder.StartCoroutine(routine);
+            return routine;
         }
         private static IEnumerator DelayActionByFramesCoroutine(int frames, Action callback, bool fixedUpdate = false)
         {
@@ -166,7 +168,31 @@ namespace PhenomTools
             callback();
         }
 
-        public static IEnumerator RepeatAction(float timeBetween, Action onRepeat)
+        public static IEnumerator RepeatActionByTime(float timeBetween, Action onRepeat, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
+        {
+            IEnumerator routine;
+
+            if(updateMode == AnimatorUpdateMode.UnscaledTime)
+                routine = RepeatActionByTimeUnscaledCoroutine(timeBetween, onRepeat);
+            else
+                routine = RepeatActionByTimeCoroutine(timeBetween, onRepeat);
+
+            CoroutineHolder.StartCoroutine(routine);
+            return routine;
+        }
+        public static IEnumerator RepeatActionByTime(float timeBetween, int timesToRepeat, Action onRepeat, Action onComplete, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
+        {
+            IEnumerator routine;
+
+            if (updateMode == AnimatorUpdateMode.UnscaledTime)
+                routine = RepeatActionByTimeUnscaledCoroutine(timeBetween, timesToRepeat, onRepeat, onComplete);
+            else
+                routine = RepeatActionByTimeCoroutine(timeBetween, timesToRepeat, onRepeat, onComplete);
+
+            CoroutineHolder.StartCoroutine(routine);
+            return routine;
+        }
+        private static IEnumerator RepeatActionByTimeCoroutine(float timeBetween, Action onRepeat)
         {
             WaitForSeconds waitDuration = new WaitForSeconds(timeBetween);
             while (true)
@@ -175,8 +201,7 @@ namespace PhenomTools
                 yield return waitDuration;
             }
         }
-
-        public static IEnumerator RepeatAction(float timeBetween, int timesToRepeat, Action onRepeat, Action onComplete)
+        private static IEnumerator RepeatActionByTimeCoroutine(float timeBetween, int timesToRepeat, Action onRepeat, Action onComplete)
         {
             WaitForSeconds waitDuration = new WaitForSeconds(timeBetween);
             while (timesToRepeat > 0)
@@ -187,6 +212,61 @@ namespace PhenomTools
             }
 
             onComplete();
+        }
+        private static IEnumerator RepeatActionByTimeUnscaledCoroutine(float timeBetween, Action onRepeat)
+        {
+            WaitForSecondsRealtime waitDuration = new WaitForSecondsRealtime(timeBetween);
+            while (true)
+            {
+                onRepeat();
+                yield return waitDuration;
+            }
+        }
+        private static IEnumerator RepeatActionByTimeUnscaledCoroutine(float timeBetween, int timesToRepeat, Action onRepeat, Action onComplete)
+        {
+            WaitForSecondsRealtime waitDuration = new WaitForSecondsRealtime(timeBetween);
+            while (timesToRepeat > 0)
+            {
+                onRepeat();
+                timesToRepeat--;
+                yield return waitDuration;
+            }
+
+            onComplete();
+        }
+
+        public static IEnumerator RepeatActionByFrames(int framesBetween, Action onRepeat, bool fixedUpdate = false)
+        {
+            IEnumerator routine = RepeatActionByFramesCoroutine(framesBetween, onRepeat, fixedUpdate);
+            CoroutineHolder.StartCoroutine(routine);
+            return routine;
+        }
+        private static IEnumerator RepeatActionByFramesCoroutine(int framesBetween, Action onRepeat, bool fixedUpdate = false)
+        {
+            while (true)
+            {
+                int count = 0;
+
+                while (count < framesBetween)
+                {
+                    if (fixedUpdate)
+                        yield return new WaitForFixedUpdate();
+                    else
+                        yield return null;
+
+                    count++;
+                }
+
+                onRepeat();
+            }
+        }
+
+        /// <summary>
+        /// Can only be used to stop coroutines that are managed by the CoroutineHolder or were started with a PhenomTools extension/utility method.
+        /// </summary>
+        public static void Stop(this IEnumerator enumerator)
+        {
+            CoroutineHolder.StopCoroutine(enumerator);
         }
     }
 }
