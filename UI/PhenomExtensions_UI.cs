@@ -9,11 +9,12 @@ namespace PhenomTools
     public static partial class PhenomExtensions
     {
         #region RectTransform
-        public static Tweener DODeltaScale(this RectTransform rectTransform, Vector2 endValue, float duration = .5f/*, bool ignoreTimescale = false*/)
-        {
-            //DOTween.Kill(rectTransform);
-            return DOTween.To(() => rectTransform.sizeDelta, newSize => rectTransform.sizeDelta = newSize, endValue, duration);//.SetUpdate(UpdateType.Normal, ignoreTimescale);
-        }
+        //Now Default in DOTween
+        //public static Tweener DODeltaScale(this RectTransform rectTransform, Vector2 endValue, float duration = .5f/*, bool ignoreTimescale = false*/)
+        //{
+        //    //DOTween.Kill(rectTransform);
+        //    return DOTween.To(() => rectTransform.sizeDelta, newSize => rectTransform.sizeDelta = newSize, endValue, duration);//.SetUpdate(UpdateType.Normal, ignoreTimescale);
+        //}
 
         /// <summary>
         /// Counts the bounding box corners of the given RectTransform that are visible from the given Camera in screen space.
@@ -141,67 +142,69 @@ namespace PhenomTools
             group.blocksRaycasts = enabled;
         }
 
-        public static Tweener Fade(this CanvasGroup group, bool enabled, float duration = .5f, float animateScale = 1f, bool disableOnFadeOut = false, bool destroyOnFadeOut = false, Action completeCallback = null, Action updateCallback = null, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
-        {
-            return Fade(group, enabled ? 1f : 0f, duration, animateScale, disableOnFadeOut, destroyOnFadeOut, completeCallback, updateCallback, updateMode);
-        }
+        //Now Default in DOTween
+        //public static Tweener Fade(this CanvasGroup group, bool enabled, float duration = .5f, float animateScale = 1f, bool disableOnFadeOut = false, bool destroyOnFadeOut = false, Action completeCallback = null, Action updateCallback = null, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
+        //{
+        //    return Fade(group, enabled ? 1f : 0f, duration, animateScale, disableOnFadeOut, destroyOnFadeOut, completeCallback, updateCallback, updateMode);
+        //}
 
-        public static Tweener Fade(this CanvasGroup group, float endValue, float duration = .5f, float animateScale = 1f, bool disableOnFadeOut = false, bool destroyOnFadeOut = false, Action completeCallback = null, Action updateCallback = null, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
-        {
-            if (group.alpha == endValue)
-                return null;
+        //public static Tweener Fade(this CanvasGroup group, float endValue, float duration = .5f, float animateScale = 1f, bool disableOnFadeOut = false, bool destroyOnFadeOut = false, Action completeCallback = null, Action updateCallback = null, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
+        //{
+        //    if (group.alpha == endValue)
+        //        return null;
 
-            DOTween.Kill(group);
+        //    DOTween.Kill(group);
 
-            group.gameObject.SetActive(true);
+        //    group.gameObject.SetActive(true);
 
-            if (endValue == 0)
-                group.SetInteractable(false);
+        //    if (endValue == 0)
+        //        group.SetInteractable(false);
 
-            if (animateScale != 1f)
-            {
-                if(group.alpha > endValue)
-                {
-                    group.transform.DOScale(animateScale, duration);
-                }
-                else
-                {
-                    group.transform.localScale = Vector3.one * animateScale;
-                    group.transform.DOScale(1f, duration);
-                }
-            }
+        //    if (animateScale != 1f)
+        //    {
+        //        if(group.alpha > endValue)
+        //        {
+        //            group.transform.DOScale(animateScale, duration);
+        //        }
+        //        else
+        //        {
+        //            group.transform.localScale = Vector3.one * animateScale;
+        //            group.transform.DOScale(1f, duration);
+        //        }
+        //    }
 
-            Tweener fadeTween = group.DOFade(endValue, duration);
+        //    Tweener fadeTween = group.DOFade(endValue, duration);
 
-            fadeTween.onComplete += () =>
-            {
-                if (endValue > 0)
-                    group.SetInteractable(true);
+        //    fadeTween.onComplete += () =>
+        //    {
+        //        if (endValue > 0)
+        //            group.SetInteractable(true);
 
-                if (endValue == 0)
-                {
-                    if (disableOnFadeOut)
-                        group.gameObject.SetActive(false);
+        //        if (endValue == 0)
+        //        {
+        //            if (disableOnFadeOut)
+        //                group.gameObject.SetActive(false);
 
-                    if (destroyOnFadeOut)
-                        UnityEngine.Object.Destroy(group.gameObject);
-                }
+        //            if (destroyOnFadeOut)
+        //                UnityEngine.Object.Destroy(group.gameObject);
+        //        }
 
-                completeCallback?.Invoke();
-            };
+        //        completeCallback?.Invoke();
+        //    };
 
-            fadeTween.onUpdate += () => updateCallback?.Invoke();
+        //    fadeTween.onUpdate += () => updateCallback?.Invoke();
 
-            if (updateMode == AnimatorUpdateMode.AnimatePhysics)
-                fadeTween.SetUpdate(UpdateType.Fixed);
-            else if(updateMode == AnimatorUpdateMode.UnscaledTime)
-                fadeTween.SetUpdate(UpdateType.Normal, true);
-            else
-                fadeTween.SetUpdate(UpdateType.Normal);
+        //    if (updateMode == AnimatorUpdateMode.AnimatePhysics)
+        //        fadeTween.SetUpdate(UpdateType.Fixed);
+        //    else if(updateMode == AnimatorUpdateMode.UnscaledTime)
+        //        fadeTween.SetUpdate(UpdateType.Normal, true);
+        //    else
+        //        fadeTween.SetUpdate(UpdateType.Normal);
 
-            return fadeTween;
-        }
+        //    return fadeTween;
+        //}
 
+        /* OLD
         //public static void Fade(this CanvasGroup canvasGroup, bool enabled, UnityEngine.Object customKey, float duration = .5f, bool animateScale = false, bool disableOnFadeOut = false, bool destroyOnFadeOut = false, Action completeCallback = null)
         //{
         //    canvasGroup.gameObject.SetActive(true);
@@ -255,6 +258,7 @@ namespace PhenomTools
 
         //    completeCallback?.Invoke();
         //}
+        */
         #endregion
 
         #region Text
@@ -278,11 +282,12 @@ namespace PhenomTools
             return tempString;
         }
 
-        public static Tweener Roll(this TMP_Text text, int valueIn, int valueOut, float duration, bool? isCurrency = null)
-        {
-            int value = valueIn;
-            return value.Roll(() => value, x => value = x, valueOut, duration).OnUpdate(() => text.SetText(isCurrency == true ? value.ToCurrency() : value.ToCreditsDisplay()));
-        }
+        // Obsolete
+        //public static Tweener Roll(this TMP_Text text, int valueIn, int valueOut, float duration, bool? isCurrency = null)
+        //{
+        //    int value = valueIn;
+        //    return value.Roll(() => value, x => value = x, valueOut, duration).OnUpdate(() => text.SetText(isCurrency == true ? value.ToCurrency() : value.ToCreditsDisplay()));
+        //}
 
         //public static void Roll(this TMP_Text text, int valueIn, int valueOut, float duration, bool isCurrency = false)
         //{

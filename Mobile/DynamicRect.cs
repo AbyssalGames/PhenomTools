@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PhenomTools;
 using DG.Tweening;
+using DG.Tweening.Plugins;
 
 namespace PhenomTools
 {
@@ -36,7 +37,8 @@ namespace PhenomTools
 
         protected override void OnDeviceOrientationChanged(int index)
         {
-            rt.DODeltaScale(rects[index] /*+ new Vector2(Screen.width * mults[index].x, Screen.height * mults[index].y)*/, .5f).SetUpdate(UpdateType.Normal, true);
+            rt.DOSizeDelta(rects[index], .5f).SetUpdate(UpdateType.Normal, true);
+            //rt.DODeltaScale(rects[index] /*+ new Vector2(Screen.width * mults[index].x, Screen.height * mults[index].y)*/, .5f).SetUpdate(UpdateType.Normal, true);
         }
 
         [ContextMenu("Set Current as Portrait")]
