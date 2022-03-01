@@ -5,6 +5,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
 
+#if UNITY_EDITOR
+using Unity.EditorCoroutines.Editor;
+#endif
+
 namespace PhenomTools
 {
     public enum CardinalDirection
@@ -12,9 +16,9 @@ namespace PhenomTools
         North, NorthEast, East, SouthEast, South, SouthWest, West, NorthWest
     }
 
-
     public static class PhenomUtils
     {
+        #region Misc
         public static string GetCurrentPlatformString()
         {
             return GetPlatformString(Application.platform);
@@ -56,7 +60,9 @@ namespace PhenomTools
             else
                 return 1;
         }
+        #endregion
 
+        #region Random
         public static int GetWeightedNumber(int[] finalValues, float[] weights)
         {
             float[] weightIndex = new float[finalValues.Length];
@@ -121,17 +127,27 @@ namespace PhenomTools
 
             return newString;
         }
+        #endregion
 
+        #region Coroutines
         public static IEnumerator DelayActionByTime(float time, Action callback, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
         {
             IEnumerator routine;
 
-            if(updateMode == AnimatorUpdateMode.UnscaledTime)
-                routine = DelayActionByTimeUnscaledCoroutine(time, callback);
-            else
-                routine = DelayActionByTimeNormalCoroutine(time, callback);
+            if (!Application.isPlaying && Application.isEditor)
+            {
+                routine = DelayActionByTimeEditorCoroutine(time, callback);
+                EditorCoroutineUtility.StartCoroutineOwnerless(routine);
+            }
+            else 
+            {
+                if (updateMode == AnimatorUpdateMode.UnscaledTime)
+                    routine = DelayActionByTimeUnscaledCoroutine(time, callback);
+                else
+                    routine = DelayActionByTimeNormalCoroutine(time, callback);
 
-            CoroutineHolder.StartCoroutine(routine);
+                CoroutineHolder.StartCoroutine(routine);
+            }
             return routine;
         }
         private static IEnumerator DelayActionByTimeNormalCoroutine(float time, Action callback)
@@ -144,11 +160,26 @@ namespace PhenomTools
             yield return new WaitForSecondsRealtime(time);
             callback();
         }
+        private static IEnumerator DelayActionByTimeEditorCoroutine(float time, Action callback)
+        {
+            yield return new EditorWaitForSeconds(time);
+            callback();
+        }
 
         public static IEnumerator DelayActionByFrames(int frames, Action callback, bool fixedUpdate = false)
         {
-            IEnumerator routine = DelayActionByFramesCoroutine(frames, callback, fixedUpdate);
-            CoroutineHolder.StartCoroutine(routine);
+            IEnumerator routine;
+
+            if (!Application.isPlaying && Application.isEditor)
+            {
+                routine = DelayActionByFramesCoroutine(frames, callback);
+                EditorCoroutineUtility.StartCoroutineOwnerless(routine);
+            }
+            else
+            {
+                routine = DelayActionByFramesCoroutine(frames, callback, fixedUpdate);
+                CoroutineHolder.StartCoroutine(routine);
+            }
             return routine;
         }
         private static IEnumerator DelayActionByFramesCoroutine(int frames, Action callback, bool fixedUpdate = false)
@@ -172,24 +203,42 @@ namespace PhenomTools
         {
             IEnumerator routine;
 
-            if(updateMode == AnimatorUpdateMode.UnscaledTime)
-                routine = RepeatActionByTimeUnscaledCoroutine(timeBetween, onRepeat);
+            if (!Application.isPlaying && Application.isEditor)
+            {
+                routine = RepeatActionByTimeEditorCoroutine(timeBetween, onRepeat);
+                EditorCoroutineUtility.StartCoroutineOwnerless(routine);
+            }
             else
-                routine = RepeatActionByTimeCoroutine(timeBetween, onRepeat);
+            {
+                if (updateMode == AnimatorUpdateMode.UnscaledTime)
+                    routine = RepeatActionByTimeUnscaledCoroutine(timeBetween, onRepeat);
+                else
+                    routine = RepeatActionByTimeCoroutine(timeBetween, onRepeat);
 
-            CoroutineHolder.StartCoroutine(routine);
+                CoroutineHolder.StartCoroutine(routine);
+            }
+
             return routine;
         }
         public static IEnumerator RepeatActionByTime(float timeBetween, int timesToRepeat, Action onRepeat, Action onComplete, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
         {
             IEnumerator routine;
 
-            if (updateMode == AnimatorUpdateMode.UnscaledTime)
-                routine = RepeatActionByTimeUnscaledCoroutine(timeBetween, timesToRepeat, onRepeat, onComplete);
+            if (!Application.isPlaying && Application.isEditor)
+            {
+                routine = RepeatActionByTimeEditorCoroutine(timeBetween, timesToRepeat, onRepeat, onComplete);
+                EditorCoroutineUtility.StartCoroutineOwnerless(routine);
+            }
             else
-                routine = RepeatActionByTimeCoroutine(timeBetween, timesToRepeat, onRepeat, onComplete);
+            {
+                if (updateMode == AnimatorUpdateMode.UnscaledTime)
+                    routine = RepeatActionByTimeUnscaledCoroutine(timeBetween, timesToRepeat, onRepeat, onComplete);
+                else
+                    routine = RepeatActionByTimeCoroutine(timeBetween, timesToRepeat, onRepeat, onComplete);
 
-            CoroutineHolder.StartCoroutine(routine);
+                CoroutineHolder.StartCoroutine(routine);
+            }
+
             return routine;
         }
         private static IEnumerator RepeatActionByTimeCoroutine(float timeBetween, Action onRepeat)
@@ -234,11 +283,59 @@ namespace PhenomTools
 
             onComplete();
         }
+        private static IEnumerator RepeatActionByTimeEditorCoroutine(float timeBetween, Action onRepeat)
+        {
+            EditorWaitForSeconds waitDuration = new EditorWaitForSeconds(timeBetween);
+            while (true)
+            {
+                onRepeat();
+                yield return waitDuration;
+            }
+        }
+        private static IEnumerator RepeatActionByTimeEditorCoroutine(float timeBetween, int timesToRepeat, Action onRepeat, Action onComplete)
+        {
+            EditorWaitForSeconds waitDuration = new EditorWaitForSeconds(timeBetween);
+            while (timesToRepeat > 0)
+            {
+                onRepeat();
+                timesToRepeat--;
+                yield return waitDuration;
+            }
+
+            onComplete();
+        }
 
         public static IEnumerator RepeatActionByFrames(int framesBetween, Action onRepeat, bool fixedUpdate = false)
         {
-            IEnumerator routine = RepeatActionByFramesCoroutine(framesBetween, onRepeat, fixedUpdate);
-            CoroutineHolder.StartCoroutine(routine);
+            IEnumerator routine;
+
+            if (!Application.isPlaying && Application.isEditor)
+            {
+                routine = RepeatActionByFramesCoroutine(framesBetween, onRepeat);
+                EditorCoroutineUtility.StartCoroutineOwnerless(routine);
+            }
+            else
+            {
+                routine = RepeatActionByFramesCoroutine(framesBetween, onRepeat, fixedUpdate);
+                CoroutineHolder.StartCoroutine(routine);
+            }
+            return routine;
+        }
+
+        public static IEnumerator RepeatActionByFrames(int framesBetween, int timesToRepeat, Action onRepeat, Action onComplete, bool fixedUpdate = false)
+        {
+            IEnumerator routine;
+
+            if (!Application.isPlaying && Application.isEditor)
+            {
+                routine = RepeatActionByFramesCoroutine(framesBetween, timesToRepeat, onRepeat, onComplete);
+                EditorCoroutineUtility.StartCoroutineOwnerless(routine);
+            }
+            else
+            {
+                routine = RepeatActionByFramesCoroutine(framesBetween, timesToRepeat, onRepeat, onComplete, fixedUpdate);
+                CoroutineHolder.StartCoroutine(routine);
+            }
             return routine;
         }
         private static IEnumerator RepeatActionByFramesCoroutine(int framesBetween, Action onRepeat, bool fixedUpdate = false)
@@ -260,6 +357,28 @@ namespace PhenomTools
                 onRepeat();
             }
         }
+        private static IEnumerator RepeatActionByFramesCoroutine(int framesBetween, int timesToRepeat, Action onRepeat, Action onComplete, bool fixedUpdate = false)
+        {
+            while (timesToRepeat > 0)
+            {
+                int count = 0;
+
+                while (count < framesBetween)
+                {
+                    if (fixedUpdate)
+                        yield return new WaitForFixedUpdate();
+                    else
+                        yield return null;
+
+                    count++;
+                }
+
+                onRepeat();
+                timesToRepeat--;
+            }
+
+            onComplete();
+        }
 
         /// <summary>
         /// Can only be used to stop coroutines that are managed by the CoroutineHolder or were started with a PhenomTools extension/utility method.
@@ -268,5 +387,68 @@ namespace PhenomTools
         {
             CoroutineHolder.StopCoroutine(enumerator);
         }
+        #endregion
+
+        #region Mobile
+        public static float GetKeyboardHeightRelative(float canvasHeight, bool includeInput)
+        {
+            return (GetKeyboardHeight(includeInput) / Display.main.systemHeight) * canvasHeight;
+        }
+
+        public static float GetKeyboardHeight(bool includeInput)
+        {
+#if UNITY_EDITOR
+            return 300f;
+#elif UNITY_ANDROID
+            using (var unityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+            {
+                var unityPlayer = unityClass.GetStatic<AndroidJavaObject>("currentActivity").Get<AndroidJavaObject>("mUnityPlayer");
+                var view = unityPlayer.Call<AndroidJavaObject>("getView");
+
+                var result = 0;
+
+                if (view != null)
+                {
+                    using (var rect = new AndroidJavaObject("android.graphics.Rect"))
+                    {
+                        view.Call("getWindowVisibleDisplayFrame", rect);
+                        result = Display.main.systemHeight - rect.Call<int>("height");
+                    }
+
+                    if (includeInput)
+                    {
+                        var dialog = unityPlayer.Get<AndroidJavaObject>("mSoftInputDialog");
+                        var decorView = dialog?.Call<AndroidJavaObject>("getWindow").Call<AndroidJavaObject>("getDecorView");
+
+                        if (decorView != null)
+                        {
+                            var decorHeight = decorView.Call<int>("getHeight");
+                            result += decorHeight;
+                        }
+                        else
+                        {
+                            decorView = dialog?.Call<AndroidJavaObject>("getWindow").Call<AndroidJavaObject>("b");
+
+                            if (decorView != null)
+                            {
+                                var decorHeight = decorView.Call<int>("getHeight");
+                                result += decorHeight;
+                            }
+                            else
+                            {
+                                result += 60;
+                            }
+                        }
+                    }
+                }
+
+                return result;
+            }
+#else
+            var height = Mathf.RoundToInt(TouchScreenKeyboard.area.height);
+            return height >= Display.main.systemHeight ? 0 : height;
+#endif
+        }
+        #endregion
     }
 }

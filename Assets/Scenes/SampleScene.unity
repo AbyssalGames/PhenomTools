@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 58489535}
   - component: {fileID: 58489534}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Tester
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37cfdd4e96e0764faf522ec8a56e6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 0
+  time: 1
+  count: 10
 --- !u!4 &58489535
 Transform:
   m_ObjectHideFlags: 0
@@ -217,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8b96895a0ec4ba685178a052544251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 8d66e65c66e29504199ed664979682cd, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -225,8 +226,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0e6566c305f454635a11c319b09a8358, type: 3}
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: 2d0c32881f2cf4e72a16f0ec34822026, type: 3}
+  m_PreserveAspect: 1
 --- !u!222 &185045761
 CanvasRenderer:
   m_ObjectHideFlags: 0
