@@ -132,12 +132,14 @@ namespace PhenomTools
         #region Coroutines
         public static IEnumerator DelayActionByTime(float time, Action callback, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
         {
-            IEnumerator routine;
+            IEnumerator routine = null;
 
             if (!Application.isPlaying && Application.isEditor)
             {
+#if UNITY_EDITOR
                 routine = DelayActionByTimeEditorCoroutine(time, callback);
                 EditorCoroutineUtility.StartCoroutineOwnerless(routine);
+#endif
             }
             else 
             {
@@ -160,20 +162,24 @@ namespace PhenomTools
             yield return new WaitForSecondsRealtime(time);
             callback();
         }
+#if UNITY_EDITOR
         private static IEnumerator DelayActionByTimeEditorCoroutine(float time, Action callback)
         {
             yield return new EditorWaitForSeconds(time);
             callback();
         }
+#endif
 
         public static IEnumerator DelayActionByFrames(int frames, Action callback, bool fixedUpdate = false)
         {
-            IEnumerator routine;
+            IEnumerator routine = null;
 
             if (!Application.isPlaying && Application.isEditor)
             {
+#if UNITY_EDITOR
                 routine = DelayActionByFramesCoroutine(frames, callback);
                 EditorCoroutineUtility.StartCoroutineOwnerless(routine);
+#endif
             }
             else
             {
@@ -201,12 +207,14 @@ namespace PhenomTools
 
         public static IEnumerator RepeatActionByTime(float timeBetween, Action onRepeat, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
         {
-            IEnumerator routine;
+            IEnumerator routine = null;
 
             if (!Application.isPlaying && Application.isEditor)
             {
+#if UNITY_EDITOR
                 routine = RepeatActionByTimeEditorCoroutine(timeBetween, onRepeat);
                 EditorCoroutineUtility.StartCoroutineOwnerless(routine);
+#endif
             }
             else
             {
@@ -222,12 +230,15 @@ namespace PhenomTools
         }
         public static IEnumerator RepeatActionByTime(float timeBetween, int timesToRepeat, Action onRepeat, Action onComplete, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
         {
-            IEnumerator routine;
+            IEnumerator routine = null;
 
             if (!Application.isPlaying && Application.isEditor)
             {
+
+#if UNITY_EDITOR
                 routine = RepeatActionByTimeEditorCoroutine(timeBetween, timesToRepeat, onRepeat, onComplete);
                 EditorCoroutineUtility.StartCoroutineOwnerless(routine);
+#endif
             }
             else
             {
@@ -283,6 +294,7 @@ namespace PhenomTools
 
             onComplete();
         }
+#if UNITY_EDITOR
         private static IEnumerator RepeatActionByTimeEditorCoroutine(float timeBetween, Action onRepeat)
         {
             EditorWaitForSeconds waitDuration = new EditorWaitForSeconds(timeBetween);
@@ -304,15 +316,18 @@ namespace PhenomTools
 
             onComplete();
         }
+#endif
 
         public static IEnumerator RepeatActionByFrames(int framesBetween, Action onRepeat, bool fixedUpdate = false)
         {
-            IEnumerator routine;
+            IEnumerator routine = null;
 
             if (!Application.isPlaying && Application.isEditor)
             {
+#if UNITY_EDITOR
                 routine = RepeatActionByFramesCoroutine(framesBetween, onRepeat);
                 EditorCoroutineUtility.StartCoroutineOwnerless(routine);
+#endif
             }
             else
             {
@@ -324,12 +339,14 @@ namespace PhenomTools
 
         public static IEnumerator RepeatActionByFrames(int framesBetween, int timesToRepeat, Action onRepeat, Action onComplete, bool fixedUpdate = false)
         {
-            IEnumerator routine;
+            IEnumerator routine = null;
 
             if (!Application.isPlaying && Application.isEditor)
             {
+#if UNITY_EDITOR
                 routine = RepeatActionByFramesCoroutine(framesBetween, timesToRepeat, onRepeat, onComplete);
                 EditorCoroutineUtility.StartCoroutineOwnerless(routine);
+#endif
             }
             else
             {
