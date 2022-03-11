@@ -225,6 +225,41 @@ namespace PhenomTools
         }
         #endregion
 
+        #region Rigidbody
+        public static void Cannonball(this Rigidbody body, Vector3 targetPoint, float initialAngle, bool inheritVelocity = false, float additionalGravity = 0)
+        {
+            if (!inheritVelocity)
+                body.velocity = Vector3.zero;
+
+            float gravity = -Physics.gravity.y - additionalGravity;
+            //Debug.Log(gravity);
+            // Selected angle in radians
+            float angle = initialAngle * Mathf.Deg2Rad;
+
+            // Positions of this object and the target on the same plane
+            Vector3 planarTarget = new Vector3(targetPoint.x, 0, targetPoint.z);
+            Vector3 planarPostion = new Vector3(body.position.x, 0, body.position.z);
+
+            // Planar distance between objects
+            float distance = Vector3.Distance(planarTarget, planarPostion);
+            // Distance along the y axis between objects
+            float yOffset = body.position.y - targetPoint.y;
+
+            float initialVelocity = (1 / Mathf.Cos(angle)) * Mathf.Sqrt((0.5f * gravity * Mathf.Pow(distance, 2)) / (distance * Mathf.Tan(angle) + yOffset));
+
+            Vector3 velocity = new Vector3(0, initialVelocity * Mathf.Sin(angle), initialVelocity * Mathf.Cos(angle));
+
+            // Rotate our velocity to match the direction between the two objects
+            float angleBetweenObjects = Vector3.Angle(Vector3.forward, planarTarget - planarPostion);
+            Vector3 finalVelocity = Quaternion.AngleAxis(angleBetweenObjects, Vector3.up) * velocity;
+            //Debug.Log(finalVelocity + ", " + finalVelocity.magnitude);
+            // Fire!
+            //rigid.velocity = finalVelocity;
+            // Alternative way:
+            body.AddForce(finalVelocity, ForceMode.VelocityChange);
+        }
+        #endregion
+
         #region Animation
         public static bool HasParameter(this Animator anim, string parameterName)
         {
@@ -238,6 +273,11 @@ namespace PhenomTools
         #endregion
 
         #region Collections
+        public static void AddUnique<T>(this IList<T> list, T element)
+        {
+            if (!list.Contains(element))
+                list.Add(element);
+        }
 
         public static void Shuffle<T>(this IList<T> list)
         {
