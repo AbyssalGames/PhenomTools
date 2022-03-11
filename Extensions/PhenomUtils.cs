@@ -78,10 +78,17 @@ namespace PhenomTools
             UnityWebRequest www = UnityWebRequestTexture.GetTexture(url);
             yield return www.SendWebRequest();
 
+#if UNITY_2020_1_OR_NEWER
             if (www.result == UnityWebRequest.Result.Success)
                 onSuccess?.Invoke(DownloadHandlerTexture.GetContent(www));
             else
                 onError?.Invoke(www.error);
+#else
+            if (www.isNetworkError || www.isHttpError)
+                onError?.Invoke(www.error);
+            else
+                onSuccess?.Invoke(DownloadHandlerTexture.GetContent(www));
+#endif
         }
         #endregion
 
