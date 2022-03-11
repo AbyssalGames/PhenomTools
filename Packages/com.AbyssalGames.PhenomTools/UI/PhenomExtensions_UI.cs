@@ -96,12 +96,33 @@ namespace PhenomTools
             return new Rect(position, size);
         }
 
+        /// <summary>
+        /// Returns true if at least 1 corner of rect2 is within the bounds of rect1
+        /// </summary>
+        /// <param name="rt1"></param>
+        /// <param name="rt2"></param>
+        /// <returns></returns>
         public static bool Overlaps(this RectTransform rt1, RectTransform rt2)
         {
             Rect rect1 = GetWorldSpaceRect(rt1);
             Rect rect2 = GetWorldSpaceRect(rt2);
 
             return rect1.Overlaps(rect2);
+        }
+
+        /// <summary>
+        /// Returns true if all 4 corners of rect2 are within the bounds of rect1
+        /// </summary>
+        /// <param name="rt1"></param>
+        /// <param name="rt2"></param>
+        /// <returns></returns>
+        public static bool Contains(this RectTransform rt1, RectTransform rt2)
+        {
+            Rect rect1 = GetWorldSpaceRect(rt1);
+            Vector3[] corners = new Vector3[4];
+            rt2.GetWorldCorners(corners);
+
+            return rect1.Contains(corners[0]) && rect1.Contains(corners[1]) && rect1.Contains(corners[2]) && rect1.Contains(corners[3]);
         }
         #endregion
 

@@ -4,6 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
+using UnityEngine.Networking;
 
 #if UNITY_EDITOR
 using Unity.EditorCoroutines.Editor;
@@ -59,6 +60,28 @@ namespace PhenomTools
                 return -1;
             else
                 return 1;
+        }
+
+        public static void GetTextureFromURL(string url, Action<Texture> onSuccess, Action<string> onError)
+        {
+            if (string.IsNullOrWhiteSpace(url) || !Uri.IsWellFormedUriString(url, UriKind.Absolute))
+            {
+                onError?.Invoke("Invalid URL: " + url);
+                return;
+            }
+
+            CoroutineHolder.StartCoroutine(GetTextureRoutine(url, onSuccess, onError));
+        }
+
+        private static IEnumerator GetTextureRoutine(string url, Action<Texture> onSuccess, Action<string> onError)
+        {
+            UnityWebRequest www = UnityWebRequestTexture.GetTexture(url);
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.Success)
+                onSuccess?.Invoke(DownloadHandlerTexture.GetContent(www));
+            else
+                onError?.Invoke(www.error);
         }
         #endregion
 
