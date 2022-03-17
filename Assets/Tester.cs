@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class Tester : MonoBehaviour
 {
-    public RectTransform rt1, rt2;
+    public OrderedDictionary<string, string> test = new OrderedDictionary<string, string>();
+
+    //public RectTransform rt1, rt2;
 
     //public float time;
     //public int count;
@@ -15,6 +17,12 @@ public class Tester : MonoBehaviour
     [ContextMenu("Start")]
     public void Start()
     {
+        test.Add("thing1", "thing1Value");
+        test.Add("thing2", "thing2Value");
+        test.Add("thing3", "thing3Value");
+
+        Debug.Log(test.GetAt(1));
+
         //PhenomUtils.DelayActionByTime(time, Callback);
         //PhenomUtils.DelayActionByFrames(count, Callback);
         //PhenomUtils.RepeatActionByTime(time, count, Callback, Complete);
@@ -27,11 +35,11 @@ public class Tester : MonoBehaviour
 
     private void Update()
     {
-        if (rt1.Overlaps(rt2))
-            Debug.Log("Overlaps");
+        //if (rt1.Overlaps(rt2))
+        //    Debug.Log("Overlaps");
 
-        if (rt1.Contains(rt2))
-            Debug.Log("Contains");
+        //if (rt1.Contains(rt2))
+        //    Debug.Log("Contains");
     }
 
     //private void Callback()

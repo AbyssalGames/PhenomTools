@@ -189,6 +189,7 @@ namespace PhenomTools
             transform.SetParent(parent);
             transform.localPosition = Vector3.zero;
             transform.localEulerAngles = Vector3.zero;
+            transform.localScale = Vector3.one;
         }
 
         public static Transform[] GetChildren(this Transform transform)
