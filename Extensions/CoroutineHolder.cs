@@ -13,7 +13,8 @@ namespace PhenomTools
         {
             get
             {
-                if (_instance != null) return _instance;
+                if (_instance != null) 
+                    return _instance;
 
                 _instance = new GameObject("CoroutineHolder").AddComponent<CoroutineHolder>();
                 DontDestroyOnLoad(_instance.gameObject);
@@ -42,7 +43,8 @@ namespace PhenomTools
 
         public static bool TryStopCoroutine(Object keyObject)
         {
-            if (!instance.coroutines.TryGetValue(keyObject, out IEnumerator currentRoutine)) return false;
+            if (!instance.coroutines.TryGetValue(keyObject, out IEnumerator currentRoutine))
+                return false;
 
             Debug.Log("Stopped Coroutine for: " + keyObject.name);
 
