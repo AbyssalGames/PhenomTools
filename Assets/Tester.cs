@@ -6,22 +6,24 @@ using UnityEngine.UI;
 
 public class Tester : MonoBehaviour
 {
-    public OrderedDictionary<string, string> test = new OrderedDictionary<string, string>();
+    //public OrderedDictionary<string, string> test = new OrderedDictionary<string, string>();
 
     //public RectTransform rt1, rt2;
 
     //public float time;
-    //public int count;
-    //private IEnumerator reference;
+    public int count;
+    private IEnumerator reference;
 
     [ContextMenu("Start")]
     public void Start()
     {
-        test.Add("thing1", "thing1Value");
-        test.Add("thing2", "thing2Value");
-        test.Add("thing3", "thing3Value");
+        reference = PhenomUtils.RepeatActionByFrames(100, 5, Repeat, Complete, false, 300);
 
-        Debug.Log(test.GetAt(1));
+        //test.Add("thing1", "thing1Value");
+        //test.Add("thing2", "thing2Value");
+        //test.Add("thing3", "thing3Value");
+
+        //Debug.Log(test.GetAt(1));
 
         //PhenomUtils.DelayActionByTime(time, Callback);
         //PhenomUtils.DelayActionByFrames(count, Callback);
@@ -47,20 +49,20 @@ public class Tester : MonoBehaviour
     //    Debug.Log("Thing");
     //}
 
-    //private void Complete()
-    //{
-    //    Debug.Log("Complete");
-    //}
+    private void Complete()
+    {
+        Debug.Log("Complete");
+    }
 
-    //private void Repeat()
-    //{
-    //    count++;
-    //    Debug.Log("count: " + count);
-    //}
+    private void Repeat()
+    {
+        count++;
+        Debug.Log("count: " + count);
+    }
 
-    //[ContextMenu("Stop")]
-    //public void Stop()
-    //{
-    //    reference.Stop();
-    //}
+    [ContextMenu("Stop")]
+    public void Stop()
+    {
+        reference.Stop();
+    }
 }

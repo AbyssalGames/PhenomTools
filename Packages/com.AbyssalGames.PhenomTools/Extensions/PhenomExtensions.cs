@@ -321,6 +321,24 @@ namespace PhenomTools
 
         #endregion
 
+        #region Coroutines
+        /// <summary>
+        /// Starts this Coroutine owned by the CoroutineHolder
+        /// </summary>
+        public static Coroutine Start(this IEnumerator enumerator)
+        {
+            return CoroutineHolder.StartCoroutine(enumerator);
+        }
+
+        /// <summary>
+        /// Can only be used to stop coroutines that are managed by the CoroutineHolder or were started with a PhenomTools extension/utility method.
+        /// </summary>
+        public static void Stop(this IEnumerator enumerator)
+        {
+            CoroutineHolder.StopCoroutine(enumerator);
+        }
+        #endregion
+
         #region Video Player
 
         public static void Fade(this VideoPlayer videoPlayer, bool on, float duration, ref IEnumerator coroutine,
