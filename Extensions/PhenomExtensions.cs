@@ -192,6 +192,13 @@ namespace PhenomTools
             transform.localScale = Vector3.one;
         }
 
+        public static void RotateYTowards(this Transform transform, Vector3 target, float speed)
+        {
+            Vector3 direction = (target - transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * speed);
+        }
+
         public static Transform[] GetChildren(this Transform transform)
         {
             Transform[] array = new Transform[transform.childCount];
@@ -200,13 +207,6 @@ namespace PhenomTools
                 array[i] = transform.GetChild(i);
 
             return array;
-        }
-
-        public static void RotateYTowards(this Transform transform, Vector3 target, float speed)
-        {
-            Vector3 direction = (target - transform.position).normalized;
-            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * speed);
         }
 
         public static Transform[] GetChildrenRecursive(this Transform parent)
@@ -223,6 +223,22 @@ namespace PhenomTools
             }
 
             return children.ToArray();
+        }
+
+        public static Transform FindDeepChild(this Transform parent, string childName)
+        {
+            Queue<Transform> queue = new Queue<Transform>();
+            queue.Enqueue(parent);
+
+            while (queue.Count > 0)
+            {
+                Transform c = queue.Dequeue();
+                if (c.name == childName)
+                    return c;
+                foreach (Transform t in c)
+                    queue.Enqueue(t);
+            }
+            return null;
         }
         #endregion
 
