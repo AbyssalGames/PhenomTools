@@ -1,0 +1,1838 @@
+Using pre-set license
+Built from '2020.3/release' branch; Version is '2020.3.2f1 (8fd9074bf66c) revision 9427207'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19044.1586; Version 2009; 64bit' Language: 'en' Physical Memory: 8046 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/GitHub/Abyssal/PhenomTools
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+63503
+Successfully changed project path to: C:/GitHub/Abyssal/PhenomTools
+C:/GitHub/Abyssal/PhenomTools
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 169.53 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.2f1 (8fd9074bf66c)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/GitHub/Abyssal/PhenomTools/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics 515 (ID=0x191e)
+    Vendor:   
+    VRAM:     4023 MB
+    Driver:   30.0.100.9865
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.2f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56532
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.2f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.014045 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 182.19 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.107 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.025121 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 495.11 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  8.046 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.27 seconds
+Refreshing native plugins compatible for Editor in 1.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 81.3 MB.
+System memory in use after: 81.4 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2171.
+Total: 15.225500 ms (FindLiveObjects: 0.889000 ms CreateObjectMapping: 0.375900 ms MarkObjects: 13.781600 ms  DeleteObjects: 0.174100 ms)
+
+========================================================================
+Received Import Request.
+  path: Packages/com.abyssalgames.phenomtools/UI/InputFieldExtended.cs
+  artifactKey: Guid(f546f0623b3bd734894723e45593a8d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/UI/InputFieldExtended.cs using Guid(f546f0623b3bd734894723e45593a8d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1870b6edeb40e69fda81c764102610f') in 1.336557 seconds
+  Import took 1.359383 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.044545 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.96 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.449 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.08 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1671 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 77.7 MB.
+System memory in use after: 77.8 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2175.
+Total: 5.629700 ms (FindLiveObjects: 0.602600 ms CreateObjectMapping: 0.195900 ms MarkObjects: 4.781600 ms  DeleteObjects: 0.046000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.023526 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.51 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.253 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.41 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1671 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 77.7 MB.
+System memory in use after: 77.8 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2179.
+Total: 5.752200 ms (FindLiveObjects: 0.800100 ms CreateObjectMapping: 0.243400 ms MarkObjects: 4.668100 ms  DeleteObjects: 0.037000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 284.499062 seconds.
+  path: Packages/com.abyssalgames.phenomtools/UI/InputFieldExtended.cs
+  artifactKey: Guid(f546f0623b3bd734894723e45593a8d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/UI/InputFieldExtended.cs using Guid(f546f0623b3bd734894723e45593a8d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54f5a360de4df5798e98ce232fbb028f') in 0.033094 seconds
+  Import took 0.051259 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.543545 seconds.
+  path: Assets/Plugins/DarkTonic/MasterAudio/ExampleScenes/Textures/arrow.png
+  artifactKey: Guid(e32aa6447021bfc46865731100094e88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/DarkTonic/MasterAudio/ExampleScenes/Textures/arrow.png using Guid(e32aa6447021bfc46865731100094e88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8bb76317c779a493388feb03189a4bc') in 0.758126 seconds
+  Import took 0.771317 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000519 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignHC.png
+  artifactKey: Guid(b9e0e5a8836018e4c810fbceba55a1b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignHC.png using Guid(b9e0e5a8836018e4c810fbceba55a1b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88d02c9563bf47b80cfd2b24a2457b75') in 0.164756 seconds
+  Import took 0.178612 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000643 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCR.png
+  artifactKey: Guid(6f504a3fa8848264bb4fb9bb7d582dd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCR.png using Guid(6f504a3fa8848264bb4fb9bb7d582dd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ba7cb4f56e4025445d8d5e79fa4f483') in 0.119214 seconds
+  Import took 0.144548 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001085 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha80.png
+  artifactKey: Guid(595b166389c8db546a199430284ebc9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha80.png using Guid(595b166389c8db546a199430284ebc9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3794c2161342f2f293b5d8e4d36cd239') in 0.106382 seconds
+  Import took 0.121595 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000528 seconds.
+  path: Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer.png
+  artifactKey: Guid(7051dba417b3d53409f2918f1ea4938d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer.png using Guid(7051dba417b3d53409f2918f1ea4938d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9660cd0db67562b9b9ec0d7543e1019a') in 0.150210 seconds
+  Import took 0.162921 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000576 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/greenSquare.png
+  artifactKey: Guid(789ef07ba2573f6448fa8b5dc5224c44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/greenSquare.png using Guid(789ef07ba2573f6448fa8b5dc5224c44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b42981078b78940272b0d0acae36039') in 0.115975 seconds
+  Import took 0.128440 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001878 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/arrow_down.png
+  artifactKey: Guid(36b8dedd93eefef4f84f95d748649395) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/arrow_down.png using Guid(36b8dedd93eefef4f84f95d748649395) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2385b816e7e2c2ab7ca1ae42094c449e') in 0.122117 seconds
+  Import took 0.134739 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000526 seconds.
+  path: Assets/Plugins/Demigiant/DOTweenPro Examples/Examples Assets/dotweenpro_logo.png
+  artifactKey: Guid(44a054df1702e39458b7072b08d0f212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DOTweenPro Examples/Examples Assets/dotweenpro_logo.png using Guid(44a054df1702e39458b7072b08d0f212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ac03df29c0e1eaf2e596c5fdf354c2e') in 0.263404 seconds
+  Import took 0.276748 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000754 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/copyIcon.png
+  artifactKey: Guid(66b75ad6883938f4d8e2e89a15d87b0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/copyIcon.png using Guid(66b75ad6883938f4d8e2e89a15d87b0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '295fbc84178eb071fa9162091616c605') in 0.122283 seconds
+  Import took 0.141649 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001014 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha50.png
+  artifactKey: Guid(aa1d42dc6ff3e894da2208c6929d2165) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha50.png using Guid(aa1d42dc6ff3e894da2208c6929d2165) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '242f0e07b1901875e07abb8bda2074a2') in 0.107719 seconds
+  Import took 0.119891 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000864 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignT.png
+  artifactKey: Guid(b4785ec6d937dab4fa59da70b69afc9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignT.png using Guid(b4785ec6d937dab4fa59da70b69afc9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '631522d085842e5156d79d20e1121c64') in 0.115898 seconds
+  Import took 0.154052 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002021 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignVC.png
+  artifactKey: Guid(d1d45eadab0e41c4a82cdffb6396b1d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignVC.png using Guid(d1d45eadab0e41c4a82cdffb6396b1d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b7d6018d2b56c3c2ed2bc1ee427bc04') in 0.129897 seconds
+  Import took 0.147521 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000834 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/grid_dark.png
+  artifactKey: Guid(d542f997a51000946873268e3546b6ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/grid_dark.png using Guid(d542f997a51000946873268e3546b6ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a96c4dac8c8d17a25299e08d2b8ead5') in 0.132044 seconds
+  Import took 0.167183 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000560 seconds.
+  path: Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenIcon.png
+  artifactKey: Guid(8da095e39e9b4df488dfd436f81116d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenIcon.png using Guid(8da095e39e9b4df488dfd436f81116d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '755219092f2f7b0c3275e4e3428b7fe5') in 0.120067 seconds
+  Import took 0.137315 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001957 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Console/Font/Consolas SDF.asset
+  artifactKey: Guid(e4419c9804fbc164ab056e1889d3e85a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Console/Font/Consolas SDF.asset using Guid(e4419c9804fbc164ab056e1889d3e85a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '499293fa1403be588e2c7b013c63182a') in 0.672189 seconds
+  Import took 0.700224 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000497 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_camera.png
+  artifactKey: Guid(37639be6148186645bca3fce45d5aa22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_camera.png using Guid(37639be6148186645bca3fce45d5aa22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66985a4e535b77cd80e0fb0d31c81b4c') in 0.118725 seconds
+  Import took 0.132950 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000890 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/error.png
+  artifactKey: Guid(d315e64457eb2ab4a8ba54fe9db378fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/error.png using Guid(d315e64457eb2ab4a8ba54fe9db378fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe85e498dccb7bdc98a8c82341061e43') in 0.133991 seconds
+  Import took 0.156711 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001479 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBC.png
+  artifactKey: Guid(2cdc0bc527f7a434496c6be9236e636f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBC.png using Guid(2cdc0bc527f7a434496c6be9236e636f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '333ada0fba07f9cf608e194dde4b6869') in 0.126743 seconds
+  Import took 0.153010 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000579 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_cog_border.png
+  artifactKey: Guid(6862027f2176eae40a3143c562466a1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_cog_border.png using Guid(6862027f2176eae40a3143c562466a1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15f6e26be63c85ff29682365311bc186') in 0.132284 seconds
+  Import took 0.146029 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000557 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Resources/CircleBlurred.png
+  artifactKey: Guid(935e67e243ba22d4a81599713b8db70c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Resources/CircleBlurred.png using Guid(935e67e243ba22d4a81599713b8db70c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc07808cc505ba8853641c84ff4b6dcb') in 0.132692 seconds
+  Import took 0.149294 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000685 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_cog.png
+  artifactKey: Guid(7c83a08052c9e2f49b47897a637994de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_cog.png using Guid(7c83a08052c9e2f49b47897a637994de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7742daf2026cfd9791b6bb00a1c133c7') in 0.142524 seconds
+  Import took 0.164159 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000837 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_demigiant.png
+  artifactKey: Guid(f36ab42cc6fcdfd4187033279d3d14a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_demigiant.png using Guid(f36ab42cc6fcdfd4187033279d3d14a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ccb1718b1f9bcfa7dca89b33576a8b1') in 0.132177 seconds
+  Import took 0.152794 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001493 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_distributeHAlignT.png
+  artifactKey: Guid(1ccb12a4b0bf8f447b2cc114851732f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_distributeHAlignT.png using Guid(1ccb12a4b0bf8f447b2cc114851732f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5faaac2a6ac11cf3eddf843071ac3560') in 0.132342 seconds
+  Import took 0.146370 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004057 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_cross.png
+  artifactKey: Guid(3b67e53c8c2f8114b966c0e70d452419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_cross.png using Guid(3b67e53c8c2f8114b966c0e70d452419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '401f7bed359bfe2d4252b9ac7c1d119d') in 0.088339 seconds
+  Import took 0.105114 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001434 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_delete.png
+  artifactKey: Guid(6b1f9e1e1c2cf004b8e3bdd3033a8e75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_delete.png using Guid(6b1f9e1e1c2cf004b8e3bdd3033a8e75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0b5b44c787757c7cc9ca732cfd43fd6') in 0.131319 seconds
+  Import took 0.148997 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000561 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_folder.png
+  artifactKey: Guid(4f2c4b43188596b47866d41e1dc13c8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_folder.png using Guid(4f2c4b43188596b47866d41e1dc13c8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e2c80269d4d215834df61d263605ae5') in 0.118229 seconds
+  Import took 0.131824 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000608 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_foldout_open.png
+  artifactKey: Guid(18a5a7cde794cc04b9b446f0feedb3a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_foldout_open.png using Guid(18a5a7cde794cc04b9b446f0feedb3a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '082be1c7df213a50df91efeb81165351') in 0.148729 seconds
+  Import took 0.172845 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000645 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_distributeVAlignL.png
+  artifactKey: Guid(32eaa0efb2b38774ea9705b40fdcc00a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_distributeVAlignL.png using Guid(32eaa0efb2b38774ea9705b40fdcc00a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f8df257385ef3186016162f49645452') in 0.136541 seconds
+  Import took 0.176774 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000545 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_fonts.png
+  artifactKey: Guid(cf986943c88c2254780c17b2b5e3bc2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_fonts.png using Guid(cf986943c88c2254780c17b2b5e3bc2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e16f3171b938d34da6365537fb0c4d3') in 0.111401 seconds
+  Import took 0.151237 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001063 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_star.png
+  artifactKey: Guid(645aafe2260b2884a9df05b4bc01b1ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_star.png using Guid(645aafe2260b2884a9df05b4bc01b1ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88df116ab08aa9ece26901fad3c2c138') in 0.115017 seconds
+  Import took 0.155070 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001026 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_nodeArrow.png
+  artifactKey: Guid(4aa34055b1d36ef479af3d7b5701b28a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_nodeArrow.png using Guid(4aa34055b1d36ef479af3d7b5701b28a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dadf6ba0d622655250f5da544e62a0e1') in 0.164486 seconds
+  Import took 0.186809 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000589 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_optionsDropdown.png
+  artifactKey: Guid(62a48d93e78c63b4ea9b46537c7c0091) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_optionsDropdown.png using Guid(62a48d93e78c63b4ea9b46537c7c0091) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55e774ace9840f2b973651a7cb6e4b37') in 0.134568 seconds
+  Import took 0.153685 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003375 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_skull.png
+  artifactKey: Guid(d563d6ce25cd2ca48b185ec47a74a3fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_skull.png using Guid(d563d6ce25cd2ca48b185ec47a74a3fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f32abc75d98d4ea4c28fc3b62b75f3ca') in 0.125423 seconds
+  Import took 0.152335 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001553 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/LED2.png
+  artifactKey: Guid(5db131867b395b94890a10001532ae2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/LED2.png using Guid(5db131867b395b94890a10001532ae2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7496498b9f523c86b551be2f7f081a05') in 0.132692 seconds
+  Import took 0.153404 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000829 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_end.png
+  artifactKey: Guid(a248c8288afb9184f953d9aa07a696b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_end.png using Guid(a248c8288afb9184f953d9aa07a696b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07ff5afbf9e254f7da482af349430fd4') in 0.135335 seconds
+  Import took 0.149092 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000489 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCL.png
+  artifactKey: Guid(2a8208d8e80f90944b8ff2978292b03b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCL.png using Guid(2a8208d8e80f90944b8ff2978292b03b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b73170dbbd8588411732902a2276aca') in 0.124205 seconds
+  Import took 0.141924 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000508 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_star_border.png
+  artifactKey: Guid(18f3a26aa87fccc4cb5e211d4c6de662) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_star_border.png using Guid(18f3a26aa87fccc4cb5e211d4c6de662) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4a0199e0a6294f3918e78df5f1a4451') in 0.132910 seconds
+  Import took 0.145063 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000667 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/cancel.png
+  artifactKey: Guid(fdbd2ddf9476bd943a807037650ef7ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/cancel.png using Guid(fdbd2ddf9476bd943a807037650ef7ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fc83a3f698d961bff5f7af9efbacb9d') in 0.144788 seconds
+  Import took 0.161934 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000590 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/circle.png
+  artifactKey: Guid(af28470bd0e2e9543a6dfa9a1a4b348d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/circle.png using Guid(af28470bd0e2e9543a6dfa9a1a4b348d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '529dc5ed5f65eee20b169ab1cfd6059c') in 0.123933 seconds
+  Import took 0.141766 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000512 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_scripts.png
+  artifactKey: Guid(96cbdf605b8ddb34da384703f2d0b849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_scripts.png using Guid(96cbdf605b8ddb34da384703f2d0b849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afd3c053096223edfa8f8458f2646aff') in 0.112344 seconds
+  Import took 0.136839 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002015 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_models.png
+  artifactKey: Guid(09a0cde07b4d75f49b4c817932791b81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_models.png using Guid(09a0cde07b4d75f49b4c817932791b81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1e7ffee57ad03fa8dc5f6d85c1cf5b4') in 0.154554 seconds
+  Import took 0.175916 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003813 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_textures.png
+  artifactKey: Guid(3e6b96a975eba1c43b2bad66fb7f8b4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_textures.png using Guid(3e6b96a975eba1c43b2bad66fb7f8b4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b92a748039a0681d9a40aa4aa3336a5') in 0.125117 seconds
+  Import took 0.151234 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000568 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blueSquare.png
+  artifactKey: Guid(05cfe010378336646ad6c721f66543d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blueSquare.png using Guid(05cfe010378336646ad6c721f66543d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aae21725e6f6caf5a63fc8bc51d9260d') in 0.133951 seconds
+  Import took 0.154819 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004021 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_light_border.png
+  artifactKey: Guid(252f207d01ecc87419cdba1d1c0ab1ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_light_border.png using Guid(252f207d01ecc87419cdba1d1c0ab1ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7bb292e12652239fa0c36fdad14b762') in 0.142644 seconds
+  Import took 0.177323 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001450 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_heart.png
+  artifactKey: Guid(d173388c1d9c32a418b5b777dd89d71a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_heart.png using Guid(d173388c1d9c32a418b5b777dd89d71a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10f0efbf5a6037f10274e328a5e6eead') in 0.132882 seconds
+  Import took 0.155208 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000580 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Console/Sprites/CircleThin.png
+  artifactKey: Guid(9050560acdd91b94797dae2d20f2ee4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Console/Sprites/CircleThin.png using Guid(9050560acdd91b94797dae2d20f2ee4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1313588cf63f3f3f25652b696d698369') in 0.180580 seconds
+  Import took 0.193366 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000604 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ok.png
+  artifactKey: Guid(34f39b5a760ddbb4d8b8749852868335) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ok.png using Guid(34f39b5a760ddbb4d8b8749852868335) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '711b1caf68665c8874584509100dceca') in 0.138369 seconds
+  Import took 0.153367 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000667 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_play.png
+  artifactKey: Guid(d8306b1e159c72c4ebc9a4fc31debe60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_play.png using Guid(d8306b1e159c72c4ebc9a4fc31debe60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2ba0776aab36fe13111fdbdb85542a4') in 0.157674 seconds
+  Import took 0.181941 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000762 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_star.png
+  artifactKey: Guid(21820ec6fc9dd0b4fbf42a3b93fdad4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_star.png using Guid(21820ec6fc9dd0b4fbf42a3b93fdad4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78ec14a9de6e71ba498281ac0f01b48b') in 0.131537 seconds
+  Import took 0.155092 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009398 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ui.png
+  artifactKey: Guid(cb46e1d925af22d43a6f8bf0e1d459e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ui.png using Guid(cb46e1d925af22d43a6f8bf0e1d459e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c00d6185f7314442729530c8994ba8b6') in 0.146878 seconds
+  Import took 0.168773 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000808 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_play_border.png
+  artifactKey: Guid(45e128e1cf00555479ee7934ab11cadf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_play_border.png using Guid(45e128e1cf00555479ee7934ab11cadf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4836297c40ee1129450428b132ea16e2') in 0.107012 seconds
+  Import took 0.135480 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000355 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignTR.png
+  artifactKey: Guid(e01c0b07c87513844ab88bb432bcf85a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignTR.png using Guid(e01c0b07c87513844ab88bb432bcf85a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5aa34eed72c9d9d0a31284e5ed272fa1') in 0.090095 seconds
+  Import took 0.101578 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+  artifactKey: Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset using Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '566e979a5032377230196b428a814a68') in 0.168493 seconds
+  Import took 0.190139 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004412 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/muteOff.png
+  artifactKey: Guid(13e160eda06e25546a8ebca4cc2459f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/muteOff.png using Guid(13e160eda06e25546a8ebca4cc2459f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad4a2ed1d4784e51b18eac4580a31076') in 0.159508 seconds
+  Import took 0.190654 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000617 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+  artifactKey: Guid(8f586378b4e144a9851e7b34d9b748ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset using Guid(8f586378b4e144a9851e7b34d9b748ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ed8f7ce5760ccbbb717e257dc5290da') in 0.374773 seconds
+  Import took 0.392720 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002997 seconds.
+  path: Assets/Plugins/Editor/RelationsInspector/RelationsInspectorResources/settingsIconLight.png
+  artifactKey: Guid(f5a08c65ef8f8cd499d537049ee1d885) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Editor/RelationsInspector/RelationsInspectorResources/settingsIconLight.png using Guid(f5a08c65ef8f8cd499d537049ee1d885) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b44dd2d3055a2f07f00da110ee8fd70') in 0.113693 seconds
+  Import took 0.135744 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000594 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Console/Sprites/RoundedTriangle.png
+  artifactKey: Guid(b69facd30728f3749a3f5166369bbcbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Console/Sprites/RoundedTriangle.png using Guid(b69facd30728f3749a3f5166369bbcbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edb41a3a98ccbec19b6d217716d23350') in 0.158957 seconds
+  Import took 0.182810 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000710 seconds.
+  path: Assets/Plugins/Editor/RelationsInspector/RelationsInspectorResources/nextIconDark.png
+  artifactKey: Guid(cb7608a1b0eb09a4da2042aa53ed039d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Editor/RelationsInspector/RelationsInspectorResources/nextIconDark.png using Guid(cb7608a1b0eb09a4da2042aa53ed039d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47609ce9b542613739c4b0df973d2ef9') in 0.129545 seconds
+  Import took 0.147749 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Plugins/Editor/RelationsInspector/RelationsInspectorResources/prevIconDark.png
+  artifactKey: Guid(ad5f6b542dfb01f48871fbaef68588d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Editor/RelationsInspector/RelationsInspectorResources/prevIconDark.png using Guid(ad5f6b542dfb01f48871fbaef68588d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59c49cc5b3f6f58c1ea3c61519251089') in 0.132029 seconds
+  Import took 0.152173 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000585 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/redSquare.png
+  artifactKey: Guid(fbdd7ecf39c13bf48a5bd02a1159c90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/redSquare.png using Guid(fbdd7ecf39c13bf48a5bd02a1159c90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3f4af95be8fb98394897f9842aaaf79') in 0.131956 seconds
+  Import took 0.146380 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000707 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/playIcon.png
+  artifactKey: Guid(667161b3813db8a418f5315f715f3c58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/playIcon.png using Guid(667161b3813db8a418f5315f715f3c58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cda8258760141b0df15c869a995fb80') in 0.153643 seconds
+  Import took 0.166153 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000540 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/ProjectPhenom_ColorThumbnail.png
+  artifactKey: Guid(ec6a681be92e5ad4ba79db62c89dc7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/ProjectPhenom_ColorThumbnail.png using Guid(ec6a681be92e5ad4ba79db62c89dc7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd27f5f659a335718d5f4eb19f22e847e') in 0.133172 seconds
+  Import took 0.150405 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001099 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/soloOff.png
+  artifactKey: Guid(58c470c4a43147641a0125c6f0b3b9e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/soloOff.png using Guid(58c470c4a43147641a0125c6f0b3b9e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad723c098ad28375e546d0787bd53569') in 0.129890 seconds
+  Import took 0.145701 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000550 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Console/Sprites/RoundedRectangle.png
+  artifactKey: Guid(84347af75dfc0eb4e998db07698c7402) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Console/Sprites/RoundedRectangle.png using Guid(84347af75dfc0eb4e998db07698c7402) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cba806c30b32994ec237b5d8a03ea6da') in 0.179889 seconds
+  Import took 0.218045 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000720 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/orangeSquare.png
+  artifactKey: Guid(3e730492361eb6e45be5c5fdafac23be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/orangeSquare.png using Guid(3e730492361eb6e45be5c5fdafac23be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ef19e0eb9c0476720feb9090136b59c') in 0.166362 seconds
+  Import took 0.187064 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderAlpha15.png
+  artifactKey: Guid(dfd33662d9f6f3849bd92f6e159ca226) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderAlpha15.png using Guid(dfd33662d9f6f3849bd92f6e159ca226) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efa5b04c7d9f697f9f12663b884ba2e2') in 0.272994 seconds
+  Import took 0.323391 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000465 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved_darkBordersAlpha.png
+  artifactKey: Guid(f536c51d3da3f2e4ca93ac8773ec2ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved_darkBordersAlpha.png using Guid(f536c51d3da3f2e4ca93ac8773ec2ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9b0064a47001b39c405bac0db929b9a') in 0.141647 seconds
+  Import took 0.151455 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000507 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/speakerIcon.png
+  artifactKey: Guid(60c1aef6e42a1a74686d4fef01f424fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/speakerIcon.png using Guid(60c1aef6e42a1a74686d4fef01f424fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '596354c6a1290f6732c547190e354beb') in 0.143835 seconds
+  Import took 0.156081 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000499 seconds.
+  path: Assets/Plugins/DarkTonic/MasterAudio/ExampleScenes/Textures/planet.png
+  artifactKey: Guid(67b8285bdf06e52478a51c966b779d36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/DarkTonic/MasterAudio/ExampleScenes/Textures/planet.png using Guid(67b8285bdf06e52478a51c966b779d36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2cd5adba700d997b08fdd68152b98c2') in 0.134868 seconds
+  Import took 0.149926 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001106 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmptyThick.png
+  artifactKey: Guid(fc3b86627d5fe1c4d865b80627e2e37c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmptyThick.png using Guid(fc3b86627d5fe1c4d865b80627e2e37c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97b99218dcc2a73dce881f13debbdfa4') in 0.139079 seconds
+  Import took 0.152416 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000802 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty01.png
+  artifactKey: Guid(aa8dc9238ab21e54ca88fa22698e4679) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty01.png using Guid(aa8dc9238ab21e54ca88fa22698e4679) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc29060a463a916dad273a18bdf36e52') in 0.100318 seconds
+  Import took 0.116008 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003984 seconds.
+  path: Assets/Plugins/DarkTonic/MasterAudio/ExampleScenes/Textures/ship.png
+  artifactKey: Guid(415dfa1266f253b47bc41fc24c56fe8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/DarkTonic/MasterAudio/ExampleScenes/Textures/ship.png using Guid(415dfa1266f253b47bc41fc24c56fe8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c170b14a0d999657ac630c2f0564996a') in 0.138686 seconds
+  Import took 0.157089 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000633 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderThickerEmpty.png
+  artifactKey: Guid(7acc6bd588627b046bc1c9b3cd78a6c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderThickerEmpty.png using Guid(7acc6bd588627b046bc1c9b3cd78a6c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dd8d48fb2828baf12b7333bf851aba5') in 0.112312 seconds
+  Import took 0.135752 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000524 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/transparentSquare.png
+  artifactKey: Guid(4d338c631fa36f345b72a36f1c91ff9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/transparentSquare.png using Guid(4d338c631fa36f345b72a36f1c91ff9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42a70f3496c34eba8b275916d3790d8d') in 0.122079 seconds
+  Import took 0.159100 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000779 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_AlarmOn.png
+  artifactKey: Guid(93084e39bc9f88043b030d81d01e74b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_AlarmOn.png using Guid(93084e39bc9f88043b030d81d01e74b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e29e2b8e0b431be4ae45a3e236640a1d') in 0.182645 seconds
+  Import took 0.197107 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000630 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty03.png
+  artifactKey: Guid(c0a56b88a1b449045b3fe5f561aa12fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty03.png using Guid(c0a56b88a1b449045b3fe5f561aa12fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99b71b8582113560a4576bc96ce6dc98') in 0.140041 seconds
+  Import took 0.164918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000543 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_Edit.png
+  artifactKey: Guid(1ff21c4089232854d9c4fe27eb0481a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_Edit.png using Guid(1ff21c4089232854d9c4fe27eb0481a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd34afcf175ee00b06d5b586a81568388') in 0.128125 seconds
+  Import took 0.167428 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000562 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_BtnXboxBRound.png
+  artifactKey: Guid(b5df766acbef2cf488ce8a379c1c9ab5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_BtnXboxBRound.png using Guid(b5df766acbef2cf488ce8a379c1c9ab5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a1759cbc229a28ccf21d32aac1ff1d3') in 0.110873 seconds
+  Import took 0.132806 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004545 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_AlarmClock.png
+  artifactKey: Guid(04481141f290ff1428e6a7a6c96f4613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_AlarmClock.png using Guid(04481141f290ff1428e6a7a6c96f4613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4eefb3e6d67e5590a214f42d69f000fe') in 0.133270 seconds
+  Import took 0.159428 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000753 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_History.png
+  artifactKey: Guid(ed8c63fe02711384794d3159d9e70e9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_History.png using Guid(ed8c63fe02711384794d3159d9e70e9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb95d61ef9107082f2495ceb222d4ad5') in 0.147086 seconds
+  Import took 0.159369 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000852 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha25.png
+  artifactKey: Guid(f7ff421f40d548444864a01cd7f47112) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha25.png using Guid(f7ff421f40d548444864a01cd7f47112) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6987f78b5ae50c8149492a47d0e2a007') in 0.114787 seconds
+  Import took 0.151228 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000737 seconds.
+  path: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+  artifactKey: Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Fonts/LiberationSans.ttf using Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '266ce3162b5b72ce4469f85fceb59ec1') in 0.227498 seconds
+  Import took 0.244172 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000872 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_Sliders.png
+  artifactKey: Guid(11c89d1b9e2bbd54ab31c7cdfa6b6010) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_Sliders.png using Guid(11c89d1b9e2bbd54ab31c7cdfa6b6010) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db2380fb40d7257f1b22318475e7b82a') in 0.151162 seconds
+  Import took 0.168566 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000606 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_Stopwatch.png
+  artifactKey: Guid(12f07947c96fd714cb7fb425ba41c1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_Stopwatch.png using Guid(12f07947c96fd714cb7fb425ba41c1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e440728cc2d7f36863f9de7ded819f1') in 0.144525 seconds
+  Import took 0.170132 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000595 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCC.png
+  artifactKey: Guid(8f0cb66458819764b94b93250bae94b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCC.png using Guid(8f0cb66458819764b94b93250bae94b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ae0ed2497a0d023c215f766bdf4a953') in 0.120609 seconds
+  Import took 0.147613 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000614 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/inspector_header_master_audio.png
+  artifactKey: Guid(8af7d6a686c12554fa27da741d80348a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/inspector_header_master_audio.png using Guid(8af7d6a686c12554fa27da741d80348a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecb9844d75aeda631299208605546a13') in 0.141870 seconds
+  Import took 0.160158 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000900 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/LED1.png
+  artifactKey: Guid(8d23edca0721a704693bc1b23aa1048b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/LED1.png using Guid(8d23edca0721a704693bc1b23aa1048b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f893fe715556066080ac8aeb4fceb736') in 0.128460 seconds
+  Import took 0.141199 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000715 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/soloOn.png
+  artifactKey: Guid(2190b762f478b6c4e86eb56f9b74d401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/soloOn.png using Guid(2190b762f478b6c4e86eb56f9b74d401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07ee453400d7ee5b7b44260fb95206ca') in 0.148408 seconds
+  Import took 0.176576 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002927 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_ToggleOn.png
+  artifactKey: Guid(144cbef54003db84d8013df8b321448e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_ToggleOn.png using Guid(144cbef54003db84d8013df8b321448e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24c1d5ef9b3bc27ac0454917ba89a50d') in 0.101807 seconds
+  Import took 0.125949 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000661 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot_darkBorder.png
+  artifactKey: Guid(27df4ca974a8eaf40803907859421506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot_darkBorder.png using Guid(27df4ca974a8eaf40803907859421506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e1a63b90b1ad66aba5c8ad68ec362c6') in 0.140348 seconds
+  Import took 0.157350 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000740 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha15.png
+  artifactKey: Guid(5510cdd48a6aaaa439c95ef5b2fe9e28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha15.png using Guid(5510cdd48a6aaaa439c95ef5b2fe9e28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1612200b4d89235c56de96c62a0ee7ea') in 0.089030 seconds
+  Import took 0.129688 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000348 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha25.png
+  artifactKey: Guid(511f6b24c50557a40a09633b12b8b8ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha25.png using Guid(511f6b24c50557a40a09633b12b8b8ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d8a0debbcd6ea8670a63352443ba49d') in 0.159251 seconds
+  Import took 0.189994 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001004 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha50.png
+  artifactKey: Guid(ef40b00a83f7bd34f84851386b3321f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha50.png using Guid(ef40b00a83f7bd34f84851386b3321f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '767fe6dc99407f8cb5bf9049e67289d8') in 0.139335 seconds
+  Import took 0.162890 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002106 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot_whiteBorderAlpha.png
+  artifactKey: Guid(039dc89c76661c344b7776f8a47cc5a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot_whiteBorderAlpha.png using Guid(039dc89c76661c344b7776f8a47cc5a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '785cae54dad568d4cafb3123980b7d74') in 0.135436 seconds
+  Import took 0.147024 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000753 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquare_fadeOut_bt.png
+  artifactKey: Guid(a40dc0d6372a9084fb45976308087290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquare_fadeOut_bt.png using Guid(a40dc0d6372a9084fb45976308087290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b8afa3a1da0a49271c72a67b8e5ab7e') in 0.102085 seconds
+  Import took 0.120454 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000873 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Resources/Pixel.png
+  artifactKey: Guid(a6afa374e6f520c408437d0ef1d1e7bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Resources/Pixel.png using Guid(a6afa374e6f520c408437d0ef1d1e7bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7654f2e7eb2fc8aaa3b5c246d5060c52') in 0.156430 seconds
+  Import took 0.175773 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000563 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha80.png
+  artifactKey: Guid(11848dd30e516d846a02cd302634d317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha80.png using Guid(11848dd30e516d846a02cd302634d317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f5aa321ae6061f9ebe9dae2c831e536') in 0.117670 seconds
+  Import took 0.140853 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000552 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_lock_open.png
+  artifactKey: Guid(8d60feae84bdb2d4eb16a0037056c588) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_lock_open.png using Guid(8d60feae84bdb2d4eb16a0037056c588) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccb12b71c73e8248e50936fcff238bad') in 0.088651 seconds
+  Import took 0.100166 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_visibility_off.png
+  artifactKey: Guid(0c0132429106c8a4d89d9d0a6b723ec3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_visibility_off.png using Guid(0c0132429106c8a4d89d9d0a6b723ec3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99eeb0931134d85ec65d59a00cd76afa') in 0.148706 seconds
+  Import took 0.162273 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000941 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/inspector_header_bulk_audio_importer.png
+  artifactKey: Guid(3cb171cc4a5575c458ca2eb1f4774f23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/inspector_header_bulk_audio_importer.png using Guid(3cb171cc4a5575c458ca2eb1f4774f23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fae3127f81bc92a0dabf0776c113208') in 0.110864 seconds
+  Import took 0.123046 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000522 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_demigiant.png
+  artifactKey: Guid(229d0d11465a822449f78a50dbf7104d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_demigiant.png using Guid(229d0d11465a822449f78a50dbf7104d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a641fb7d561174e27eb9d3138766181') in 0.121041 seconds
+  Import took 0.161886 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003930 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/gearIcon.png
+  artifactKey: Guid(58f96f913abb6094b8c0ee62b04ff341) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/gearIcon.png using Guid(58f96f913abb6094b8c0ee62b04ff341) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3febc1ba69fedf408c3662416c7b092') in 0.126112 seconds
+  Import took 0.157463 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000558 seconds.
+  path: Assets/VectorGraphicsSamples/SVGDemo/gradient-linear.svg
+  artifactKey: Guid(2d0c32881f2cf4e72a16f0ec34822026) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VectorGraphicsSamples/SVGDemo/gradient-linear.svg using Guid(2d0c32881f2cf4e72a16f0ec34822026) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb90e84e01512285e8dbb01ae6382114') in 0.815708 seconds
+  Import took 0.831258 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000677 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_prefab.png
+  artifactKey: Guid(ed3789262161efa4fa33c85ca534590e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_prefab.png using Guid(ed3789262161efa4fa33c85ca534590e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3ad4bf2ed1756141ca479a6c2771689') in 0.130885 seconds
+  Import took 0.142625 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000561 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/stopIcon.png
+  artifactKey: Guid(d09d47936d8da854a9e9792c50e941cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/stopIcon.png using Guid(d09d47936d8da854a9e9792c50e941cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94f79e104b3deefcc0443290df61ca09') in 0.142420 seconds
+  Import took 0.158244 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003927 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_comment.png
+  artifactKey: Guid(622fdb780ae13e840938631c5ed708f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_comment.png using Guid(622fdb780ae13e840938631c5ed708f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6da67644720713f42ca1350d70ee8107') in 0.138057 seconds
+  Import took 0.149581 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000696 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/ready.png
+  artifactKey: Guid(33cb6602fac5c5141a8917bef6f55337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/ready.png using Guid(33cb6602fac5c5141a8917bef6f55337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9157dccbfee954d7724d096235fbcd30') in 0.108894 seconds
+  Import took 0.127162 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000785 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_cog.png
+  artifactKey: Guid(fb605a2688b31194887f2e7a6769235b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_cog.png using Guid(fb605a2688b31194887f2e7a6769235b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8f881fc8620d3d05898b6bb70db2464') in 0.153157 seconds
+  Import took 0.171431 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000666 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/muteOn.png
+  artifactKey: Guid(2f79e5faee4cb214c9e7c4b17d3a744a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/muteOn.png using Guid(2f79e5faee4cb214c9e7c4b17d3a744a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7445159948d3d8bd32a0d9f54f9aefd') in 0.124278 seconds
+  Import took 0.136323 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000721 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_Code.png
+  artifactKey: Guid(97e3c78e478fd5c4097f5459ae8386e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_Code.png using Guid(97e3c78e478fd5c4097f5459ae8386e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '837bc540a4afabdcdfd1607bd806410e') in 0.147176 seconds
+  Import took 0.161433 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000861 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquare.png
+  artifactKey: Guid(dfe6e0ac3e5f24740a17e14b65e08406) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquare.png using Guid(dfe6e0ac3e5f24740a17e14b65e08406) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86897c3503240722e5228fe42f9125a5') in 0.109722 seconds
+  Import took 0.126771 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000493 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_play.png
+  artifactKey: Guid(2a563a43c33f0f3428d02b3a43886fc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_play.png using Guid(2a563a43c33f0f3428d02b3a43886fc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24e8838f69ec693f9bb8fd4c9272d4ff') in 0.147908 seconds
+  Import took 0.159701 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001951 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedAlpha.png
+  artifactKey: Guid(a1606d34a052ed3449da93edd229743e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedAlpha.png using Guid(a1606d34a052ed3449da93edd229743e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '741de695b82f6f54a3aad1c41dfa0685') in 0.115168 seconds
+  Import took 0.139486 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000409 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_SignIn.png
+  artifactKey: Guid(5c42013a56788f54e91d9901cf47b868) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_SignIn.png using Guid(5c42013a56788f54e91d9901cf47b868) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '700e700e50a9ae8eda770931d909bab3') in 0.123479 seconds
+  Import took 0.135309 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002661 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareCurved02.png
+  artifactKey: Guid(282d742ce2ddf9f458812ab84ea6fa88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareCurved02.png using Guid(282d742ce2ddf9f458812ab84ea6fa88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20724fa09d8c23e2b73e4a5ee340bf78') in 0.129109 seconds
+  Import took 0.143141 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000668 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_SoundOn.png
+  artifactKey: Guid(1a80636d8dcb24a4c907cb70e00ff4a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_SoundOn.png using Guid(1a80636d8dcb24a4c907cb70e00ff4a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a044d317a51f37df12bf93e5ce8b4c99') in 0.121591 seconds
+  Import took 0.135620 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000443 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/yellowSquare.png
+  artifactKey: Guid(517a5bfe18f2ee04d9925db10be034e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/yellowSquare.png using Guid(517a5bfe18f2ee04d9925db10be034e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18ad83ac82cbba8a21d64fac96512787') in 0.121658 seconds
+  Import took 0.134410 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001309 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/prevTrackIcon.png
+  artifactKey: Guid(c8e5bdefb205c144e92ea01193bc73de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/prevTrackIcon.png using Guid(c8e5bdefb205c144e92ea01193bc73de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7581a5ea7932c6e6930e71851fc9847') in 0.119557 seconds
+  Import took 0.130320 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000533 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_shaders.png
+  artifactKey: Guid(f252c69cd0163714eba038403f61b09e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_shaders.png using Guid(f252c69cd0163714eba038403f61b09e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '079e96200444ddedbfb82ffcdfdd5e8e') in 0.112840 seconds
+  Import took 0.126774 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000631 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Console/Sprites/RoundedBorder.png
+  artifactKey: Guid(5cc71970810db0f4aa261ca87ea65ae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Console/Sprites/RoundedBorder.png using Guid(5cc71970810db0f4aa261ca87ea65ae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a40fc0ef3d764b97fd59628f7f89102') in 0.135676 seconds
+  Import took 0.151496 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000496 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty02.png
+  artifactKey: Guid(29b0e8156f6fb774faf129c83bc9ee33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty02.png using Guid(29b0e8156f6fb774faf129c83bc9ee33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ee1dcd8699b144687a3f726ce2be736') in 0.118305 seconds
+  Import took 0.134684 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000956 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/LED0.png
+  artifactKey: Guid(d548ab6f6e0a2c54090f201fabb9db71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/LED0.png using Guid(d548ab6f6e0a2c54090f201fabb9db71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4bde4c0d6f9a2098e5f679e4390b577') in 0.113630 seconds
+  Import took 0.126918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000755 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmpty02.png
+  artifactKey: Guid(7d504312fad10f040b95bd8836dc6fc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmpty02.png using Guid(7d504312fad10f040b95bd8836dc6fc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5104c5c1ca73295b74d1a4ae342b72c7') in 0.115698 seconds
+  Import took 0.126772 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001002 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ui_border.png
+  artifactKey: Guid(c0c40ceac3c6df146a0fcd4e6b226540) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ui_border.png using Guid(c0c40ceac3c6df146a0fcd4e6b226540) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1eee0920ea0321ec178c3b80b62359aa') in 0.117006 seconds
+  Import took 0.130693 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001025 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved02_darkBorders.png
+  artifactKey: Guid(e3ae01f12865ad54ba365963bda55759) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved02_darkBorders.png using Guid(e3ae01f12865ad54ba365963bda55759) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '790ff04285d4383c510a8c06cf0644af') in 0.121192 seconds
+  Import took 0.132046 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000594 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_ArrowUpDown.png
+  artifactKey: Guid(10a10029061c94f4e9bbc23d5940092d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_ArrowUpDown.png using Guid(10a10029061c94f4e9bbc23d5940092d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '501687b8e5b8e3cbbc312c2da06e63d4') in 0.106054 seconds
+  Import took 0.126990 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001244 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/save.png
+  artifactKey: Guid(9111653eac5af7b4c8d65c8e5eb300d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/save.png using Guid(9111653eac5af7b4c8d65c8e5eb300d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d3c6d39877cfab44e654866e9dfce86') in 0.119193 seconds
+  Import took 0.133449 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002483 seconds.
+  path: Assets/Plugins/Editor/RelationsInspector/RelationsInspectorResources/nextIconLight.png
+  artifactKey: Guid(b8b0785860d46f144873f37f01b57d60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Editor/RelationsInspector/RelationsInspectorResources/nextIconLight.png using Guid(b8b0785860d46f144873f37f01b57d60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a54f64046e2341b5011dec35212e6e08') in 0.112093 seconds
+  Import took 0.124154 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005138 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/nextTrackIcon.png
+  artifactKey: Guid(ab40830d0f161b740a73c4e9b9efe068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/nextTrackIcon.png using Guid(ab40830d0f161b740a73c4e9b9efe068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4ac67cb5fc570038db76a1a1ef24169') in 0.103356 seconds
+  Import took 0.119875 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000934 seconds.
+  path: Assets/Plugins/Editor/RelationsInspector/RelationsInspectorResources/settingsIconDark.png
+  artifactKey: Guid(a7eb1b01754d2624881e59555a6b556c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Editor/RelationsInspector/RelationsInspectorResources/settingsIconDark.png using Guid(a7eb1b01754d2624881e59555a6b556c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f71f89a6bae28b02f447f9579ce1fa13') in 0.096438 seconds
+  Import took 0.115251 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000849 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/LED5.png
+  artifactKey: Guid(498cfbcba4b1ca34f8044294a10f9486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/LED5.png using Guid(498cfbcba4b1ca34f8044294a10f9486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf5fce74f4a19240b88bdab59fd43f03') in 0.118566 seconds
+  Import took 0.132512 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000497 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_comment_border.png
+  artifactKey: Guid(d98b8847646169c4fb5af28dd84c4179) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_comment_border.png using Guid(d98b8847646169c4fb5af28dd84c4179) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de78e2a24b9a542d7c3c43a18c4482b7') in 0.166663 seconds
+  Import took 0.179193 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004574 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_Terminal.png
+  artifactKey: Guid(ad29d614d850b41bfbc91bddccb0fe7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_Terminal.png using Guid(ad29d614d850b41bfbc91bddccb0fe7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '450c508438f4e00f5009c689b3bc34cf') in 0.152780 seconds
+  Import took 0.177932 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000893 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/pauseIconOn.png
+  artifactKey: Guid(3c5ed2167039597448e501e053bc8461) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/pauseIconOn.png using Guid(3c5ed2167039597448e501e053bc8461) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6417824e2b38a3f4ac6b888333ff85b2') in 0.124965 seconds
+  Import took 0.156300 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000593 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_heart_border.png
+  artifactKey: Guid(669c487f3c9c5fe4abb6459f9c2628f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_heart_border.png using Guid(669c487f3c9c5fe4abb6459f9c2628f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b3c88c8a5490c5f21fec1c8eca77bfa') in 0.138816 seconds
+  Import took 0.156460 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003156 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareCorners03.png
+  artifactKey: Guid(dec3ea647707588408ec0d11ab130b73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareCorners03.png using Guid(dec3ea647707588408ec0d11ab130b73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff1ff3cd6f086bbb36932519202db895') in 0.117668 seconds
+  Import took 0.128543 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/ProjectPhenom_Thumbnail.png
+  artifactKey: Guid(adcc3092734c71f41b42acfd0863a3a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/ProjectPhenom_Thumbnail.png using Guid(adcc3092734c71f41b42acfd0863a3a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a0204ee92e9581779b7199599837624') in 0.118156 seconds
+  Import took 0.134648 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000611 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_RotateRight.png
+  artifactKey: Guid(e25b31d7bdc7e23419df1547ceef58fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_RotateRight.png using Guid(e25b31d7bdc7e23419df1547ceef58fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70fc30e7f93869537b00c69b1ca8388a') in 0.130923 seconds
+  Import took 0.142616 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000617 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot.png
+  artifactKey: Guid(ed7cb8f9a27664e48896c904189f0e2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot.png using Guid(ed7cb8f9a27664e48896c904189f0e2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0e585612125a525ee988983b7d9478e') in 0.123323 seconds
+  Import took 0.143280 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000484 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_heart.png
+  artifactKey: Guid(20794834c0a413f408b80110d0fc73b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_heart.png using Guid(20794834c0a413f408b80110d0fc73b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3085f91f70e32beb917babfd6a93320') in 0.123052 seconds
+  Import took 0.152752 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001589 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/hourglass.png
+  artifactKey: Guid(90a6744fa78334548a32432b34ab23c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/hourglass.png using Guid(90a6744fa78334548a32432b34ab23c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc13b9b081a17bfac2a9fdab523a9edf') in 0.123447 seconds
+  Import took 0.140771 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000683 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignR.png
+  artifactKey: Guid(727ba41e4cc95fe4a98b07301e3ebfc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignR.png using Guid(727ba41e4cc95fe4a98b07301e3ebfc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1635f86bcd385a066aea94c40acbd50a') in 0.147813 seconds
+  Import took 0.170856 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000981 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_empty.png
+  artifactKey: Guid(d1278357b25e10442b6ca6c24edc9781) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_empty.png using Guid(d1278357b25e10442b6ca6c24edc9781) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffefe8abea3a150876aa95bd379f8027') in 0.108967 seconds
+  Import took 0.127607 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000421 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_LockLocked.png
+  artifactKey: Guid(68d030f9abb771d47b1b14a7f425b555) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_LockLocked.png using Guid(68d030f9abb771d47b1b14a7f425b555) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f473966dc076e8707a1831d3044911cd') in 0.153780 seconds
+  Import took 0.175241 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000556 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareCurved.png
+  artifactKey: Guid(070edb62059c27b408e16f28cb87f941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareCurved.png using Guid(070edb62059c27b408e16f28cb87f941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2684885fc01a78c2df50091522a3a2ef') in 0.121538 seconds
+  Import took 0.136505 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001014 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_Select.png
+  artifactKey: Guid(38be6aa44dd832849a550613ff00801f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_Select.png using Guid(38be6aa44dd832849a550613ff00801f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '853ccee2827aa413e71ac47c9d18335b') in 0.168078 seconds
+  Import took 0.180990 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000355 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderThickEmpty.png
+  artifactKey: Guid(c456d5ac01d2aa843a63985497b04931) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderThickEmpty.png using Guid(c456d5ac01d2aa843a63985497b04931) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9adb2bb5e7ff7bd60b40992cf09d5287') in 0.119748 seconds
+  Import took 0.152683 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000410 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_flipV.png
+  artifactKey: Guid(c44ae4a96937e2c4b8be481648364682) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_flipV.png using Guid(c44ae4a96937e2c4b8be481648364682) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0b3e763bf941edbe66c26c60eeab37a') in 0.121796 seconds
+  Import took 0.148742 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001552 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved02.png
+  artifactKey: Guid(ff88be84254fb1f4b9a81a27ae0b2e81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved02.png using Guid(ff88be84254fb1f4b9a81a27ae0b2e81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4acfb0ad99da74bc33643cb71fb8d36') in 0.131990 seconds
+  Import took 0.160814 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000757 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Console/Font/Consolas.TTF
+  artifactKey: Guid(e189723988510d54b8f6e77049f4c2aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Console/Font/Consolas.TTF using Guid(e189723988510d54b8f6e77049f4c2aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9d501175651ced09a68ffe730df2043') in 0.166483 seconds
+  Import took 0.188629 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002205 seconds.
+  path: Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Header.jpg
+  artifactKey: Guid(78a59ca99f8987941adb61f9e14a06a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Header.jpg using Guid(78a59ca99f8987941adb61f9e14a06a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfbd3c509f67edf5054b2d0d9c3f3d33') in 0.155481 seconds
+  Import took 0.182274 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000558 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha15.png
+  artifactKey: Guid(53d696c01f6ca524383f11fcc34dd13c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha15.png using Guid(53d696c01f6ca524383f11fcc34dd13c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2df4bf902e498159e58dbbf4f00f6adb') in 0.138576 seconds
+  Import took 0.160489 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000542 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alert.png
+  artifactKey: Guid(39cacc93c6c183f44992bf2421362f78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alert.png using Guid(39cacc93c6c183f44992bf2421362f78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f914e2a7eb46356c472da0a7c3ba1c03') in 0.121194 seconds
+  Import took 0.132244 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001648 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignB.png
+  artifactKey: Guid(8b6b31f71cd528243b053cfc488e73f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignB.png using Guid(8b6b31f71cd528243b053cfc488e73f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0693416093b4bd7d630438e6e7794f5c') in 0.130393 seconds
+  Import took 0.142787 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000584 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_foldout_closed.png
+  artifactKey: Guid(301c130dbb4bbba4e87072804939c861) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_foldout_closed.png using Guid(301c130dbb4bbba4e87072804939c861) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39f8bff09ac403698a28edb099537d7c') in 0.116775 seconds
+  Import took 0.131532 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000583 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/grid_bright.png
+  artifactKey: Guid(93b1287b4a087f84c95c72f49ec94e83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/grid_bright.png using Guid(93b1287b4a087f84c95c72f49ec94e83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a1cd591ccf8de3ba94b9b7d8d56d344') in 0.119446 seconds
+  Import took 0.136131 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000523 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/pauseIcon.png
+  artifactKey: Guid(b64008fbe954a7f4baf9c32b56ca7cfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/pauseIcon.png using Guid(b64008fbe954a7f4baf9c32b56ca7cfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5faeba99df7bbb547ea3162882288a7') in 0.116161 seconds
+  Import took 0.131589 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000599 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/arrow_up.png
+  artifactKey: Guid(bc62d6c1ceb5cd248b2261b8826e94e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/arrow_up.png using Guid(bc62d6c1ceb5cd248b2261b8826e94e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37e84d79c3af2239dc25891ea31406a4') in 0.121589 seconds
+  Import took 0.137942 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_skull.png
+  artifactKey: Guid(01976ad42d31f494e8040d3e32e283dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_skull.png using Guid(01976ad42d31f494e8040d3e32e283dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e6d62f2d6a5807ba3c55612a5089d1e') in 0.099367 seconds
+  Import took 0.113027 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000688 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha10.png
+  artifactKey: Guid(93b68213089b05943a651574eb7e2fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha10.png using Guid(93b68213089b05943a651574eb7e2fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40664f096067eb5a2ac32fff6da66100') in 0.130582 seconds
+  Import took 0.154186 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000619 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_lock.png
+  artifactKey: Guid(e3d0592dad579e141924133869455c53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_lock.png using Guid(e3d0592dad579e141924133869455c53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6229eb9b0d201f672ca5172802720301') in 0.140194 seconds
+  Import took 0.152239 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000570 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/deleteIcon.png
+  artifactKey: Guid(f7ca255c7a49bbd42b6198828da08673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/deleteIcon.png using Guid(f7ca255c7a49bbd42b6198828da08673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c68a82861c25d8428dabf9825b2727b1') in 0.123279 seconds
+  Import took 0.138751 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000768 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/purpleSquare.png
+  artifactKey: Guid(dc0ca9b32ae9fd049911671cf1a480bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/purpleSquare.png using Guid(dc0ca9b32ae9fd049911671cf1a480bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8635cc060d6e7bf53589bb447364b3db') in 0.116967 seconds
+  Import took 0.135565 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000559 seconds.
+  path: Assets/Plugins/Editor/RelationsInspector/RelationsInspectorResources/ArrowHead.png
+  artifactKey: Guid(3861beedaaa8b5443aab88a1b54316ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Editor/RelationsInspector/RelationsInspectorResources/ArrowHead.png using Guid(3861beedaaa8b5443aab88a1b54316ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bb3e7d1c7192e4a8b28750d6ed2171c') in 0.119076 seconds
+  Import took 0.131215 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000602 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_skull_border.png
+  artifactKey: Guid(6dfd924c0ba23844fb5d04ad1560de22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_skull_border.png using Guid(6dfd924c0ba23844fb5d04ad1560de22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13c099584752c9a1bda5a29b6d529566') in 0.159480 seconds
+  Import took 0.177342 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000584 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_slanted_alpha.png
+  artifactKey: Guid(018a5623a46db1d49b1e6ff2482b07ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_slanted_alpha.png using Guid(018a5623a46db1d49b1e6ff2482b07ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2dab61596cb5939245b1b09bcb76ca4') in 0.119595 seconds
+  Import took 0.133754 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000458 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_bundle.png
+  artifactKey: Guid(58676a985ae875646b7be748cf4499fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_bundle.png using Guid(58676a985ae875646b7be748cf4499fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0daf1b288b8aaad052fd37ea7502fabb') in 0.120997 seconds
+  Import took 0.139279 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000457 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquare.png
+  artifactKey: Guid(7ba4b2810f605d945af87e032ca2957b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquare.png using Guid(7ba4b2810f605d945af87e032ca2957b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c85dd681df308c424902190557a09cff') in 0.108821 seconds
+  Import took 0.124486 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000615 seconds.
+  path: Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer_dark.png
+  artifactKey: Guid(519694efe2bb2914788b151fbd8c01f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer_dark.png using Guid(519694efe2bb2914788b151fbd8c01f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da82bcd8615e78d99327e633b61bcdb0') in 0.140100 seconds
+  Import took 0.151269 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000589 seconds.
+  path: Assets/VectorGraphicsSamples/SVGDemo/gradient-addressing.svg
+  artifactKey: Guid(0e6566c305f454635a11c319b09a8358) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VectorGraphicsSamples/SVGDemo/gradient-addressing.svg using Guid(0e6566c305f454635a11c319b09a8358) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '156f9f6d86cbbc01331ef4544d9652be') in 0.148015 seconds
+  Import took 0.164045 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000558 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_atlas.png
+  artifactKey: Guid(e2279677842a8064fbae0bc889fb85ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_atlas.png using Guid(e2279677842a8064fbae0bc889fb85ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0369ef70362b0748a2e024bfb2737448') in 0.107132 seconds
+  Import took 0.128008 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000588 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty.png
+  artifactKey: Guid(8db54efcce998554c86b796b37a7cdfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty.png using Guid(8db54efcce998554c86b796b37a7cdfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a76ae9de11ef8238e6917a2d93950d7') in 0.119142 seconds
+  Import took 0.135821 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000594 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/LED4.png
+  artifactKey: Guid(5a0bea4e29231f74297bbab5a34bc03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/LED4.png using Guid(5a0bea4e29231f74297bbab5a34bc03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b92c562c907cf156923c460dc038dc57') in 0.126337 seconds
+  Import took 0.138155 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000493 seconds.
+  path: Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenMiniIcon.png
+  artifactKey: Guid(61521df2e071645488ba3d05e49289ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenMiniIcon.png using Guid(61521df2e071645488ba3d05e49289ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4a60c575c1b52cf4e3622dc4f1cb36d') in 0.111165 seconds
+  Import took 0.132230 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000525 seconds.
+  path: Assets/TextMesh Pro/Sprites/EmojiOne.png
+  artifactKey: Guid(dffef66376be4fa480fb02b19edbe903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Sprites/EmojiOne.png using Guid(dffef66376be4fa480fb02b19edbe903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab1b1b105e1444d45272c35d252ae2ab') in 0.121928 seconds
+  Import took 0.136240 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000796 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/find.png
+  artifactKey: Guid(8174da2a682b1bc42822acafeae9dc0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/find.png using Guid(8174da2a682b1bc42822acafeae9dc0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '909290226327ce8459eeedcc6520987d') in 0.110224 seconds
+  Import took 0.122088 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000824 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBR.png
+  artifactKey: Guid(eeac3acbf7d1cd54fabfb1c4a12f9fc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBR.png using Guid(eeac3acbf7d1cd54fabfb1c4a12f9fc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d00cc711cadd2ab4e5b47a0c475f5de') in 0.112482 seconds
+  Import took 0.122320 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000783 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/LED3.png
+  artifactKey: Guid(ad384bbef2d01334dab17b5b8431ea93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/LED3.png using Guid(ad384bbef2d01334dab17b5b8431ea93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd82bb6bb6c29476eec70c2850fa2a5d') in 0.114185 seconds
+  Import took 0.126779 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000466 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_particles.png
+  artifactKey: Guid(8003873ab749935489bb11f23f830856) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_particles.png using Guid(8003873ab749935489bb11f23f830856) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f82c497548280888ccfe2f9623e7509b') in 0.116178 seconds
+  Import took 0.128801 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000584 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorder.png
+  artifactKey: Guid(afd7d0ddb1d6c744b9cb87ae49b2ce62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorder.png using Guid(afd7d0ddb1d6c744b9cb87ae49b2ce62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '155599fef75e27fb3b3c914ef4f70506') in 0.113059 seconds
+  Import took 0.136990 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000499 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha10.png
+  artifactKey: Guid(8c9cfa1dbe00a1d41ae9d14f5ac543ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha10.png using Guid(8c9cfa1dbe00a1d41ae9d14f5ac543ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e7b173fcbbaba15980f223e255e98e8') in 0.116379 seconds
+  Import took 0.131346 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000603 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_materials.png
+  artifactKey: Guid(e02713e10d7aced44a7a651231f0adef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_materials.png using Guid(e02713e10d7aced44a7a651231f0adef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3723f867f6aab48b72fc695e91ad758') in 0.110348 seconds
+  Import took 0.124544 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000650 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/circle_dashedBorderEmpty.png
+  artifactKey: Guid(522b0133a9838674ca9a12e0c6e5a59c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/circle_dashedBorderEmpty.png using Guid(522b0133a9838674ca9a12e0c6e5a59c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f6d07797e561ee25bf1dff91f0d42ef') in 0.115098 seconds
+  Import took 0.127106 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000586 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_camera_border.png
+  artifactKey: Guid(358cddede8023574191e0aae610a4645) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_camera_border.png using Guid(358cddede8023574191e0aae610a4645) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f555019a6a97ab883f58c6c684c7da7') in 0.109984 seconds
+  Import took 0.121783 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000807 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_terrains.png
+  artifactKey: Guid(4a091a7609ef2d34bbdfaa1a886deb18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_terrains.png using Guid(4a091a7609ef2d34bbdfaa1a886deb18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a3e26afda0463527e7b67fb44582a81') in 0.109806 seconds
+  Import took 0.127245 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001605 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved.png
+  artifactKey: Guid(4896b5aa9d63dec498136c21ffce735b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved.png using Guid(4896b5aa9d63dec498136c21ffce735b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6418e12611edcc9a068fd28027259049') in 0.112359 seconds
+  Import took 0.131129 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002419 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignL.png
+  artifactKey: Guid(d18ceface0c20014b8db4bba05a41b83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignL.png using Guid(d18ceface0c20014b8db4bba05a41b83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6c5c9dd79e5cd0af3d1d6e291c09562') in 0.111113 seconds
+  Import took 0.120909 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000574 seconds.
+  path: Assets/Editor Default Resources/MasterAudio/randomIcon.png
+  artifactKey: Guid(322929ab77a9d1b428d8b868d40cd499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor Default Resources/MasterAudio/randomIcon.png using Guid(322929ab77a9d1b428d8b868d40cd499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d5c4548408f4586afb0148105143e0d') in 0.116435 seconds
+  Import took 0.131150 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000615 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignTC.png
+  artifactKey: Guid(0f79253104349f44cb73978f6c8e93de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignTC.png using Guid(0f79253104349f44cb73978f6c8e93de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '484439451804997218adefdef74f0b81') in 0.114362 seconds
+  Import took 0.126576 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000504 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved_darkBorders.png
+  artifactKey: Guid(25da15ac84743244ab4c860cf8798ec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved_darkBorders.png using Guid(25da15ac84743244ab4c860cf8798ec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87cdd423a8f32bcdb4fb2888e1245338') in 0.116840 seconds
+  Import took 0.128248 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001858 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareCornersEmpty02.png
+  artifactKey: Guid(ca2f91cc405eb144dad970eb23db2f72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareCornersEmpty02.png using Guid(ca2f91cc405eb144dad970eb23db2f72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '588c000eb11735aa5f3f9a4e6f446bbd') in 0.128148 seconds
+  Import took 0.140712 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000529 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_Repeat.png
+  artifactKey: Guid(d8511fcd5de969e48ba1be9734aa8bf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_Repeat.png using Guid(d8511fcd5de969e48ba1be9734aa8bf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39583e1af568426f13a7d74f02aeacc8') in 0.127294 seconds
+  Import took 0.141180 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000566 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBL.png
+  artifactKey: Guid(abf8a615f379ef44b9ac872a13b7712f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBL.png using Guid(abf8a615f379ef44b9ac872a13b7712f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c6821eb7ab6b0269884dea55c2b4abe') in 0.120153 seconds
+  Import took 0.135782 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000573 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_light.png
+  artifactKey: Guid(4f69b96f9308d8f4ea239773ef5b55c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_light.png using Guid(4f69b96f9308d8f4ea239773ef5b55c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6726eec7651c738570d5579b4f02f39f') in 0.114667 seconds
+  Import took 0.124956 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000582 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_audio.png
+  artifactKey: Guid(e1af8927fb6f5634896d59aed409a589) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_audio.png using Guid(e1af8927fb6f5634896d59aed409a589) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd45b40f7bcd124bb982c9a7b00b45f48') in 0.116095 seconds
+  Import took 0.129064 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000429 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmpty.png
+  artifactKey: Guid(4578222ee7a511446b0c340551bf8740) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmpty.png using Guid(4578222ee7a511446b0c340551bf8740) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d9022f82c332c697f406d847152fa1d') in 0.138673 seconds
+  Import took 0.151325 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000520 seconds.
+  path: Assets/Plugins/Editor/RelationsInspector/RelationsInspectorResources/prevIconLight.png
+  artifactKey: Guid(7c9c243eaa13b4d48aee5e00c6344c8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Editor/RelationsInspector/RelationsInspectorResources/prevIconLight.png using Guid(7c9c243eaa13b4d48aee5e00c6344c8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58a26ca65f1563fb976f79ec3f1c7083') in 0.116647 seconds
+  Import took 0.127614 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000528 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_slanted.png
+  artifactKey: Guid(c99a391f381fe534c80a193fe9f307a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_slanted.png using Guid(c99a391f381fe534c80a193fe9f307a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bb3d53a5610326070558085e562613d') in 0.099548 seconds
+  Import took 0.121402 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000585 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignTL.png
+  artifactKey: Guid(6efe1c8569d975640ba0c9f2ac4a9d61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignTL.png using Guid(6efe1c8569d975640ba0c9f2ac4a9d61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fa561f89fd0524b86b2e374411add99') in 0.106056 seconds
+  Import took 0.120991 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000669 seconds.
+  path: Assets/Plugins/Editor/RelationsInspector/RelationsInspectorResources/disc.png
+  artifactKey: Guid(29882f4a65663dc499a9c1f2fbbb90c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Editor/RelationsInspector/RelationsInspectorResources/disc.png using Guid(29882f4a65663dc499a9c1f2fbbb90c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c15487a63b7f079328c0601a222865db') in 0.098502 seconds
+  Import took 0.115651 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002397 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_visibility.png
+  artifactKey: Guid(55c2b426022dac44f9b25f0cba28aa45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_visibility.png using Guid(55c2b426022dac44f9b25f0cba28aa45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '202317809c915e8fef9b285e4d017270') in 0.115425 seconds
+  Import took 0.135756 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000475 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_FullscreenEnter.png
+  artifactKey: Guid(a3e1c0465f07fde4bac9d483e5a2cd5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Icons/UI_Icon_FullscreenEnter.png using Guid(a3e1c0465f07fde4bac9d483e5a2cd5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cd0887d0ea8bb88d420f9728c627a17') in 0.150930 seconds
+  Import took 0.165413 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000560 seconds.
+  path: Packages/com.abyssalgames.phenomtools/Resources/Selection.png
+  artifactKey: Guid(4fd73164137d5034b8f01d6992fd6925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.abyssalgames.phenomtools/Resources/Selection.png using Guid(4fd73164137d5034b8f01d6992fd6925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f42202c6fb39bc643c49a18c3072215c') in 0.127835 seconds
+  Import took 0.144317 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.034190 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.973 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1671 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 81.6 MB.
+System memory in use after: 81.7 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2253.
+Total: 7.511400 ms (FindLiveObjects: 0.872500 ms CreateObjectMapping: 0.281900 ms MarkObjects: 5.964600 ms  DeleteObjects: 0.386900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.045635 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.05 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.730 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1671 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 81.6 MB.
+System memory in use after: 81.7 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2257.
+Total: 5.689200 ms (FindLiveObjects: 0.636800 ms CreateObjectMapping: 0.272600 ms MarkObjects: 4.720000 ms  DeleteObjects: 0.054800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.031859 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.06 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  6.154 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.64 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1671 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 81.6 MB.
+System memory in use after: 81.7 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2261.
+Total: 7.035800 ms (FindLiveObjects: 0.517400 ms CreateObjectMapping: 0.214000 ms MarkObjects: 6.259600 ms  DeleteObjects: 0.040700 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
