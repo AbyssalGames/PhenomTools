@@ -30,6 +30,8 @@ namespace PhenomTools
 
             EditorGUILayout.PropertyField(onBeginDragProperty);
             EditorGUILayout.PropertyField(onEndDragProperty);
+
+            serializedObject.ApplyModifiedProperties();
         }
     }
 }
