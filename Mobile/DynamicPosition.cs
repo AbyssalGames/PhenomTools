@@ -9,6 +9,7 @@ namespace PhenomTools
 {
     public class DynamicPosition : DynamicBase
     {
+        public float tweenRate = .5f;
         public bool anchored;
         public Vector3 portraitPosition;
         public Vector3 landscapeLeftPosition;
@@ -36,9 +37,19 @@ namespace PhenomTools
         protected override void OnDeviceOrientationChanged(int index)
         {
             if (anchored)
-                DOTween.To(() => rect.anchoredPosition, p => rect.anchoredPosition = p, (Vector2)positions[index], .5f).SetUpdate(UpdateType.Normal, true);
+            {
+                if (tweenRate > 0)
+                    DOTween.To(() => rect.anchoredPosition, p => rect.anchoredPosition = p, (Vector2)positions[index], tweenRate).SetUpdate(UpdateType.Normal, true);
+                else
+                    rect.anchoredPosition = positions[index];
+            }
             else
-                transform.DOLocalMove(positions[index], .5f).SetUpdate(UpdateType.Normal, true);
+            {
+                if (tweenRate > 0)
+                    transform.DOLocalMove(positions[index], tweenRate).SetUpdate(UpdateType.Normal, true);
+                else
+                    transform.localPosition = positions[index];
+            }
         }
 
         [ContextMenu("Set Current as Portrait")]
