@@ -7,6 +7,7 @@ namespace PhenomTools
 {
     public class DynamicRotation : DynamicBase
     {
+        public float tweenRate = .5f;
         public bool local = true;
         public Vector3 portraitRotation;
         public Vector3 landscapeLeftRotation;
@@ -27,11 +28,19 @@ namespace PhenomTools
         protected override void OnDeviceOrientationChanged(int index)
         {
             if (local)
-                transform.DOLocalRotate(rotations[index], .5f).SetUpdate(UpdateType.Normal, true);
-            //transform.DOLocalRotateQuaternion(Quaternion.Euler(rotations[index]), .5f).SetUpdate(UpdateType.Normal, true);
+            {
+                if (tweenRate > 0)
+                    transform.DOLocalRotate(rotations[index], tweenRate).SetUpdate(UpdateType.Normal, true);
+                else
+                    transform.localEulerAngles = rotations[index];
+            }
             else
-                transform.DORotate(rotations[index], .5f).SetUpdate(UpdateType.Normal, true);
-            //transform.DORotateQuaternion(Quaternion.Euler(rotations[index]), .5f).SetUpdate(UpdateType.Normal, true);
+            {
+                if (tweenRate > 0)
+                    transform.DORotate(rotations[index], tweenRate).SetUpdate(UpdateType.Normal, true);
+                else
+                    transform.eulerAngles = rotations[index];
+            }
         }
 
         public void Reset()
