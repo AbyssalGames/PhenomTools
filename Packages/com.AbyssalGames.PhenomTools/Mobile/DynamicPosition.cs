@@ -39,7 +39,8 @@ namespace PhenomTools
             if (anchored)
             {
                 if (tweenRate > 0)
-                    DOTween.To(() => rect.anchoredPosition, p => rect.anchoredPosition = p, (Vector2)positions[index], tweenRate).SetUpdate(UpdateType.Normal, true);
+                    rect.DOAnchorPos(positions[index], tweenRate).SetUpdate(UpdateType.Normal, true);
+                //DOTween.To(() => rect.anchoredPosition, p => rect.anchoredPosition = p, (Vector2)positions[index], tweenRate).SetUpdate(UpdateType.Normal, true);
                 else
                     rect.anchoredPosition = positions[index];
             }
