@@ -16,31 +16,69 @@ namespace PhenomTools
         public event Action onBecameHidden;
         public event Action onBecameFullyVisible;
         public event Action onBecamePartlyHidden;
-
         public bool isVisible { get; private set; }
         public bool isFullyVisible { get; private set; }
 
         private RectTransform rect;
         private RectTransform otherRect;
-        private bool isInit;
 
         private bool hasBeenVisible;
         private bool overlapsCache;
         private bool containsCache;
 
-        public void BeginVisibilityChecks(RectTransform otherRect)
+        private IEnumerator visibilityCheckRoutine;
+        private Action checkEvent;
+        private UnityEvent checkUnityEvent;
+
+        public void BeginVisibilityChecks(RectTransform otherRect, int framesBetweenChecks = 0)
         {
             rect = transform as RectTransform;
             this.otherRect = otherRect;
-            isInit = true;
+
+            visibilityCheckRoutine = PhenomUtils.RepeatActionByFrames(framesBetweenChecks, CheckVisibility);
         }
 
-        protected virtual void Update()
+        public void BeginVisibilityChecks(RectTransform otherRect, float timeBetweenChecks)
         {
-            if (!isInit)
-                return;
+            rect = transform as RectTransform;
+            this.otherRect = otherRect;
 
-            CheckVisibility();
+            visibilityCheckRoutine = PhenomUtils.RepeatActionByTime(timeBetweenChecks, CheckVisibility);
+        }
+
+        public void BeginVisibilityChecks(RectTransform otherRect, Action checkEvent)
+        {
+            rect = transform as RectTransform;
+            this.otherRect = otherRect;
+            this.checkEvent = checkEvent;
+
+            checkEvent += CheckVisibility;
+        }
+
+        public void BeginVisibilityChecks(RectTransform otherRect, UnityEvent checkUnityEvent)
+        {
+            rect = transform as RectTransform;
+            this.otherRect = otherRect;
+            this.checkUnityEvent = checkUnityEvent;
+
+            checkUnityEvent.AddListener(CheckVisibility);
+        }
+
+        public void EndVisibilityChecks()
+        {
+            if (visibilityCheckRoutine != null)
+                visibilityCheckRoutine.Stop();
+
+            if (checkEvent != null)
+                checkEvent -= CheckVisibility;
+
+            if (checkUnityEvent != null)
+                checkUnityEvent.RemoveListener(CheckVisibility);
+        }
+
+        protected virtual void OnDisable()
+        {
+            EndVisibilityChecks();
         }
 
         private void CheckVisibility()
