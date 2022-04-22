@@ -7,24 +7,24 @@ using PhenomTools;
 
 namespace PhenomTools
 {
-    [CustomEditor(typeof(Tester))]
-    //[CanEditMultipleObjects]
-    public class TesterEditor : Editor
-    {
-        //SerializedProperty value;
+    //[CustomEditor(typeof(Tester))]
+    ////[CanEditMultipleObjects]
+    //public class TesterEditor : Editor
+    //{
+    //    //SerializedProperty value;
  
-        public void OnEnable()
-        {
-            //value = serializedObject.FindProperty("Value");
-        }
+    //    public void OnEnable()
+    //    {
+    //        //value = serializedObject.FindProperty("Value");
+    //    }
  
-        public override void OnInspectorGUI()
-        {
-            serializedObject.Update();
+    //    public override void OnInspectorGUI()
+    //    {
+    //        serializedObject.Update();
  
-            // EditorGUI content
+    //        // EditorGUI content
  
-            serializedObject.ApplyModifiedProperties();
-        }
-    }
+    //        serializedObject.ApplyModifiedProperties();
+    //    }
+    //}
 }
