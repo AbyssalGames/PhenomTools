@@ -6,10 +6,6 @@ using UnityEngine.Events;
 using System.Linq;
 using UnityEngine.Networking;
 
-#if UNITY_EDITOR
-using Unity.EditorCoroutines.Editor;
-#endif
-
 namespace PhenomTools
 {
     public enum CardinalDirection

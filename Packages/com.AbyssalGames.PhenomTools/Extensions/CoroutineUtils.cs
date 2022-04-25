@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.EditorCoroutines.Editor;
 using UnityEngine;
+
+#if UNITY_EDITOR
+using Unity.EditorCoroutines.Editor;
+#endif
 
 namespace PhenomTools
 {
