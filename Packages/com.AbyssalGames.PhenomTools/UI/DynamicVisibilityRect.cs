@@ -46,22 +46,28 @@ namespace PhenomTools
             visibilityCheckRoutine = PhenomUtils.RepeatActionByTime(timeBetweenChecks, CheckVisibility);
         }
 
-        public void BeginVisibilityChecks(RectTransform otherRect, Action checkEvent)
+        public void BeginVisibilityChecks(RectTransform otherRect, Action checkEvent, bool checkImmediately = true)
         {
             rect = transform as RectTransform;
             this.otherRect = otherRect;
             this.checkEvent = checkEvent;
 
             checkEvent += CheckVisibility;
+
+            if(checkImmediately)
+                CheckVisibility();
         }
 
-        public void BeginVisibilityChecks(RectTransform otherRect, UnityEvent checkUnityEvent)
+        public void BeginVisibilityChecks(RectTransform otherRect, UnityEvent checkUnityEvent, bool checkImmediately = true)
         {
             rect = transform as RectTransform;
             this.otherRect = otherRect;
             this.checkUnityEvent = checkUnityEvent;
 
             checkUnityEvent.AddListener(CheckVisibility);
+
+            if (checkImmediately)
+                CheckVisibility();
         }
 
         public void EndVisibilityChecks()
