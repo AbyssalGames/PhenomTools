@@ -30,7 +30,7 @@ namespace PhenomTools
         private Action checkEvent;
         private UnityEvent checkUnityEvent;
 
-        public void BeginVisibilityChecks(RectTransform otherRect, int framesBetweenChecks = 0)
+        public virtual void BeginVisibilityChecks(RectTransform otherRect, int framesBetweenChecks = 0)
         {
             rect = transform as RectTransform;
             this.otherRect = otherRect;
@@ -38,7 +38,7 @@ namespace PhenomTools
             visibilityCheckRoutine = PhenomUtils.RepeatActionByFrames(framesBetweenChecks, CheckVisibility);
         }
 
-        public void BeginVisibilityChecks(RectTransform otherRect, float timeBetweenChecks)
+        public virtual void BeginVisibilityChecks(RectTransform otherRect, float timeBetweenChecks)
         {
             rect = transform as RectTransform;
             this.otherRect = otherRect;
@@ -46,31 +46,25 @@ namespace PhenomTools
             visibilityCheckRoutine = PhenomUtils.RepeatActionByTime(timeBetweenChecks, CheckVisibility);
         }
 
-        public void BeginVisibilityChecks(RectTransform otherRect, Action checkEvent, bool checkImmediately = true)
+        public virtual void BeginVisibilityChecks(RectTransform otherRect, Action checkEvent)
         {
             rect = transform as RectTransform;
             this.otherRect = otherRect;
             this.checkEvent = checkEvent;
 
             checkEvent += CheckVisibility;
-
-            if(checkImmediately)
-                CheckVisibility();
         }
 
-        public void BeginVisibilityChecks(RectTransform otherRect, UnityEvent checkUnityEvent, bool checkImmediately = true)
+        public virtual void BeginVisibilityChecks(RectTransform otherRect, UnityEvent checkUnityEvent)
         {
             rect = transform as RectTransform;
             this.otherRect = otherRect;
             this.checkUnityEvent = checkUnityEvent;
 
             checkUnityEvent.AddListener(CheckVisibility);
-
-            if (checkImmediately)
-                CheckVisibility();
         }
 
-        public void EndVisibilityChecks()
+        public virtual void EndVisibilityChecks()
         {
             if (visibilityCheckRoutine != null)
                 visibilityCheckRoutine.Stop();
@@ -87,7 +81,7 @@ namespace PhenomTools
             EndVisibilityChecks();
         }
 
-        private void CheckVisibility()
+        public virtual void CheckVisibility()
         {
             isVisible = rect.Overlaps(otherRect);
 
