@@ -7,6 +7,8 @@ namespace PhenomTools
 {
     public class ToggleExtended : Toggle
     {
+        public Graphic[] graphics = new Graphic[0];
+
         public UnityEvent onHover = new UnityEvent();
         public UnityEvent onDown = new UnityEvent();
         public UnityEvent onUp = new UnityEvent();
@@ -40,6 +42,12 @@ namespace PhenomTools
         {
             onValueChanged.RemoveListener(OnValueChanged);
             base.OnDisable();
+        }
+
+        protected override void Start()
+        {
+            foreach (Graphic graphic in graphics)
+                PlayEffect(graphic, true);
         }
 
         public void SetParameters(Toggle t, Graphic targetGraphic, Graphic graphic, ToggleEvent onValueChanged)
@@ -121,9 +129,25 @@ namespace PhenomTools
 
         private void OnValueChanged(bool on)
         {
+            foreach (Graphic graphic in graphics)
+                PlayEffect(graphic, toggleTransition == ToggleTransition.None);
+
 #if PhenomAudio
             SoundManager.Play2DSound(on ? toggleOnSound : toggleOffSound);
 #endif
+        }
+
+        private void PlayEffect(Graphic graphic, bool instant)
+        {
+            if (graphic == null)
+                return;
+
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+                graphic.canvasRenderer.SetAlpha(isOn ? 1f : 0f);
+            else
+#endif
+                graphic.CrossFadeAlpha(isOn ? 1f : 0f, instant ? 0f : 0.1f, true);
         }
 
         public void DoClick(bool? on = null)
@@ -157,8 +181,8 @@ namespace PhenomTools
             }
 #endif
 
-            onGhostToggle?.Invoke(on);
             SetIsOnWithoutNotify(on);
+            onGhostToggle?.Invoke(on);
         }
 
         //public Sound onSound;
