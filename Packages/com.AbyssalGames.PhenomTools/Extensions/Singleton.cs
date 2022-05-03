@@ -14,12 +14,25 @@ namespace PhenomTools
                     T[] objs = FindObjectsOfType(typeof(T)) as T[];
 
                     if (objs.Length > 0)
+                    {
                         _instance = objs[0];
-                    else if (objs.Length > 1)
-                        Debug.LogError("There is more than one " + typeof(T).Name + " in the scene.");
-                    else if(_instance == null)
-                        Debug.LogError("No instance of " + typeof(T).Name + " in the scene.");
+
+                        if (objs.Length > 1)
+                        {
+                            for (int i = 1; i < objs.Length; i++)
+                            {
+                                Debug.Log("Duplicate of " + typeof(T).Name + " found, destroying " + objs[i].gameObject.name);
+                                Destroy(objs[i].gameObject);
+                            }
+                        }
+
+                        Debug.Log("Instance of " + typeof(T).Name + " set to " + _instance.gameObject.name, _instance.gameObject);
+                        return _instance;
+                    }
+
+                    Debug.LogError("No instance of " + typeof(T).Name + " in the scene.");
                 }
+
                 return _instance;
             }
             set

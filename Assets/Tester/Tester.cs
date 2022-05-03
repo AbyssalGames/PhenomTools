@@ -4,19 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Tester : MonoBehaviour
+public class Tester : Singleton<Tester>
 {
-    public DynamicVisibilityRect rect;
-    public RectTransform other;
-    public ScrollRectExtended scrollRect;
+    //public DynamicVisibilityRect rect;
+    //public RectTransform other;
+    //public ScrollRectExtended scrollRect;
 
     private void Start()
     {
-        rect.onBecameVisible += () => Debug.Log("Ye");
+        Tester t = Instance;
+        //rect.onBecameVisible += () => Debug.Log("Ye");
         //rect.BeginVisibilityChecks(other, 0);
         //rect.BeginVisibilityChecks(other, 1f);
         //rect.BeginVisibilityChecks(other, 30);
-        rect.BeginVisibilityChecks(other, scrollRect.onMove);
+        //rect.BeginVisibilityChecks(other, scrollRect.onMove);
     }
 
     //public OrderedDictionary<string, string> test = new OrderedDictionary<string, string>();
