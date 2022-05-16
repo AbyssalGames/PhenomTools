@@ -16,6 +16,20 @@ namespace PhenomTools
     public static partial class PhenomUtils
     {
         #region Misc
+        public static long GetUtcTimestamp()
+        {
+            return DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        }
+        public static long GetUtcTimestamp(DateTime dateTime)
+        {
+            return new DateTimeOffset(dateTime).ToUnixTimeSeconds();
+        }
+
+        public static TimeSpan GetTimeSince(long utcTimestamp)
+        {
+            return DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(utcTimestamp);
+        }
+
         public static string GetCurrentPlatformString()
         {
             return GetPlatformString(Application.platform);
