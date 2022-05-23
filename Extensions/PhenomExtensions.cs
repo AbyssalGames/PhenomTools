@@ -3,6 +3,7 @@ using DG.Tweening.Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Video;
@@ -32,7 +33,7 @@ namespace PhenomTools
 
         public static int ToIntBinary(this bool i)
         {
-            return i == true ? 1 : 0;
+            return i ? 1 : 0;
         }
 
         public static int[] ToIntBinary(this bool[] boolArray)
@@ -49,10 +50,10 @@ namespace PhenomTools
 
         public static int ToIntDirectional(this bool i)
         {
-            if (i == true)
+            if (i)
                 return 1;
-            else
-                return -1;
+
+            return -1;
         }
 
         #endregion
@@ -73,22 +74,17 @@ namespace PhenomTools
                 string newString = "";
                 for (int n = 0; n < length - iLength; n++)
                 {
-                    string.Concat(newString, "0");
+                    newString = string.Concat(newString, "0");
                 }
 
-                string.Concat(newString, i.ToString());
+                newString = string.Concat(newString, i.ToString());
 
                 return newString;
             }
-            else if (iLength > length)
-            {
-                string s = (i / Mathf.Pow(10, iLength)).ToString("F" + length.ToString());
-                return s.Remove(0, 2); // remove the 0 and decimal point
-            }
-            else
-            {
-                return i.ToString();
-            }
+
+            if (iLength <= length) return i.ToString();
+            //string s = (i / Mathf.Pow(10, iLength)).ToString("F" + length.ToString());
+            return (i / Mathf.Pow(10, iLength)).ToString("F" + length).Remove(0, 2); // remove the 0 and decimal point
         }
 
         public static string ToBigNumberString(this byte num) => ToBigNumberString((ulong)num);
@@ -157,8 +153,7 @@ namespace PhenomTools
         public static Transform EmptyInstantiate(this GameObject obj, Vector3 position, Quaternion rotation)
         {
             Transform t = obj.transform;
-            t.position = position;
-            t.rotation = rotation;
+            t.SetPositionAndRotation(position, rotation);
             return t;
         }
 
@@ -280,12 +275,7 @@ namespace PhenomTools
         #region Animation
         public static bool HasParameter(this Animator anim, string parameterName)
         {
-            foreach (AnimatorControllerParameter param in anim.parameters)
-            {
-                if (param.name == parameterName) 
-                    return true;
-            }
-            return false;
+            return anim.parameters.Any(param => param.name == parameterName);
         }
         #endregion
 
@@ -295,6 +285,13 @@ namespace PhenomTools
             if (!list.Contains(element))
                 list.Add(element);
         }
+        public static void AddUnique<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TKey key, TValue value)
+        {
+            if (dictionary.ContainsKey(key))
+                dictionary[key] = value;
+            else
+                dictionary.Add(key, value);
+        }
 
         public static void Shuffle<T>(this IList<T> list)
         {
@@ -303,30 +300,18 @@ namespace PhenomTools
             {
                 n--;
                 int k = rng.Next(n + 1);
-                T value = list[k];
-                list[k] = list[n];
-                list[n] = value;
+                (list[k], list[n]) = (list[n], list[k]);
             }
         }
 
         public static Vector3 Sum(this IList<Vector3> list)
         {
-            Vector3 sum = Vector3.zero;
-
-            foreach (Vector3 vector in list)
-                sum += vector;
-
-            return sum;
+            return list.Aggregate(Vector3.zero, (current, vector) => current + vector);
         }
 
         public static Quaternion Product(this IList<Quaternion> list)
         {
-            Quaternion product = Quaternion.identity;
-
-            foreach (Quaternion q in list)
-                product *= q;
-
-            return product;
+            return list.Aggregate(Quaternion.identity, (current, q) => current * q);
         }
 
         public static void Reset<T>(this List<T> list)
