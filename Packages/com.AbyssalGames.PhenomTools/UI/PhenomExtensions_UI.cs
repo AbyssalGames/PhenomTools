@@ -25,7 +25,7 @@ namespace PhenomTools
         /// <param name="camera">Camera.</param>
         private static int CountCornersVisibleFrom(this RectTransform rectTransform, Camera camera)
         {
-            Rect screenBounds = new(0f, 0f, Screen.width, Screen.height); // Screen space bounds (assumes camera renders across the entire screen)
+            Rect screenBounds = new Rect(0f, 0f, Screen.width, Screen.height); // Screen space bounds (assumes camera renders across the entire screen)
             Vector3[] objectCorners = new Vector3[4];
             rectTransform.GetWorldCorners(objectCorners);
 
