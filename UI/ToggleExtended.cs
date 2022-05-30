@@ -14,6 +14,7 @@ namespace PhenomTools
         public UnityEvent onUp = new UnityEvent();
         public UnityEvent onExit = new UnityEvent();
         public UnityEvent onReenter = new UnityEvent();
+        public UnityEvent onLongPress = new UnityEvent();
         public UnityEventBool onGhostToggle = new UnityEventBool();
 
 #if PhenomAudio
@@ -32,6 +33,10 @@ namespace PhenomTools
         [HideInInspector]
         public bool isPressed;
 
+        private bool isPointerDown;
+        private bool longPressTriggered = false;
+        private float timePressStarted;
+
         protected override void OnEnable()
         {
             onValueChanged.AddListener(OnValueChanged);
@@ -48,6 +53,15 @@ namespace PhenomTools
         {
             foreach (Graphic graphic in graphics)
                 PlayEffect(graphic, true);
+        }
+
+        private void Update()
+        {
+            if (isPointerDown && !longPressTriggered && Time.time - timePressStarted > 1f)
+            {
+                longPressTriggered = true;
+                onLongPress.Invoke();
+            }
         }
 
         public void SetParameters(Toggle t, Graphic targetGraphic, Graphic graphic, ToggleEvent onValueChanged)
@@ -81,7 +95,11 @@ namespace PhenomTools
 #endif
 
             if (isPressed)
+            {
+                isPointerDown = true;
+                timePressStarted = Time.time;
                 onReenter?.Invoke();
+            }
         }
 
         public override void OnPointerDown(PointerEventData eventData)
@@ -92,6 +110,9 @@ namespace PhenomTools
                 return;
 
             isPressed = true;
+            isPointerDown = true;
+            timePressStarted = Time.time;
+            longPressTriggered = false;
 #if PhenomAudio
             SoundManager.Play2DSound(downSound);
 #endif
@@ -102,6 +123,7 @@ namespace PhenomTools
         public override void OnPointerExit(PointerEventData eventData)
         {
             base.OnPointerExit(eventData);
+            isPointerDown = false;
 
             if (isPressed)
                 onExit?.Invoke();

@@ -19,8 +19,10 @@ namespace PhenomTools
 
         private SerializedProperty onHoverProperty;
         private SerializedProperty onDownProperty;
+        private SerializedProperty onUpProperty;
         private SerializedProperty onExitProperty;
         private SerializedProperty onReenterProperty;
+        private SerializedProperty onLongPressProperty;
         private SerializedProperty onGhostToggleProperty;
 
 #if PhenomAudio
@@ -45,8 +47,10 @@ namespace PhenomTools
 
             onHoverProperty = serializedObject.FindProperty("onHover");
             onDownProperty = serializedObject.FindProperty("onDown");
+            onUpProperty = serializedObject.FindProperty("onUp");
             onExitProperty = serializedObject.FindProperty("onExit");
             onReenterProperty = serializedObject.FindProperty("onReenter");
+            onLongPressProperty = serializedObject.FindProperty("onLongPress");
             onGhostToggleProperty = serializedObject.FindProperty("onGhostToggle");
 
 #if PhenomAudio
@@ -108,8 +112,10 @@ namespace PhenomTools
 
                 EditorGUILayout.PropertyField(onHoverProperty);
                 EditorGUILayout.PropertyField(onDownProperty);
+                EditorGUILayout.PropertyField(onUpProperty);
                 EditorGUILayout.PropertyField(onExitProperty);
                 EditorGUILayout.PropertyField(onReenterProperty);
+                EditorGUILayout.PropertyField(onLongPressProperty);
                 EditorGUILayout.PropertyField(onGhostToggleProperty);
 
 #if PhenomAudio

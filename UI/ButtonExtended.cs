@@ -12,6 +12,7 @@ namespace PhenomTools
         public UnityEvent onUp = new UnityEvent();
         public UnityEvent onExit = new UnityEvent();
         public UnityEvent onReenter = new UnityEvent();
+        public UnityEvent onLongPress = new UnityEvent();
         public UnityEvent onGhostClick = new UnityEvent();
 
 #if PhenomAudio
@@ -25,6 +26,10 @@ namespace PhenomTools
 
         [HideInInspector]
         public bool isPressed;
+
+        private bool isPointerDown;
+        private bool longPressTriggered = false;
+        private float timePressStarted;
 
         public void SetParameters(Button b, Graphic targetGraphic, ButtonClickedEvent onClick)
         {
@@ -42,6 +47,15 @@ namespace PhenomTools
             this.onClick = onClick;
         }
 
+        private void Update()
+        {
+            if (isPointerDown && !longPressTriggered && Time.time - timePressStarted > 1f)
+            {
+                longPressTriggered = true;
+                onLongPress.Invoke();
+            }
+        }
+
         public override void OnPointerEnter(PointerEventData eventData)
         {
             base.OnPointerEnter(eventData);
@@ -52,7 +66,11 @@ namespace PhenomTools
 #endif
 
             if (isPressed)
+            {
+                isPointerDown = true;
+                timePressStarted = Time.time;
                 onReenter?.Invoke();
+            }
         }
 
         public override void OnPointerDown(PointerEventData eventData)
@@ -63,6 +81,9 @@ namespace PhenomTools
                 return;
 
             isPressed = true;
+            isPointerDown = true;
+            timePressStarted = Time.time;
+            longPressTriggered = false;
 #if PhenomAudio
             SoundManager.Play2DSound(downSound);
 #endif
@@ -73,8 +94,9 @@ namespace PhenomTools
         public override void OnPointerExit(PointerEventData eventData)
         {
             base.OnPointerExit(eventData);
+            isPointerDown = false;
 
-            if(isPressed)
+            if (isPressed)
                 onExit?.Invoke();
         }
 
