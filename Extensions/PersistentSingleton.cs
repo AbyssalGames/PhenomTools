@@ -17,8 +17,8 @@ namespace PhenomTools
                     {
                         _instance = objs[0];
 
-                        if(_instance.transform.parent == null)
-                            DontDestroyOnLoad(_instance.gameObject);
+                        //if(_instance.transform.parent == null)
+                        //    DontDestroyOnLoad(_instance.gameObject);
 
                         if (objs.Length > 1)
                         {
@@ -41,6 +41,19 @@ namespace PhenomTools
             set
             {
                 _instance = value;
+            }
+        }
+
+        protected virtual void Awake()
+        {
+            if(_instance == null)
+            {
+                _instance = this as T;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                DestroyImmediate(gameObject);
             }
         }
     }
