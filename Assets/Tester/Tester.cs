@@ -2,9 +2,10 @@ using PhenomTools;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Tester : Singleton<Tester>
+public class Tester : PersistentSingleton<Tester>
 {
     //public DynamicVisibilityRect rect;
     //public RectTransform other;
@@ -12,12 +13,14 @@ public class Tester : Singleton<Tester>
 
     private void Start()
     {
-        Tester t = Instance;
+        //Tester t = Instance;
         //rect.onBecameVisible += () => Debug.Log("Ye");
         //rect.BeginVisibilityChecks(other, 0);
         //rect.BeginVisibilityChecks(other, 1f);
         //rect.BeginVisibilityChecks(other, 30);
         //rect.BeginVisibilityChecks(other, scrollRect.onMove);
+
+        SceneManager.LoadScene("Empty");
     }
 
     //public OrderedDictionary<string, string> test = new OrderedDictionary<string, string>();
