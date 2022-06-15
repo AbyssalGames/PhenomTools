@@ -96,7 +96,7 @@ namespace PhenomTools
             base.OnPointerExit(eventData);
             isPointerDown = false;
 
-            if (isPressed)
+            //if (isPressed)
                 onExit?.Invoke();
         }
 
