@@ -7,6 +7,8 @@ namespace PhenomTools
 {
     public class ButtonExtended : Button
     {
+        public float longPressDuration = .5f;
+
         public UnityEvent onHover = new UnityEvent();
         public UnityEvent onDown = new UnityEvent();
         public UnityEvent onUp = new UnityEvent();
@@ -49,7 +51,7 @@ namespace PhenomTools
 
         private void Update()
         {
-            if (isPointerDown && !longPressTriggered && Time.time - timePressStarted > 1f)
+            if (isPointerDown && !longPressTriggered && Time.time - timePressStarted > longPressDuration)
             {
                 longPressTriggered = true;
                 onLongPress.Invoke();
