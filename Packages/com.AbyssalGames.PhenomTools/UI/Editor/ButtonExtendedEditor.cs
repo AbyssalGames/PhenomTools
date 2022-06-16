@@ -7,7 +7,8 @@ namespace PhenomTools
     [CanEditMultipleObjects]
     public class ButtonExtendedEditor : SelectableEditor
     {
-        SerializedProperty m_OnClickProperty;
+        private SerializedProperty m_OnClickProperty;
+        private SerializedProperty longPressDurationProperty;
         private SerializedProperty onHoverProperty;
         private SerializedProperty onDownProperty;
         private SerializedProperty onUpProperty;
@@ -28,6 +29,7 @@ namespace PhenomTools
         {
             base.OnEnable();
             m_OnClickProperty = serializedObject.FindProperty("m_OnClick");
+            longPressDurationProperty = serializedObject.FindProperty("longPressDuration");
             onHoverProperty = serializedObject.FindProperty("onHover");
             onDownProperty = serializedObject.FindProperty("onDown");
             onUpProperty = serializedObject.FindProperty("onUp");
@@ -49,6 +51,7 @@ namespace PhenomTools
 
             serializedObject.Update();
 
+            EditorGUILayout.PropertyField(longPressDurationProperty);
             eventsFoldout = EditorGUILayout.Foldout(eventsFoldout, "Events");
 
             if (eventsFoldout)

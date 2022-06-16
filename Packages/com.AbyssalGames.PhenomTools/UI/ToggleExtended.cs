@@ -8,6 +8,7 @@ namespace PhenomTools
     public class ToggleExtended : Toggle
     {
         public Graphic[] graphics = new Graphic[0];
+        public float longPressDuration = .5f;
 
         public UnityEvent onHover = new UnityEvent();
         public UnityEvent onDown = new UnityEvent();
@@ -57,7 +58,7 @@ namespace PhenomTools
 
         private void Update()
         {
-            if (isPointerDown && !longPressTriggered && Time.time - timePressStarted > 1f)
+            if (isPointerDown && !longPressTriggered && Time.time - timePressStarted > longPressDuration)
             {
                 longPressTriggered = true;
                 onLongPress.Invoke();

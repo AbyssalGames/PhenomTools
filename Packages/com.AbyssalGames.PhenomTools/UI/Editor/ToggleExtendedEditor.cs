@@ -11,11 +11,12 @@ namespace PhenomTools
 
     public class ToggleExtendedEditor : SelectableEditor
     {
-        SerializedProperty m_OnValueChangedProperty;
-        SerializedProperty m_TransitionProperty;
-        SerializedProperty m_GraphicsProperty;
-        SerializedProperty m_GroupProperty;
-        SerializedProperty m_IsOnProperty;
+        private SerializedProperty m_OnValueChangedProperty;
+        private SerializedProperty m_TransitionProperty;
+        private SerializedProperty m_GraphicsProperty;
+        private SerializedProperty m_GroupProperty;
+        private SerializedProperty m_IsOnProperty;
+        private SerializedProperty longPressDurationProperty;
 
         private SerializedProperty onHoverProperty;
         private SerializedProperty onDownProperty;
@@ -44,6 +45,7 @@ namespace PhenomTools
             m_GroupProperty = serializedObject.FindProperty("m_Group");
             m_IsOnProperty = serializedObject.FindProperty("m_IsOn");
             m_OnValueChangedProperty = serializedObject.FindProperty("onValueChanged");
+            longPressDurationProperty = serializedObject.FindProperty("longPressDuration");
 
             onHoverProperty = serializedObject.FindProperty("onHover");
             onDownProperty = serializedObject.FindProperty("onDown");
@@ -93,6 +95,7 @@ namespace PhenomTools
             EditorGUILayout.PropertyField(m_GraphicsProperty);
             EditorGUI.BeginChangeCheck();
             EditorGUILayout.PropertyField(m_GroupProperty);
+            EditorGUILayout.PropertyField(longPressDurationProperty);
             if (EditorGUI.EndChangeCheck())
             {
                 if (!Application.isPlaying)
