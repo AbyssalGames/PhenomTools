@@ -101,6 +101,11 @@ namespace PhenomTools
                 onSuccess?.Invoke(DownloadHandlerTexture.GetContent(www));
 #endif
         }
+
+        public static void GetVideoFromURL(string url, Action<Texture> onSuccess, Action<string> onError)
+        {
+
+        }
         #endregion
 
         #region Random

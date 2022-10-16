@@ -4,24 +4,80 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
+using System.Text.RegularExpressions;
 
 public class Tester : PersistentSingleton<Tester>
 {
+    //public string testString;
+
+    [ContextMenu("Test")]
+    public void Test()
+    {
+        StartCoroutine(TestRoutine());
+    }
+
+    private IEnumerator TestRoutine()
+    {
+        PhenomConsole.LogAssertion("Test1");
+        yield return new WaitForSeconds(.2f);
+        PhenomConsole.Log("Test");
+        yield return new WaitForSeconds(.2f);
+        PhenomConsole.LogAssertion("Test");
+        yield return new WaitForSeconds(.2f);
+        PhenomConsole.LogError("Test");
+        yield return new WaitForSeconds(.2f);
+        PhenomConsole.LogAssertion("Test");
+        yield return new WaitForSeconds(.2f);
+        PhenomConsole.LogError("Test");
+        yield return new WaitForSeconds(.2f);
+        PhenomConsole.LogAssertion("Test");
+        yield return new WaitForSeconds(.2f);
+        PhenomConsole.LogError("Test");
+        yield return new WaitForSeconds(.2f);
+        PhenomConsole.Log("Test");
+        yield return new WaitForSeconds(.2f);
+        StartCoroutine(TestRoutine());
+    }
+
+    [ContextMenu("Toggle")]
+    public void Start()
+    {
+        PhenomConsole.ToggleDebugMode(!PhenomConsole.isDebugMode);
+        Test();
+    }
+        //Debug.Log(testString.ToNonCamelCase());
+    //}
+
+    //    [SerializeField]
+    //    private TextMeshProUGUI text = null;
+
+    //private string testString = "house home go www.monstermmorpg.com nice hospital http://www.monstermmorpg.com this is incorrect url http://www.monstermmorpg.commerged continue";
+
     //public DynamicVisibilityRect rect;
     //public RectTransform other;
     //public ScrollRectExtended scrollRect;
 
-    private void Start()
-    {
-        //Tester t = Instance;
-        //rect.onBecameVisible += () => Debug.Log("Ye");
-        //rect.BeginVisibilityChecks(other, 0);
-        //rect.BeginVisibilityChecks(other, 1f);
-        //rect.BeginVisibilityChecks(other, 30);
-        //rect.BeginVisibilityChecks(other, scrollRect.onMove);
+    //private void Start()
+    //{
+    //    text.SetText(ToRich(testString));
 
-        SceneManager.LoadScene("Empty");
-    }
+    //Tester t = Instance;
+    //rect.onBecameVisible += () => Debug.Log("Ye");
+    //rect.BeginVisibilityChecks(other, 0);
+    //rect.BeginVisibilityChecks(other, 1f);
+    //rect.BeginVisibilityChecks(other, 30);
+    //rect.BeginVisibilityChecks(other, scrollRect.onMove);
+
+    //SceneManager.LoadScene("Empty");
+    //}
+
+    //private string ToRich(string raw)
+    //{
+    //    return Regex.Replace(raw,
+    //            @"((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?)",
+    //            "<a target='_blank' href='$1'>$1</a>");
+    //}
 
     //public OrderedDictionary<string, string> test = new OrderedDictionary<string, string>();
 
