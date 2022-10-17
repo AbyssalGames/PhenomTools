@@ -7,7 +7,7 @@ namespace PhenomTools
 {
     public class PhenomLogItem : MonoBehaviour
     {
-        public static bool altColor;
+        private static bool altColor;
 
         [SerializeField]
         private TextMeshProUGUI logText = null;
@@ -23,46 +23,32 @@ namespace PhenomTools
         [NonSerialized]
         public PhenomLog data;
 
-        public string log => data.log;
-        public string stackTrace => data.stackTrace;
-        public PhenomLogType logType => data.logType;
-        public int count => data.count;
-
-        private int logIndex;
-        //private int count;
+        private string log => data.log;
+        private string stackTrace => data.stackTrace;
+        private PhenomLogType logType => data.logType;
+        private int count => data.count;
 
         public void Init(PhenomLog data, ToggleGroup group, int logIndex, bool collapse, bool showTimestamp)
         {
             this.data = data;
-            //this.log = log;
-            //this.stackTrace = stackTrace;
-            //this.logType = logType;
-
-            //gameObject.name = string.Concat("Log_", logIndex);
-
+            
             logText.SetText(log);
             logText.color = PhenomConsole.GetColorOfLogType(logType, 1f, 1f);
-
-            // bgImage.color = PhenomConsole.GetColorOfLogType(logType, altColor ? .1f : .3f, .5f);
-            // altColor = !altColor;
-
             toggle.group = group;
 
             UpdateInfo(logIndex, collapse, showTimestamp);
 
             if (collapse)
             {
-                bgImage.color = PhenomConsole.GetColorOfLogType(logType, altColor ? .1f : .3f, .5f);
+                bgImage.color = PhenomConsole.GetColorOfLogType(logType, altColor ? .2f : .25f, .5f);
                 altColor = !altColor;
             }
         }
         
         public void UpdateInfo(int logIndex, bool collapse, bool showTimestamp)
         {
-            this.logIndex = logIndex;
             if (showTimestamp)
             {
-                // Debug.LogError("Try get index: " + logIndex + ", but count is: " + data.timestamps.Count, gameObject);
                 DateTime timestamp = data.timestamps[logIndex];
                 logText.SetText( string.Concat("[", timestamp.Hour.ToString("00"), ":",
                     timestamp.Minute.ToString("00"), ":", timestamp.Second.ToString("00"), ":", timestamp.Millisecond.ToString("000"), "] ", log));
@@ -76,7 +62,7 @@ namespace PhenomTools
             }
             else
             {
-                bgImage.color = PhenomConsole.GetColorOfLogType(logType, altColor ? .1f : .3f, .5f);
+                bgImage.color = PhenomConsole.GetColorOfLogType(logType, altColor ? .2f : .25f, .5f);
                 altColor = !altColor;
             }
         }

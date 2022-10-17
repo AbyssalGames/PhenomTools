@@ -300,8 +300,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+      - m_Target: {fileID: 5710184133615262433}
+        m_TargetAssemblyTypeName: PhenomTools.PhenomLogItem, PhenomTools.Console
         m_MethodName: OnToggle
         m_Mode: 0
         m_Arguments:
