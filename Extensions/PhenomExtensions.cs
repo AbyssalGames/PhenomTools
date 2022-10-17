@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Video;
@@ -106,6 +107,21 @@ namespace PhenomTools
                 return (num / 1000D).ToString("0.##") + "K";
 
             return num.ToString("#,0");
+        }
+
+        public static string ToNonCamelCase(this string text)
+        {
+            return Regex.Replace(
+                Regex.Replace(
+                    text,
+                    @"(\P{Ll})(\P{Ll}\p{Ll})",
+                    "$1 $2"
+                ),
+                @"(\p{Ll})(\P{Ll})",
+                "$1 $2"
+            );
+
+            //return Regex.Replace(text, "(?<!^)([A-Z][a-z]|(?<=[a-z])[A-Z])", " $1");
         }
 
         //public static string ToBigNumberString(this ulong i)
@@ -291,6 +307,18 @@ namespace PhenomTools
                 dictionary[key] = value;
             else
                 dictionary.Add(key, value);
+        }
+
+        public static bool AnyOut<T>(this IEnumerable<T> list, Func<T, bool> predicate, out T obj)
+        {
+            if (list.Any(predicate))
+            {
+                obj = list.First(predicate);
+                return true;
+            }
+
+            obj = default;
+            return false;
         }
 
         public static void Shuffle<T>(this IList<T> list)

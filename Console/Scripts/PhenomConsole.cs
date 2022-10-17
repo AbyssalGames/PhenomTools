@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,7 +12,39 @@ namespace PhenomTools
 {
     public enum PhenomLogType
     {
-        Error, Assertion, Warning, Normal, Exception, Boon
+        Error, Assertion, Warning, Normal, Boon, Count
+    }
+
+    [Serializable]
+    public class PhenomLog 
+    {
+        public string log;
+        public PhenomLogType logType;
+        public string stackTrace;
+        public int count = 1;
+
+        public List<DateTime> timestamps = new List<DateTime>();
+        public List<PhenomLogItem> logItems = new List<PhenomLogItem>();
+
+        public PhenomLog(string log, PhenomLogType logType, string stackTrace)
+        {
+            this.log = log;
+            this.logType = logType;
+            this.stackTrace = stackTrace;
+            
+            timestamps.Add(DateTime.Now);
+        }
+        
+        public override bool Equals(object obj)
+        {
+            PhenomLog other = obj as PhenomLog;
+            return log == other.log && logType == other.logType;
+        }
+
+        public override int GetHashCode()
+        {
+            return log.GetHashCode() ^ logType.GetHashCode();
+        }
     }
 
     /// <summary>
@@ -19,14 +52,22 @@ namespace PhenomTools
     /// </summary>
     public class PhenomConsole : MonoBehaviour
     {
-        private static PhenomConsole instance;
+        public static bool isDebugMode { get; private set; }
 
+        private static PhenomConsole instance;
+        private static bool isEnabled;
+        private static string fileName;
+
+        [SerializeField]
+        private Canvas canvas = null;
         [SerializeField]
         private RectTransform consoleTransform = null;
         [SerializeField]
         private CanvasGroup consoleCanvasGroup = null;
         [SerializeField]
         private CanvasGroup showButtonCanvasGroup = null;
+        [SerializeField]
+        private Toggle collapseToggle = null;
         [SerializeField]
         private Transform logRoot = null;
         [SerializeField]
@@ -40,166 +81,193 @@ namespace PhenomTools
         [SerializeField]
         private ToggleGroup toggleGroup = null;
         [SerializeField]
-        private PhenomConsoleLogItem logItemPrefab = null;
-        //[SerializeField]
-        //private GameObject openLogFileButton = null;
+        private PhenomLogItem logItemPrefab = null;
         [SerializeField]
-        private int maxLines = 100;
+        private GameObject openLogFileButton = null;
+        [SerializeField]
+        private int maxLogItems = 100;
+        [SerializeField]
+        private TextMeshProUGUI[] logTypeCountTexts = null;
+        [SerializeField]
+        private Toggle[] logTypeToggles = null;
 
         [Space]
+        [SerializeField]
+        private bool enableOnAwake = false;
         [SerializeField]
         private bool collapse = true;
         [SerializeField]
         private bool listenForSystemLogs = false;
-
-        [Space]
         [SerializeField]
         private bool useTimestamp = true;
         [SerializeField]
-        private bool useConsoleWriteLine = false;
+        private bool writeLogFile = true;
 
-        private Dictionary<string, PhenomConsoleLogItem> logDict = new Dictionary<string, PhenomConsoleLogItem>();
-        private List<PhenomConsoleLogItem> logItems = new List<PhenomConsoleLogItem>();
+        private List<PhenomLog> logs = new List<PhenomLog>();
+        private List<PhenomLogItem> logItems = new List<PhenomLogItem>();
+        
+        private int currentLogItemCount;
         private int currentLogCount;
-
-        private static string fileName;
+        private Vector3 consoleOriginalPos;
+        // private StreamWriter writer;
+        private int[] logTypeCounts = new int[(int)PhenomLogType.Count];
+        private bool[] logTypeDisplayEnabled = new bool[(int)PhenomLogType.Count] { true, true, true, true, true };
 
         private void Awake()
         {
-#if !TEST
-            Destroy(gameObject);
-            return;
-#else
-
             if (!Application.isBatchMode && instance == null)
             {
                 instance = this;
                 DontDestroyOnLoad(gameObject);
-
-#if !UNITY_EDITOR
-                fileName = Application.persistentDataPath + "/PhenomLog_" + DateTime.UtcNow.ToString("MM-dd_HH-mm-ss") + ".txt";
-                File.Create(fileName);
-//#else
-                //openLogFileButton.SetActive(false);
-#endif
             }
             else
             {
                 Destroy(gameObject);
                 return;
             }
+            
+            if (writeLogFile)
+            {
+                fileName = Application.persistentDataPath + "/PhenomLog_" + DateTime.UtcNow.ToString("MM-dd_HH-mm-ss") + ".txt";
+                File.Create(fileName);
+
+#if UNITY_EDITOR || UNITY_STANDALONE
+                openLogFileButton.SetActive(true);
 #endif
+            }
+            
+#if UNITY_ASSERTIONS
+            logTypeToggles[(int)PhenomLogType.Assertion].gameObject.SetActive(true);
+#else
+            logTypeToggles[(int)PhenomLogType.Assertion].gameObject.SetActive(false);
+#endif
+
+            collapse = PlayerPrefs.GetInt("PC_Collapse", 0).ToBoolBinary();
+            collapseToggle.SetIsOnWithoutNotify(collapse);
+
+            for (int i = 0; i < logTypeDisplayEnabled.Length; i++)
+            {
+                logTypeDisplayEnabled[i] = PlayerPrefs.GetInt("PC_Type_" + i, 1).ToBoolBinary();
+                logTypeToggles[i].SetIsOnWithoutNotify(logTypeDisplayEnabled[i]);
+            }
+
+            if (enableOnAwake)
+                ToggleDebugMode(true);
+            else
+                instance.canvas.enabled = false;
         }
 
-        private void OnEnable()
+        public static void ToggleDebugMode(bool on)
         {
-            if (listenForSystemLogs)
-                Application.logMessageReceived += SystemLogReceived;
-        }
+            isDebugMode = on;
+            instance.canvas.enabled = on;
 
-        private void OnDisable()
-        {
-            if (listenForSystemLogs)
-                Application.logMessageReceived -= SystemLogReceived;
+            if (instance.listenForSystemLogs)
+            { 
+                if (on)
+                    Application.logMessageReceived += instance.SystemLogReceived;
+                else
+                    Application.logMessageReceived -= instance.SystemLogReceived;
+            }
         }
 
         private void SystemLogReceived(string log, string stackTrace, LogType logType)
         {
+            if (logType == LogType.Exception)
+                logType = LogType.Error;
+
             if (instance != null)
-            {
-                instance.NewLine(log.ToString(), (PhenomLogType)logType, stackTrace);
-#if !UNITY_EDITOR
-                instance.WriteToFile(log.ToString());
-#endif
-            }
+                instance.NewLine(log, (PhenomLogType)logType, stackTrace);
         }
 
-        public static void Log(object log, PhenomLogType logType = PhenomLogType.Normal, Object context = null, string stackTrace = null, bool useTimestamp = true, bool useTypePrefix = false)
+        public static void Log(object log, PhenomLogType logType = PhenomLogType.Normal, Object context = null, string stackTrace = null)
         {
-            if (useTypePrefix || (instance != null && instance.useConsoleWriteLine == true))
-                log = string.Concat(GetTypePrefix(logType), log);
-
-            if (useTimestamp && instance != null && instance.useTimestamp == true)
-            {
-                DateTime now = DateTime.Now;
-                log = string.Concat(now.Hour.ToString("00"), ":", now.Minute.ToString("00"), ":", now.Second.ToString("00"), ":", now.Millisecond.ToString("000"), " : ", log);
-            }
-
-            switch (logType)
-            {
-                case PhenomLogType.Normal:
-                    if (instance != null && instance.useConsoleWriteLine == true) Console.WriteLine(log); else Debug.Log(log, context);
-                    break;
-                case PhenomLogType.Warning:
-                    if (instance != null && instance.useConsoleWriteLine == true) Console.WriteLine(log); else Debug.LogWarning(log, context);
-                    break;
-                case PhenomLogType.Error:
-                    if (instance != null && instance.useConsoleWriteLine == true) Console.WriteLine(log); else Debug.LogError(log, context);
-                    break;
-                case PhenomLogType.Assertion:
-                    if (instance != null && instance.useConsoleWriteLine == true) Console.WriteLine(log); else Debug.LogError(log, context);
-                    break;
-                case PhenomLogType.Boon:
-                    if (instance != null && instance.useConsoleWriteLine == true) Console.WriteLine(log); else Debug.Log(log, context);
-                    break;
-            }
+            if (logType == PhenomLogType.Normal)
+                Debug.Log(log, context);
+            else if (logType == PhenomLogType.Warning)
+                Debug.LogWarning(log, context);
+            else if (logType == PhenomLogType.Error)
+                Debug.LogError(log, context);
+            else if (logType == PhenomLogType.Assertion)
+                Debug.LogAssertion(log, context);
+            else if (logType == PhenomLogType.Boon) 
+                Debug.Log(log, context);
 
             if (instance != null && !instance.listenForSystemLogs)
-            {
                 instance.NewLine(log.ToString(), logType, stackTrace);
-#if !UNITY_EDITOR
-                instance.WriteToFile(log.ToString());
-#endif
-            }
         }
-        public static void LogError(object log, Object context = null, string stackTrace = null, bool useTimestamp = true, bool useTypePrefix = false)
+        public static void LogError(object log, Object context = null, string stackTrace = null)
         {
-            Log(log, PhenomLogType.Error, context, stackTrace, useTimestamp, useTypePrefix);
+            Log(log, PhenomLogType.Error, context, stackTrace);
+        }
+        public static void LogWarning(object log, Object context = null, string stackTrace = null)
+        {
+            Log(log, PhenomLogType.Warning, context, stackTrace);
+        }
+        public static void LogAssertion(object log, Object context = null, string stackTrace = null)
+        {
+            Log(log, PhenomLogType.Assertion, context, stackTrace);
+        }
+        public static void LogBoon(object log, Object context = null, string stackTrace = null)
+        {
+            Log(log, PhenomLogType.Boon, context, stackTrace);
         }
 
-        private void NewLine(string log, PhenomLogType logType, string stackTrace)
+        private void NewLine(string logText, PhenomLogType logType, string stackTrace)
         {
-            if (collapse && logDict.TryGetValue(log, out PhenomConsoleLogItem item))
+            currentLogCount++;
+            logTypeCounts[(int)logType]++;
+            logTypeCountTexts[(int)logType].SetText(logTypeCounts[(int)logType].ToBigNumberString());
+            
+            if (logs.AnyOut(l => l.log == logText && l.logType == logType, out PhenomLog log))
             {
-                IncrementLogCountBadge(item);
+                log.count++;
+                log.timestamps.Add(DateTime.Now);
+                
+                if (!logTypeDisplayEnabled[(int)logType])
+                    return;
+                
+                if (collapse)
+                {
+                    if (log.logItems.Count == 1 && log.logItems[0] != null)
+                        log.logItems[0].UpdateInfo(log.count - 1, collapse, useTimestamp);
+                    else
+                        CreateNewLogItem(log);
+                }
+                else
+                {
+                    CreateNewLogItem(log);
+                }
             }
             else
             {
-                if (currentLogCount >= maxLines)
-                {
-                    if (collapse)
-                        logDict.Remove(logItems[0].log);
-
-                    Destroy(logItems[0]);
-                    logItems.RemoveAt(0);
-                }
-
-                CreateNewLogObject(log, logType, stackTrace);
+                log = new PhenomLog(logText, logType, stackTrace);
+                logs.Add(log);
+                
+                if (logTypeDisplayEnabled[(int)logType])
+                    CreateNewLogItem(log);
             }
+            
+            if(writeLogFile && logTypeDisplayEnabled[(int)logType])
+                instance.WriteToFile(log);
         }
 
-        private void CreateNewLogObject(string log, PhenomLogType logType, string stackTrace)
+        private void CreateNewLogItem(PhenomLog log)
         {
-            PhenomConsoleLogItem newLogItem = Instantiate(logItemPrefab, logRoot);
-            newLogItem.Init(log.ToString(), logType, currentLogCount++, stackTrace, toggleGroup);
-
-            logItems.Add(newLogItem);
-
-            if (collapse)
-                logDict.Add(log, newLogItem);
+            if (currentLogItemCount == maxLogItems)
+            {
+                logItems[0].data.logItems.RemoveAt(0);
+                Destroy(logItems[0].gameObject);
+                logItems.RemoveAt(0);
+                currentLogItemCount--;
+            }
+            
+            PhenomLogItem newItem = Instantiate(logItemPrefab, logRoot);
+            newItem.Init(log, toggleGroup,  Math.Max(0, log.count - 1), collapse, useTimestamp);
+            log.logItems.Add(newItem);
+            logItems.Add(newItem);
+            currentLogItemCount++;
         }
-
-        private void IncrementLogCountBadge(PhenomConsoleLogItem item)
-        {
-            item.IncrementCountBadge();
-        }
-
-        //        public void OpenLogFile()
-        //        {
-        //#if !UNITY_EDITOR
-        //            Application.OpenURL(Application.persistentDataPath + "/PhenomLog_" + DateTime.UtcNow.ToString("MM-dd_HH-mm-ss") + ".txt");
-        //#endif
-        //        }
 
         public static void ToggleStackTrace(string text)
         {
@@ -220,14 +288,143 @@ namespace PhenomTools
             }
         }
 
-#if !UNITY_EDITOR
-    public void WriteToFile(string text)
-    {
-        using (StreamWriter writer = new StreamWriter(fileName, true))
+        public void WriteToFile(PhenomLog log)
+        {
+            using StreamWriter writer = new StreamWriter(fileName, true);
+            
+            DateTime timestamp = log.timestamps[^1];
+            string logType = log.logType == PhenomLogType.Normal ? "" : "[" + log.logType + "] ";
+            
+            string text = string.Concat("[", timestamp.Hour.ToString("00"), ":",
+                timestamp.Minute.ToString("00"), ":", timestamp.Second.ToString("00"), ":", timestamp.Millisecond.ToString("000"), "] ", 
+                logType,
+                log.log,
+                "\n   ",
+                log.stackTrace);//.Replace("\n", "\n    "));
+            
             writer.WriteLine(text);
-    }
+        }
+        
+        public void OpenLogFile()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorUtility.RevealInFinder(fileName);
+#elif UNITY_STANDALONE
+            Application.OpenURL(fileName);
 #endif
+        }
 
+        public void ToggleConsoleDisplay(bool on)
+        {
+            DOTween.Kill(consoleCanvasGroup);
+            DOTween.Kill(consoleTransform);
+            DOTween.Kill(showButtonCanvasGroup);
+
+            if (on)
+            {
+                DOTween.To(() => consoleCanvasGroup.alpha, a => consoleCanvasGroup.alpha = a, 1f, .25f);
+                consoleCanvasGroup.blocksRaycasts = true;
+                consoleCanvasGroup.interactable = true;
+
+                DOTween.To(() => showButtonCanvasGroup.alpha, a => showButtonCanvasGroup.alpha = a, 0f, .25f);
+                showButtonCanvasGroup.blocksRaycasts = false;
+                showButtonCanvasGroup.interactable = false;
+
+                consoleOriginalPos = consoleTransform.localPosition;
+                consoleTransform.DOLocalMove(Vector3.zero, .25f);
+            }
+            else
+            {
+                DOTween.To(() => consoleCanvasGroup.alpha, a => consoleCanvasGroup.alpha = a, 0f, .25f);
+                consoleCanvasGroup.blocksRaycasts = false;
+                consoleCanvasGroup.interactable = false;
+
+                DOTween.To(() => showButtonCanvasGroup.alpha, a => showButtonCanvasGroup.alpha = a, 1f, .25f);
+                showButtonCanvasGroup.blocksRaycasts = true;
+                showButtonCanvasGroup.interactable = true;
+
+                consoleTransform.DOLocalMove(consoleOriginalPos, .25f);
+            }
+        }
+
+        public void Clear()
+        {
+            currentLogItemCount = 0;
+            currentLogCount = 0;
+
+            for (int i = 0; i < (int)PhenomLogType.Count; i++)
+            {
+                logTypeCounts[i] = 0;
+                logTypeCountTexts[i].SetText("0");
+            }
+
+            for (int i = 0; i < logItems.Count; i++)
+                Destroy(logItems[i].gameObject);
+            
+            logItems.Clear();
+            logs.Clear();
+        }
+
+        public void ToggleCollapse(bool on)
+        {
+            collapse = on;
+            PlayerPrefs.SetInt("PC_Collapse", collapse.ToIntBinary());
+            Rebuild();
+        }
+
+        public void ToggleLogTypeDisplay(int i)
+        {
+            logTypeDisplayEnabled[i] = !logTypeDisplayEnabled[i];
+            PlayerPrefs.SetInt("PC_Type_" + i, logTypeDisplayEnabled[i].ToIntBinary());
+            Rebuild();
+        }
+
+        private void Rebuild()
+        {
+            currentLogItemCount = 0;
+            logItems.Clear();
+            
+            if (collapse)
+            {
+                foreach(PhenomLog log in logs)
+                {
+                    for (int j = log.logItems.Count - 1; j >= 0; j--) 
+                    {
+                        Destroy(log.logItems[j].gameObject);
+                        log.logItems.RemoveAt(j);
+                    }
+
+                    if (logTypeDisplayEnabled[(int)log.logType])
+                        CreateNewLogItem(log);
+                }
+            }
+            else
+            {
+                List<KeyValuePair<DateTime, PhenomLog>> allLogs = new List<KeyValuePair<DateTime, PhenomLog>>();
+
+                foreach (PhenomLog log in logs)
+                {
+                    foreach (DateTime timestamp in log.timestamps)
+                        allLogs.Add(new KeyValuePair<DateTime, PhenomLog>(timestamp, log));
+
+                    for (int i = 0; i < log.logItems.Count; i++)
+                        Destroy(log.logItems[i].gameObject);
+
+                    log.logItems.Clear();
+                }
+
+                allLogs = allLogs.OrderBy(l => l.Key).ToList();
+
+                foreach (KeyValuePair<DateTime, PhenomLog> kvp in allLogs)
+                {
+                    PhenomLog log = kvp.Value;
+
+                    if (logTypeDisplayEnabled[(int)log.logType])
+                        CreateNewLogItem(log);
+                }
+            }
+        }
+        
         public static Color GetColorOfLogType(PhenomLogType type, float value, float alpha)
         {
             switch (type)
@@ -240,7 +437,6 @@ namespace PhenomTools
                 case PhenomLogType.Warning:
                     return new Color(1 * value, .92f * value, .016f * value, alpha);
                 case PhenomLogType.Error:
-                case PhenomLogType.Exception:
                     return new Color(1 * value, 0 * value, 0 * value, alpha);
                 case PhenomLogType.Boon:
                     return new Color(0 * value, 1 * value, 0 * value, alpha);
@@ -261,51 +457,6 @@ namespace PhenomTools
                     return "Error: ";
                 case PhenomLogType.Warning:
                     return "Warning: ";
-            }
-        }
-
-        private Vector3 consoleOriginalPos;
-        //private Vector3 showButtonOriginalPos;
-        //private Vector3 showButtonOffsetPos;
-
-        public void ToggleConsoleDisplay(bool on)
-        {
-            //if (showButtonOffsetPos == Vector3.zero)
-            //    showButtonOffsetPos = showButtonTransform.localPosition - Vector3.right * 200f;
-
-            DOTween.Kill(consoleCanvasGroup);
-            DOTween.Kill(consoleTransform);
-            DOTween.Kill(showButtonCanvasGroup);
-            //DOTween.Kill(showButtonTransform);
-
-            if (on)
-            {
-                DOTween.To(() => consoleCanvasGroup.alpha, a => consoleCanvasGroup.alpha = a, 1f, .25f);
-                consoleCanvasGroup.blocksRaycasts = true;
-                consoleCanvasGroup.interactable = true;
-
-                DOTween.To(() => showButtonCanvasGroup.alpha, a => showButtonCanvasGroup.alpha = a, 0f, .25f);
-                showButtonCanvasGroup.blocksRaycasts = false;
-                showButtonCanvasGroup.interactable = false;
-
-                consoleOriginalPos = consoleTransform.localPosition;
-                consoleTransform.DOLocalMove(Vector3.zero, .25f);
-
-                //showButtonOriginalPos = showButtonTransform.localPosition;
-                //showButtonTransform.DOLocalMove(showButtonOffsetPos, .5f);
-            }
-            else
-            {
-                DOTween.To(() => consoleCanvasGroup.alpha, a => consoleCanvasGroup.alpha = a, 0f, .25f);
-                consoleCanvasGroup.blocksRaycasts = false;
-                consoleCanvasGroup.interactable = false;
-
-                DOTween.To(() => showButtonCanvasGroup.alpha, a => showButtonCanvasGroup.alpha = a, 1f, .25f);
-                showButtonCanvasGroup.blocksRaycasts = true;
-                showButtonCanvasGroup.interactable = true;
-
-                consoleTransform.DOLocalMove(consoleOriginalPos, .25f);
-                //showButtonTransform.DOLocalMove(showButtonOriginalPos, .5f);
             }
         }
     }
