@@ -14,7 +14,8 @@ public class Tester : PersistentSingleton<Tester>
     [ContextMenu("Test")]
     public void Test()
     {
-        StartCoroutine(TestRoutine());
+        Debug.Log(SystemInfo.deviceUniqueIdentifier);
+        // StartCoroutine(TestRoutine());
     }
 
     private IEnumerator TestRoutine()

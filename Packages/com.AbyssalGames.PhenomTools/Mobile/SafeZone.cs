@@ -4,11 +4,12 @@ namespace PhenomTools
 {
     public class SafeZone : MonoBehaviour
     {
-        public static float width;
-        public static float height;
-
         [SerializeField]
         private RectTransform panel;
+        [SerializeField]
+        private bool top = true;
+        [SerializeField]
+        private bool bot = true;
 
         private void Start()
         {
@@ -25,17 +26,21 @@ namespace PhenomTools
 
         private void ApplySafeArea(Rect r)
         {
-            width = r.width;
-            height = r.height;
-
-            Vector2 anchorMin = r.position;
-            Vector2 anchorMax = r.position + r.size;
-            anchorMin.x /= Screen.width;
-            anchorMin.y /= Screen.height;
-            anchorMax.x /= Screen.width;
-            anchorMax.y /= Screen.height;
-            panel.anchorMin = anchorMin;
-            panel.anchorMax = anchorMax;
+            if (bot)
+            {
+                Vector2 anchorMin = r.position;
+                anchorMin.x /= Screen.width;
+                anchorMin.y /= Screen.height;
+                panel.anchorMin = anchorMin;
+            }
+            
+            if (top)
+            {
+                Vector2 anchorMax = r.position + r.size;
+                anchorMax.x /= Screen.width;
+                anchorMax.y /= Screen.height;
+                panel.anchorMax = anchorMax;
+            }
         }
 
         private void Reset()

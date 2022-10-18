@@ -85,6 +85,8 @@ namespace PhenomTools
         [SerializeField]
         private GameObject openLogFileButton = null;
         [SerializeField]
+        private GameObject copyButton = null;
+        [SerializeField]
         private int maxLogItems = 100;
         [SerializeField]
         private TextMeshProUGUI[] logTypeCountTexts = null;
@@ -109,6 +111,7 @@ namespace PhenomTools
         private int currentLogItemCount;
         private int currentLogCount;
         private Vector3 consoleOriginalPos;
+        private PhenomLog selectedLog;
         // private StreamWriter writer;
         private int[] logTypeCounts = new int[(int)PhenomLogType.Count];
         private bool[] logTypeDisplayEnabled = new bool[(int)PhenomLogType.Count] { true, true, true, true, true };
@@ -269,40 +272,33 @@ namespace PhenomTools
             currentLogItemCount++;
         }
 
-        public static void ToggleStackTrace(string text)
+        public static void ToggleStackTrace(PhenomLog log)
         {
-            if (instance == null || !instance.listenForSystemLogs || string.IsNullOrWhiteSpace(text))
+            if (instance == null || !instance.listenForSystemLogs || string.IsNullOrWhiteSpace(log.log))
                 return;
 
-            instance.stackTraceText.SetText(text);
+            instance.stackTraceText.SetText(log.log);
 
             if (instance.toggleGroup.AnyTogglesOn())
             {
+                instance.selectedLog = log;
                 instance.logsRect.anchorMin = new Vector2(0f, instance.stackTraceRect.anchorMax.y);
                 instance.stackTraceObject.SetActive(true);
+                instance.copyButton.SetActive(true);
             }
             else
             {
+                instance.selectedLog = null;
                 instance.logsRect.anchorMin = new Vector2(0f, 0f);
                 instance.stackTraceObject.SetActive(false);
+                instance.copyButton.SetActive(false);
             }
         }
 
         public void WriteToFile(PhenomLog log)
         {
             using StreamWriter writer = new StreamWriter(fileName, true);
-            
-            DateTime timestamp = log.timestamps[^1];
-            string logType = log.logType == PhenomLogType.Normal ? "" : "[" + log.logType + "] ";
-            
-            string text = string.Concat("[", timestamp.Hour.ToString("00"), ":",
-                timestamp.Minute.ToString("00"), ":", timestamp.Second.ToString("00"), ":", timestamp.Millisecond.ToString("000"), "] ", 
-                logType,
-                log.log,
-                "\n   ",
-                log.stackTrace);//.Replace("\n", "\n    "));
-            
-            writer.WriteLine(text);
+            writer.WriteLine(GetFormattedLogString(log));
         }
         
         public void OpenLogFile()
@@ -312,6 +308,24 @@ namespace PhenomTools
 #elif UNITY_STANDALONE
             Application.OpenURL(fileName);
 #endif
+        }
+
+        public void CopyToClipboard()
+        {
+            GUIUtility.systemCopyBuffer = GetFormattedLogString(selectedLog);
+        }
+
+        public static string GetFormattedLogString(PhenomLog log)
+        {
+            DateTime timestamp = log.timestamps[^1];
+            string logType = log.logType == PhenomLogType.Normal ? "" : "[" + log.logType + "] ";
+            
+            return string.Concat("[", timestamp.Hour.ToString("00"), ":",
+                timestamp.Minute.ToString("00"), ":", timestamp.Second.ToString("00"), ":", timestamp.Millisecond.ToString("000"), "] ", 
+                logType,
+                log.log,
+                "\n",
+                log.stackTrace);//.Replace("\n", "\n    "));
         }
 
         public void ToggleConsoleDisplay(bool on)
@@ -360,6 +374,11 @@ namespace PhenomTools
 
             for (int i = 0; i < logItems.Count; i++)
                 Destroy(logItems[i].gameObject);
+            
+            instance.selectedLog = null;
+            instance.logsRect.anchorMin = new Vector2(0f, 0f);
+            instance.stackTraceObject.SetActive(false);
+            instance.copyButton.SetActive(false);
             
             logItems.Clear();
             logs.Clear();
