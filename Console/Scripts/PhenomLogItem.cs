@@ -69,7 +69,7 @@ namespace PhenomTools
 
         public void OnToggle(bool on)
         {
-            PhenomConsole.ToggleStackTrace(stackTrace);
+            PhenomConsole.ToggleStackTrace(data);
         }
     }
 }
