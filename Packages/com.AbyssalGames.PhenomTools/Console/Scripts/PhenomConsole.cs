@@ -274,10 +274,10 @@ namespace PhenomTools
 
         public static void ToggleStackTrace(PhenomLog log)
         {
-            if (instance == null || !instance.listenForSystemLogs || string.IsNullOrWhiteSpace(log.log))
+            if (instance == null || !instance.listenForSystemLogs || string.IsNullOrWhiteSpace(log.stackTrace))
                 return;
 
-            instance.stackTraceText.SetText(log.log);
+            instance.stackTraceText.SetText(log.stackTrace);
 
             if (instance.toggleGroup.AnyTogglesOn())
             {

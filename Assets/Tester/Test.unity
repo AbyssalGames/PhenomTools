@@ -583,7 +583,7 @@ PrefabInstance:
     - target: {fileID: 8135953765753274181, guid: 41a87a0fc1845444a9195fc3591b344c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00048828125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135953765882516312, guid: 41a87a0fc1845444a9195fc3591b344c,
         type: 3}
@@ -594,6 +594,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PhenomConsole
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135953766624437766, guid: 41a87a0fc1845444a9195fc3591b344c,
+        type: 3}
+      propertyPath: enableOnAwake
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8135953767325168804, guid: 41a87a0fc1845444a9195fc3591b344c,
         type: 3}

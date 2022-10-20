@@ -44,7 +44,7 @@ public class Tester : PersistentSingleton<Tester>
     [ContextMenu("Toggle")]
     public void Start()
     {
-        PhenomConsole.ToggleDebugMode(!PhenomConsole.isDebugMode);
+        // PhenomConsole.ToggleDebugMode(!PhenomConsole.isDebugMode);
         Test();
     }
         //Debug.Log(testString.ToNonCamelCase());
