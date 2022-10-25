@@ -9,6 +9,7 @@ namespace PhenomTools
     {
         private SerializedProperty m_OnClickProperty;
         private SerializedProperty longPressDurationProperty;
+        private SerializedProperty vibrateOnLongPressProperty;
         private SerializedProperty onHoverProperty;
         private SerializedProperty onDownProperty;
         private SerializedProperty onUpProperty;
@@ -30,6 +31,7 @@ namespace PhenomTools
             base.OnEnable();
             m_OnClickProperty = serializedObject.FindProperty("m_OnClick");
             longPressDurationProperty = serializedObject.FindProperty("longPressDuration");
+            vibrateOnLongPressProperty = serializedObject.FindProperty("vibrateOnLongPress");
             onHoverProperty = serializedObject.FindProperty("onHover");
             onDownProperty = serializedObject.FindProperty("onDown");
             onUpProperty = serializedObject.FindProperty("onUp");
@@ -50,8 +52,13 @@ namespace PhenomTools
             base.OnInspectorGUI();
 
             serializedObject.Update();
+            
+            if ((target as ButtonExtended).onLongPress.GetPersistentEventCount() > 0)
+            {
+                EditorGUILayout.PropertyField(longPressDurationProperty);
+                EditorGUILayout.PropertyField(vibrateOnLongPressProperty);
+            }
 
-            EditorGUILayout.PropertyField(longPressDurationProperty);
             eventsFoldout = EditorGUILayout.Foldout(eventsFoldout, "Events");
 
             if (eventsFoldout)

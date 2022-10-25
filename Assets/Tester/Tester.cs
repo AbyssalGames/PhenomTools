@@ -47,6 +47,11 @@ public class Tester : PersistentSingleton<Tester>
         // PhenomConsole.ToggleDebugMode(!PhenomConsole.isDebugMode);
         Test();
     }
+
+    public void Vibrate()
+    {
+        Debug.Log("Vibrate");
+    }
         //Debug.Log(testString.ToNonCamelCase());
     //}
 

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using NaughtyAttributes;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ namespace PhenomTools
     public class ButtonExtended : Button
     {
         public float longPressDuration = .5f;
+        public bool vibrateOnLongPress = false;
 
         public UnityEvent onHover = new UnityEvent();
         public UnityEvent onDown = new UnityEvent();
@@ -54,6 +56,10 @@ namespace PhenomTools
             if (isPointerDown && !longPressTriggered && Time.time - timePressStarted > longPressDuration)
             {
                 longPressTriggered = true;
+
+                if (vibrateOnLongPress)
+                    Vibration.Vibrate(100);
+                
                 onLongPress.Invoke();
             }
         }
