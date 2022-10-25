@@ -9,6 +9,7 @@ namespace PhenomTools
     {
         public Graphic[] graphics = new Graphic[0];
         public float longPressDuration = .5f;
+        public bool vibrateOnLongPress = false;
 
         public UnityEvent onHover = new UnityEvent();
         public UnityEvent onDown = new UnityEvent();
@@ -61,6 +62,10 @@ namespace PhenomTools
             if (isPointerDown && !longPressTriggered && Time.time - timePressStarted > longPressDuration)
             {
                 longPressTriggered = true;
+                
+                if (vibrateOnLongPress)
+                    Vibration.Vibrate(100);
+                
                 onLongPress.Invoke();
             }
         }

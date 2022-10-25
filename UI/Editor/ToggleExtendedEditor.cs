@@ -17,6 +17,7 @@ namespace PhenomTools
         private SerializedProperty m_GroupProperty;
         private SerializedProperty m_IsOnProperty;
         private SerializedProperty longPressDurationProperty;
+        private SerializedProperty vibrateOnLongPressProperty;
 
         private SerializedProperty onHoverProperty;
         private SerializedProperty onDownProperty;
@@ -46,6 +47,7 @@ namespace PhenomTools
             m_IsOnProperty = serializedObject.FindProperty("m_IsOn");
             m_OnValueChangedProperty = serializedObject.FindProperty("onValueChanged");
             longPressDurationProperty = serializedObject.FindProperty("longPressDuration");
+            vibrateOnLongPressProperty = serializedObject.FindProperty("vibrateOnLongPress");
 
             onHoverProperty = serializedObject.FindProperty("onHover");
             onDownProperty = serializedObject.FindProperty("onDown");
@@ -95,7 +97,13 @@ namespace PhenomTools
             EditorGUILayout.PropertyField(m_GraphicsProperty);
             EditorGUI.BeginChangeCheck();
             EditorGUILayout.PropertyField(m_GroupProperty);
-            EditorGUILayout.PropertyField(longPressDurationProperty);
+            
+            if ((target as ToggleExtended).onLongPress.GetPersistentEventCount() > 0)
+            {
+                EditorGUILayout.PropertyField(longPressDurationProperty);
+                EditorGUILayout.PropertyField(vibrateOnLongPressProperty);
+            }
+            
             if (EditorGUI.EndChangeCheck())
             {
                 if (!Application.isPlaying)
