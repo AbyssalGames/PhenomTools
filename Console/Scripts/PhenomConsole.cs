@@ -277,7 +277,7 @@ namespace PhenomTools
             if (instance == null || !instance.listenForSystemLogs || string.IsNullOrWhiteSpace(log.stackTrace))
                 return;
 
-            instance.stackTraceText.SetText(log.stackTrace);
+            instance.stackTraceText.SetText(log.log + "\r\n" + log.stackTrace);
 
             if (instance.toggleGroup.AnyTogglesOn())
             {
