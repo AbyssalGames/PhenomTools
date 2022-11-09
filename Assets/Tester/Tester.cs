@@ -10,48 +10,107 @@ using System.Text.RegularExpressions;
 public class Tester : PersistentSingleton<Tester>
 {
     //public string testString;
+    
+    [SerializeField]
+    private AdvancedInputFieldPlugin.AdvancedInputField inputField = null;
+    [SerializeField]
+    private LayoutElement keyboardExpander = null;
+
+    public bool isKeyboardOpen;
 
     [ContextMenu("Test")]
     public void Test()
     {
-        Debug.Log(SystemInfo.deviceUniqueIdentifier);
+        
+        // Debug.Log(SystemInfo.deviceUniqueIdentifier);
         // StartCoroutine(TestRoutine());
     }
 
-    private IEnumerator TestRoutine()
+    public void Open()
     {
-        PhenomConsole.LogAssertion("Test1");
-        yield return new WaitForSeconds(.2f);
-        PhenomConsole.Log("Test");
-        yield return new WaitForSeconds(.2f);
-        PhenomConsole.LogAssertion("Test");
-        yield return new WaitForSeconds(.2f);
-        PhenomConsole.LogError("Test");
-        yield return new WaitForSeconds(.2f);
-        PhenomConsole.LogAssertion("Test");
-        yield return new WaitForSeconds(.2f);
-        PhenomConsole.LogError("Test");
-        yield return new WaitForSeconds(.2f);
-        PhenomConsole.LogAssertion("Test");
-        yield return new WaitForSeconds(.2f);
-        PhenomConsole.LogError("Test");
-        yield return new WaitForSeconds(.2f);
-        PhenomConsole.Log("Test");
-        yield return new WaitForSeconds(.2f);
-        StartCoroutine(TestRoutine());
+        isKeyboardOpen = true;
+
+        // if (isKeyboardOpen)
+        //     return;
+        // inputField.
+
+        // toolbar.gameObject.SetActive(true);
+        // keyboardExpander.gameObject.SetActive(true);
+        //
+        // inputField.Select();
+
+        // float height = TouchScreenKeyboard.area.height;
+        // PhenomUtils.DelayActionByTime(1f, () =>
+        // {
+        // float height = PhenomUtils.GetKeyboardHeightRelative((keyboardExpander.transform.parent as RectTransform).rect.height, false);
+        // keyboardExpander.minHeight = height;
+        Debug.Log("Open");
+        // });
     }
 
-    [ContextMenu("Toggle")]
-    public void Start()
+    public void Close()
     {
-        // PhenomConsole.ToggleDebugMode(!PhenomConsole.isDebugMode);
-        Test();
+        isKeyboardOpen = false;
+        // if (!isKeyboardOpen)
+        //     return;
+        Debug.Log("Close");
+        keyboardExpander.minHeight = 0;
     }
 
-    public void Vibrate()
+    protected virtual void Update()
     {
-        Debug.Log("Vibrate");
+        if (isKeyboardOpen)
+        {
+            // isKeyboardOpen = true;
+            keyboardExpander.minHeight = PhenomUtils.GetKeyboardHeightRelative((keyboardExpander.transform.parent as RectTransform).rect.height, false);
+        }
+        // else if(isKeyboardOpen)
+        // {
+            // Close();
+            // isKeyboardOpen = false;
+        // }
     }
+
+    public void OnTextSelectionChanged(int startIndex, int endIndex)
+    {
+        // if(endIndex - startIndex > 0)
+        //     Debug.Log("Selected: " + inputField.Text.Substring(startIndex, endIndex-startIndex));
+    }
+
+    // private IEnumerator TestRoutine()
+    // {
+    //     PhenomConsole.LogAssertion("Test1");
+    //     yield return new WaitForSeconds(.2f);
+    //     PhenomConsole.Log("Test");
+    //     yield return new WaitForSeconds(.2f);
+    //     PhenomConsole.LogAssertion("Test");
+    //     yield return new WaitForSeconds(.2f);
+    //     PhenomConsole.LogError("Test");
+    //     yield return new WaitForSeconds(.2f);
+    //     PhenomConsole.LogAssertion("Test");
+    //     yield return new WaitForSeconds(.2f);
+    //     PhenomConsole.LogError("Test");
+    //     yield return new WaitForSeconds(.2f);
+    //     PhenomConsole.LogAssertion("Test");
+    //     yield return new WaitForSeconds(.2f);
+    //     PhenomConsole.LogError("Test");
+    //     yield return new WaitForSeconds(.2f);
+    //     PhenomConsole.Log("Test");
+    //     yield return new WaitForSeconds(.2f);
+    //     StartCoroutine(TestRoutine());
+    // }
+
+    // [ContextMenu("Toggle")]
+    // public void Start()
+    // {
+    //     // PhenomConsole.ToggleDebugMode(!PhenomConsole.isDebugMode);
+    //     Test();
+    // }
+
+    // public void Vibrate()
+    // {
+    //     Debug.Log("Vibrate");
+    // }
         //Debug.Log(testString.ToNonCamelCase());
     //}
 
