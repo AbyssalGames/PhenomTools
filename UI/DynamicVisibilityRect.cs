@@ -76,7 +76,7 @@ namespace PhenomTools
                 checkUnityEvent.RemoveListener(CheckVisibility);
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             CheckVisibility();
         }
