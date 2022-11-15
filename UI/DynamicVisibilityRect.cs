@@ -76,7 +76,7 @@ namespace PhenomTools
                 checkUnityEvent.RemoveListener(CheckVisibility);
         }
 
-        protected virtual void OnEnable()
+        private void OnEnable()
         {
             CheckVisibility();
         }
@@ -88,6 +88,9 @@ namespace PhenomTools
 
         public virtual void CheckVisibility()
         {
+            if (otherRect == null)
+                return;
+            
             isVisible = rect.Overlaps(otherRect);
 
             if (isVisible != overlapsCache)
