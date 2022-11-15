@@ -88,6 +88,9 @@ namespace PhenomTools
 
         public virtual void CheckVisibility()
         {
+            if (otherRect == null)
+                return;
+            
             isVisible = rect.Overlaps(otherRect);
 
             if (isVisible != overlapsCache)
