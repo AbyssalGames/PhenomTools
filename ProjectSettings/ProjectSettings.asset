@@ -51,7 +51,7 @@ PlayerSettings:
   m_MTRendering: 1
   mipStripping: 0
   numberOfMipsStripped: 0
-  m_StackTraceTypes: 010000000100000001000000010000000100000001000000
+  m_StackTraceTypes: 020000000200000002000000020000000200000001000000
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
   iosUseCustomAppBackgroundBehavior: 0
@@ -134,7 +134,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.2.5.0
+  bundleVersion: 1.2.9.0
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -163,7 +163,7 @@ PlayerSettings:
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
-  AndroidBundleVersionCode: 1020000
+  AndroidBundleVersionCode: 1020900
   AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -251,15 +251,15 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: P:/GitHub/Abyssal/user.keystore
+  AndroidKeyaliasName: phenomnom
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
-  androidUseCustomKeystore: 0
+  androidUseCustomKeystore: 1
   m_AndroidBanners:
   - width: 320
     height: 180
@@ -762,22 +762,22 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    Android: EASY_MOBILE;EASY_MOBILE_PRO
-    CloudRendering: EASY_MOBILE;EASY_MOBILE_PRO
-    EmbeddedLinux: EASY_MOBILE;EASY_MOBILE_PRO
-    GameCoreScarlett: EASY_MOBILE;EASY_MOBILE_PRO
-    GameCoreXboxOne: EASY_MOBILE;EASY_MOBILE_PRO
-    Lumin: EASY_MOBILE;EASY_MOBILE_PRO
-    Nintendo Switch: EASY_MOBILE;EASY_MOBILE_PRO
-    PS4: EASY_MOBILE;EASY_MOBILE_PRO
-    PS5: EASY_MOBILE;EASY_MOBILE_PRO
-    Stadia: EASY_MOBILE;EASY_MOBILE_PRO
-    Standalone: TEST;RHSD;EASY_MOBILE;EASY_MOBILE_PRO
-    WebGL: EASY_MOBILE;EASY_MOBILE_PRO
-    Windows Store Apps: EASY_MOBILE;EASY_MOBILE_PRO
-    XboxOne: EASY_MOBILE;EASY_MOBILE_PRO
-    iPhone: EASY_MOBILE;EASY_MOBILE_PRO
-    tvOS: EASY_MOBILE;EASY_MOBILE_PRO
+    Android: EASY_MOBILE;EASY_MOBILE_PRO;EM_CAMERA_GALLERY
+    CloudRendering: EASY_MOBILE;EASY_MOBILE_PRO;EM_CAMERA_GALLERY
+    EmbeddedLinux: EASY_MOBILE;EASY_MOBILE_PRO;EM_CAMERA_GALLERY
+    GameCoreScarlett: EASY_MOBILE;EASY_MOBILE_PRO;EM_CAMERA_GALLERY
+    GameCoreXboxOne: EASY_MOBILE;EASY_MOBILE_PRO;EM_CAMERA_GALLERY
+    Lumin: EASY_MOBILE;EASY_MOBILE_PRO;EM_CAMERA_GALLERY
+    Nintendo Switch: EASY_MOBILE;EASY_MOBILE_PRO;EM_CAMERA_GALLERY
+    PS4: EASY_MOBILE;EASY_MOBILE_PRO;EM_CAMERA_GALLERY
+    PS5: EASY_MOBILE;EASY_MOBILE_PRO;EM_CAMERA_GALLERY
+    Stadia: EASY_MOBILE;EASY_MOBILE_PRO;EM_CAMERA_GALLERY
+    Standalone: TEST;RHSD;EASY_MOBILE;EASY_MOBILE_PRO;EM_CAMERA_GALLERY
+    WebGL: EASY_MOBILE;EASY_MOBILE_PRO;EM_CAMERA_GALLERY
+    Windows Store Apps: EASY_MOBILE;EASY_MOBILE_PRO;EM_CAMERA_GALLERY
+    XboxOne: EASY_MOBILE;EASY_MOBILE_PRO;EM_CAMERA_GALLERY
+    iPhone: EASY_MOBILE;EASY_MOBILE_PRO;EM_CAMERA_GALLERY
+    tvOS: EASY_MOBILE;EASY_MOBILE_PRO;EM_CAMERA_GALLERY
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
