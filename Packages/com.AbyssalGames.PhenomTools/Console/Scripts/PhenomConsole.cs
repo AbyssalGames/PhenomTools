@@ -317,7 +317,7 @@ namespace PhenomTools
 
         public static string GetFormattedLogString(PhenomLog log)
         {
-            DateTime timestamp = log.timestamps[^1];
+            DateTime timestamp = log.timestamps[log.timestamps.Count - 1];
             string logType = log.logType == PhenomLogType.Normal ? "" : "[" + log.logType + "] ";
             
             return string.Concat("[", timestamp.Hour.ToString("00"), ":",
