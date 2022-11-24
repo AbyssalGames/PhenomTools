@@ -297,8 +297,8 @@ namespace PhenomTools
 
         public void WriteToFile(PhenomLog log)
         {
-            using StreamWriter writer = new StreamWriter(fileName, true);
-            writer.WriteLine(GetFormattedLogString(log));
+            using (StreamWriter writer = new StreamWriter(fileName, true))
+                writer.WriteLine(GetFormattedLogString(log));
         }
         
         public void OpenLogFile()
