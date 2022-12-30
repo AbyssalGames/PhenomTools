@@ -42,6 +42,10 @@ namespace PhenomTools
         protected override void OnEnable()
         {
             onValueChanged.AddListener(OnValueChanged);
+            
+            foreach (Graphic graphic in graphics)
+                PlayEffect(graphic, true);
+            
             base.OnEnable();
         }
 
@@ -49,12 +53,6 @@ namespace PhenomTools
         {
             onValueChanged.RemoveListener(OnValueChanged);
             base.OnDisable();
-        }
-
-        protected override void Start()
-        {
-            foreach (Graphic graphic in graphics)
-                PlayEffect(graphic, true);
         }
 
         private void Update()
