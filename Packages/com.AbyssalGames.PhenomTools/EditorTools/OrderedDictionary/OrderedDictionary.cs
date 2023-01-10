@@ -83,6 +83,15 @@ namespace PhenomTools
 			return _innerList[index].Value;
 		}
 		/// <summary>
+		/// Gets the key at the specified index
+		/// </summary>
+		/// <param name="index">The index of the key to retrieve</param>
+		/// <returns>The key of the item at the specified index</returns>
+		public TKey GetKeyAt(int index)
+		{
+			return _innerList[index].Key;
+		}
+		/// <summary>
 		/// Sets the value at the specified index
 		/// </summary>
 		/// <param name="index">The index of the value to set</param>
