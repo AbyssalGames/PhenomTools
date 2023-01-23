@@ -11,11 +11,11 @@ namespace PhenomTools
     [RequireComponent(typeof(RectTransform))]
     public class DynamicVisibilityRect : MonoBehaviour
     {
-        public event Action onFirstBecameVisible;
-        public event Action onBecameVisible;
-        public event Action onBecameHidden;
-        public event Action onBecameFullyVisible;
-        public event Action onBecamePartlyHidden;
+        public Action onFirstBecameVisible;
+        public Action onBecameVisible;
+        public Action onBecameHidden;
+        public Action onBecameFullyVisible;
+        public Action onBecamePartlyHidden;
         public bool isVisible { get; private set; }
         public bool isFullyVisible { get; private set; }
 
