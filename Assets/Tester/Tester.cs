@@ -11,71 +11,72 @@ public class Tester : PersistentSingleton<Tester>
 {
     //public string testString;
     
-    [SerializeField]
-    private AdvancedInputFieldPlugin.AdvancedInputField inputField = null;
-    [SerializeField]
-    private LayoutElement keyboardExpander = null;
-
-    public bool isKeyboardOpen;
+    // [SerializeField]
+    // private AdvancedInputFieldPlugin.AdvancedInputField inputField = null;
+    // [SerializeField]
+    // private LayoutElement keyboardExpander = null;
+    //
+    // public bool isKeyboardOpen;
 
     [ContextMenu("Test")]
     public void Test()
     {
-        
+        Debug.Log("verylongstringverylongstringverylongstringverylongstringverylongstring".Truncate(10));
+        Debug.Log("short".Truncate(10));
         // Debug.Log(SystemInfo.deviceUniqueIdentifier);
         // StartCoroutine(TestRoutine());
     }
 
-    public void Open()
-    {
-        isKeyboardOpen = true;
+    // public void Open()
+    // {
+    //     isKeyboardOpen = true;
+    //
+    //     // if (isKeyboardOpen)
+    //     //     return;
+    //     // inputField.
+    //
+    //     // toolbar.gameObject.SetActive(true);
+    //     // keyboardExpander.gameObject.SetActive(true);
+    //     //
+    //     // inputField.Select();
+    //
+    //     // float height = TouchScreenKeyboard.area.height;
+    //     // PhenomUtils.DelayActionByTime(1f, () =>
+    //     // {
+    //     // float height = PhenomUtils.GetKeyboardHeightRelative((keyboardExpander.transform.parent as RectTransform).rect.height, false);
+    //     // keyboardExpander.minHeight = height;
+    //     Debug.Log("Open");
+    //     // });
+    // }
 
-        // if (isKeyboardOpen)
-        //     return;
-        // inputField.
-
-        // toolbar.gameObject.SetActive(true);
-        // keyboardExpander.gameObject.SetActive(true);
-        //
-        // inputField.Select();
-
-        // float height = TouchScreenKeyboard.area.height;
-        // PhenomUtils.DelayActionByTime(1f, () =>
-        // {
-        // float height = PhenomUtils.GetKeyboardHeightRelative((keyboardExpander.transform.parent as RectTransform).rect.height, false);
-        // keyboardExpander.minHeight = height;
-        Debug.Log("Open");
-        // });
-    }
-
-    public void Close()
-    {
-        isKeyboardOpen = false;
-        // if (!isKeyboardOpen)
-        //     return;
-        Debug.Log("Close");
-        keyboardExpander.minHeight = 0;
-    }
-
-    protected virtual void Update()
-    {
-        if (isKeyboardOpen)
-        {
-            // isKeyboardOpen = true;
-            keyboardExpander.minHeight = PhenomUtils.GetKeyboardHeightRelative((keyboardExpander.transform.parent as RectTransform).rect.height, false);
-        }
-        // else if(isKeyboardOpen)
-        // {
-            // Close();
-            // isKeyboardOpen = false;
-        // }
-    }
-
-    public void OnTextSelectionChanged(int startIndex, int endIndex)
-    {
-        // if(endIndex - startIndex > 0)
-        //     Debug.Log("Selected: " + inputField.Text.Substring(startIndex, endIndex-startIndex));
-    }
+    // public void Close()
+    // {
+    //     isKeyboardOpen = false;
+    //     // if (!isKeyboardOpen)
+    //     //     return;
+    //     Debug.Log("Close");
+    //     keyboardExpander.minHeight = 0;
+    // }
+    //
+    // protected virtual void Update()
+    // {
+    //     if (isKeyboardOpen)
+    //     {
+    //         // isKeyboardOpen = true;
+    //         keyboardExpander.minHeight = PhenomUtils.GetKeyboardHeightRelative((keyboardExpander.transform.parent as RectTransform).rect.height, false);
+    //     }
+    //     // else if(isKeyboardOpen)
+    //     // {
+    //         // Close();
+    //         // isKeyboardOpen = false;
+    //     // }
+    // }
+    //
+    // public void OnTextSelectionChanged(int startIndex, int endIndex)
+    // {
+    //     // if(endIndex - startIndex > 0)
+    //     //     Debug.Log("Selected: " + inputField.Text.Substring(startIndex, endIndex-startIndex));
+    // }
 
     // private IEnumerator TestRoutine()
     // {

@@ -87,6 +87,12 @@ namespace PhenomTools
             //string s = (i / Mathf.Pow(10, iLength)).ToString("F" + length.ToString());
             return (i / Mathf.Pow(10, iLength)).ToString("F" + length).Remove(0, 2); // remove the 0 and decimal point
         }
+        
+        public static string Truncate(this string value, int maxLength)
+        {
+            if (string.IsNullOrEmpty(value)) return value;
+            return value.Length <= maxLength ? value : value.Substring(0, maxLength); 
+        }
 
         public static string ToBigNumberString(this byte num) => ToBigNumberString((ulong)num);
         public static string ToBigNumberString(this int num) => ToBigNumberString((ulong)num);
