@@ -14,6 +14,8 @@ namespace PhenomTools
         public UnityEvent onBeginDrag = new UnityEvent();
         public UnityEvent onEndDrag = new UnityEvent();
 
+        public bool isDragging { get; private set; }
+
         protected override void Awake()
         {
             base.Awake();
@@ -40,13 +42,40 @@ namespace PhenomTools
         public override void OnBeginDrag(PointerEventData eventData)
         {
             base.OnBeginDrag(eventData);
+            isDragging = true;
             onBeginDrag?.Invoke();
         }
 
         public override void OnEndDrag(PointerEventData eventData)
         {
             base.OnEndDrag(eventData);
+            isDragging = false;
             onEndDrag?.Invoke();
+        }
+        
+        public void CustomSetVerticalPosition(float value)
+        {
+            if(isDragging)
+            {
+                float anchoredYBeforeSet = content.anchoredPosition.y;
+                content.anchoredPosition = Vector2.up * value;
+                // SetNormalizedPosition(value, 1);
+                m_ContentStartPosition += new Vector2(0f, content.anchoredPosition.y - anchoredYBeforeSet);
+            }
+            else
+                content.anchoredPosition = Vector2.up * value;
+        }
+        
+        public void CustomSetVerticalNormalizedPosition(float value)
+        {
+            if(isDragging)
+            {
+                float anchoredYBeforeSet = content.anchoredPosition.y;
+                SetNormalizedPosition(value, 1);
+                m_ContentStartPosition += new Vector2(0f, content.anchoredPosition.y - anchoredYBeforeSet);
+            }
+            else
+                SetNormalizedPosition(value, 1);
         }
     }
 }
