@@ -11,6 +11,12 @@ namespace PhenomTools
     [RequireComponent(typeof(RectTransform))]
     public class DynamicVisibilityRect : MonoBehaviour
     {
+        [Flags]
+        public enum VisibilityCheckType
+        {
+            None, Frames, Time, Event, UnityEvent
+        }
+        
         public Action onFirstBecameVisible;
         public Action onBecameVisible;
         public Action onBecameHidden;
@@ -18,6 +24,7 @@ namespace PhenomTools
         public Action onBecamePartlyHidden;
         public bool isVisible { get; private set; }
         public bool isFullyVisible { get; private set; }
+        public VisibilityCheckType visibilityCheckType { get; private set; }
 
         private RectTransform rect;
         private RectTransform otherRect;
@@ -26,33 +33,50 @@ namespace PhenomTools
         private bool overlapsCache;
         private bool containsCache;
 
-        private IEnumerator visibilityCheckRoutine;
+        private List<IEnumerator> visibilityCheckRoutines = new List<IEnumerator>();
+
+        private int framesBetweenChecks;
+        private float timeBetweenChecks;
         private Action checkEvent;
         private UnityEvent checkUnityEvent;
 
         public virtual void BeginVisibilityChecks(RectTransform otherRect, int framesBetweenChecks = 0)
         {
+            if (visibilityCheckType.HasFlag(VisibilityCheckType.Frames))
+                return;
+            
             rect = transform as RectTransform;
             this.otherRect = otherRect;
+            this.framesBetweenChecks = framesBetweenChecks;
+            visibilityCheckType |= VisibilityCheckType.Frames;
 
-            visibilityCheckRoutine = PhenomUtils.RepeatActionByFrames(framesBetweenChecks, CheckVisibility);
+            visibilityCheckRoutines.Add(PhenomUtils.RepeatActionByFrames(framesBetweenChecks, CheckVisibility));
             CheckVisibility();
         }
 
         public virtual void BeginVisibilityChecks(RectTransform otherRect, float timeBetweenChecks)
         {
+            if (visibilityCheckType.HasFlag(VisibilityCheckType.Time))
+                return;
+
             rect = transform as RectTransform;
             this.otherRect = otherRect;
+            this.timeBetweenChecks = timeBetweenChecks;
+            visibilityCheckType |= VisibilityCheckType.Time;
 
-            visibilityCheckRoutine = PhenomUtils.RepeatActionByTime(timeBetweenChecks, CheckVisibility);
+            visibilityCheckRoutines.Add(PhenomUtils.RepeatActionByTime(timeBetweenChecks, CheckVisibility));
             CheckVisibility();
         }
 
         public virtual void BeginVisibilityChecks(RectTransform otherRect, Action checkEvent)
         {
+            if (visibilityCheckType.HasFlag(VisibilityCheckType.Event))
+                return;
+
             rect = transform as RectTransform;
             this.otherRect = otherRect;
             this.checkEvent = checkEvent;
+            visibilityCheckType |= VisibilityCheckType.Event;
 
             checkEvent += CheckVisibility;
             CheckVisibility();
@@ -60,9 +84,13 @@ namespace PhenomTools
 
         public virtual void BeginVisibilityChecks(RectTransform otherRect, UnityEvent checkUnityEvent)
         {
+            if (visibilityCheckType.HasFlag(VisibilityCheckType.UnityEvent))
+                return;
+
             rect = transform as RectTransform;
             this.otherRect = otherRect;
             this.checkUnityEvent = checkUnityEvent;
+            visibilityCheckType |= VisibilityCheckType.UnityEvent;
 
             checkUnityEvent.AddListener(CheckVisibility);
             CheckVisibility();
@@ -70,19 +98,35 @@ namespace PhenomTools
 
         public virtual void EndVisibilityChecks()
         {
-            if (visibilityCheckRoutine != null)
-                visibilityCheckRoutine.Stop();
-
+            foreach (IEnumerator visibilityCheckRoutine in visibilityCheckRoutines)
+                visibilityCheckRoutine?.Stop();
+            
+            visibilityCheckRoutines.Clear();
+            
+            framesBetweenChecks = 0;
+            timeBetweenChecks = 0;
+            
             if (checkEvent != null)
                 checkEvent -= CheckVisibility;
-
-            if (checkUnityEvent != null)
-                checkUnityEvent.RemoveListener(CheckVisibility);
+            
+            checkUnityEvent?.RemoveListener(CheckVisibility);
+            
+            visibilityCheckType = VisibilityCheckType.None;
         }
 
         protected virtual void OnEnable()
         {
-            CheckVisibility();
+            if (visibilityCheckType == VisibilityCheckType.None)
+                return;
+            
+            if(visibilityCheckType.HasFlag(VisibilityCheckType.Frames))
+                BeginVisibilityChecks(otherRect, framesBetweenChecks);
+            if(visibilityCheckType.HasFlag(VisibilityCheckType.Time))
+                BeginVisibilityChecks(otherRect, timeBetweenChecks);
+            if(visibilityCheckType.HasFlag(VisibilityCheckType.Event))
+                BeginVisibilityChecks(otherRect, checkEvent);
+            if(visibilityCheckType.HasFlag(VisibilityCheckType.UnityEvent))
+                BeginVisibilityChecks(otherRect, checkUnityEvent);
         }
 
         protected virtual void OnDisable()
