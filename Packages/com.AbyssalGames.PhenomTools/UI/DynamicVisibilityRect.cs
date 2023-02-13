@@ -24,7 +24,8 @@ namespace PhenomTools
         public Action onBecamePartlyHidden;
         public bool isVisible { get; private set; }
         public bool isFullyVisible { get; private set; }
-        public VisibilityCheckType visibilityCheckType;// { get; private set; }
+        public bool isChecking{ get; private set; }
+        public VisibilityCheckType visibilityCheckType { get; private set; }
 
         private RectTransform rect;
         private RectTransform otherRect;
@@ -46,6 +47,7 @@ namespace PhenomTools
             this.otherRect = otherRect;
             this.framesBetweenChecks = framesBetweenChecks;
             visibilityCheckType |= VisibilityCheckType.Frames;
+            isChecking = true;
 
             visibilityCheckRoutines.Add(PhenomUtils.RepeatActionByFrames(framesBetweenChecks, CheckVisibility));
             CheckVisibility();
@@ -57,6 +59,7 @@ namespace PhenomTools
             this.otherRect = otherRect;
             this.timeBetweenChecks = timeBetweenChecks;
             visibilityCheckType |= VisibilityCheckType.Time;
+            isChecking = true;
 
             visibilityCheckRoutines.Add(PhenomUtils.RepeatActionByTime(timeBetweenChecks, CheckVisibility));
             CheckVisibility();
@@ -68,6 +71,7 @@ namespace PhenomTools
             this.otherRect = otherRect;
             this.checkEvent = checkEvent;
             visibilityCheckType |= VisibilityCheckType.Event;
+            isChecking = true;
 
             checkEvent += CheckVisibility;
             CheckVisibility();
@@ -79,6 +83,7 @@ namespace PhenomTools
             this.otherRect = otherRect;
             this.checkUnityEvent = checkUnityEvent;
             visibilityCheckType |= VisibilityCheckType.UnityEvent;
+            isChecking = true;
 
             checkUnityEvent.AddListener(CheckVisibility);
             CheckVisibility();
@@ -95,6 +100,8 @@ namespace PhenomTools
                 checkEvent -= CheckVisibility;
             
             checkUnityEvent?.RemoveListener(CheckVisibility);
+
+            isChecking = false;
         }
 
         public virtual void EndVisibilityChecks()
@@ -110,10 +117,7 @@ namespace PhenomTools
         protected virtual void OnEnable()
         {
             if (visibilityCheckType == VisibilityCheckType.None)
-            {
-                Debug.LogError("Hmm");
                 return;
-            }
             
             if(visibilityCheckType.HasFlag(VisibilityCheckType.Frames))
                 BeginVisibilityChecks(otherRect, framesBetweenChecks);
