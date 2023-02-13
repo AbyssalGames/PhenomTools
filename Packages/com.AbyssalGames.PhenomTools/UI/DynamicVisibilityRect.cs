@@ -14,7 +14,7 @@ namespace PhenomTools
         [Flags]
         public enum VisibilityCheckType
         {
-            None, Frames, Time, Event, UnityEvent
+            None = 0, Frames = 1 << 0, Time = 1 << 1, Event = 1 << 2, UnityEvent = 1 << 3
         }
         
         public Action onFirstBecameVisible;
@@ -24,7 +24,7 @@ namespace PhenomTools
         public Action onBecamePartlyHidden;
         public bool isVisible { get; private set; }
         public bool isFullyVisible { get; private set; }
-        public VisibilityCheckType visibilityCheckType { get; private set; }
+        public VisibilityCheckType visibilityCheckType;// { get; private set; }
 
         private RectTransform rect;
         private RectTransform otherRect;
@@ -42,9 +42,6 @@ namespace PhenomTools
 
         public virtual void BeginVisibilityChecks(RectTransform otherRect, int framesBetweenChecks = 0)
         {
-            if (visibilityCheckType.HasFlag(VisibilityCheckType.Frames))
-                return;
-            
             rect = transform as RectTransform;
             this.otherRect = otherRect;
             this.framesBetweenChecks = framesBetweenChecks;
@@ -56,9 +53,6 @@ namespace PhenomTools
 
         public virtual void BeginVisibilityChecks(RectTransform otherRect, float timeBetweenChecks)
         {
-            if (visibilityCheckType.HasFlag(VisibilityCheckType.Time))
-                return;
-
             rect = transform as RectTransform;
             this.otherRect = otherRect;
             this.timeBetweenChecks = timeBetweenChecks;
@@ -70,9 +64,6 @@ namespace PhenomTools
 
         public virtual void BeginVisibilityChecks(RectTransform otherRect, Action checkEvent)
         {
-            if (visibilityCheckType.HasFlag(VisibilityCheckType.Event))
-                return;
-
             rect = transform as RectTransform;
             this.otherRect = otherRect;
             this.checkEvent = checkEvent;
@@ -84,9 +75,6 @@ namespace PhenomTools
 
         public virtual void BeginVisibilityChecks(RectTransform otherRect, UnityEvent checkUnityEvent)
         {
-            if (visibilityCheckType.HasFlag(VisibilityCheckType.UnityEvent))
-                return;
-
             rect = transform as RectTransform;
             this.otherRect = otherRect;
             this.checkUnityEvent = checkUnityEvent;
@@ -96,28 +84,36 @@ namespace PhenomTools
             CheckVisibility();
         }
 
-        public virtual void EndVisibilityChecks()
+        public virtual void PauseVisibilityChecks()
         {
             foreach (IEnumerator visibilityCheckRoutine in visibilityCheckRoutines)
                 visibilityCheckRoutine?.Stop();
             
             visibilityCheckRoutines.Clear();
             
-            framesBetweenChecks = 0;
-            timeBetweenChecks = 0;
-            
             if (checkEvent != null)
                 checkEvent -= CheckVisibility;
             
             checkUnityEvent?.RemoveListener(CheckVisibility);
+        }
+
+        public virtual void EndVisibilityChecks()
+        {
+            PauseVisibilityChecks();
             
+            framesBetweenChecks = 0;
+            timeBetweenChecks = 0;
+
             visibilityCheckType = VisibilityCheckType.None;
         }
 
         protected virtual void OnEnable()
         {
             if (visibilityCheckType == VisibilityCheckType.None)
+            {
+                Debug.LogError("Hmm");
                 return;
+            }
             
             if(visibilityCheckType.HasFlag(VisibilityCheckType.Frames))
                 BeginVisibilityChecks(otherRect, framesBetweenChecks);
@@ -131,7 +127,7 @@ namespace PhenomTools
 
         protected virtual void OnDisable()
         {
-            EndVisibilityChecks();
+            PauseVisibilityChecks();
         }
 
         public virtual void CheckVisibility()

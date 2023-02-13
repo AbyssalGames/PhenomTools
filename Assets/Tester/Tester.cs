@@ -1,3 +1,4 @@
+using System;
 using PhenomTools;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,8 +8,51 @@ using UnityEngine.UI;
 using TMPro;
 using System.Text.RegularExpressions;
 
-public class Tester : PersistentSingleton<Tester>
+public class Tester : PhenomTools.Singleton<Tester>
 {
+    public RectTransform intersectionRect;
+    public ScrollRectExtended scrollRect;
+    public Transform parent;
+    public TestItem testItemPrefab;
+    public List<TestItem> items;
+    
+    [ContextMenu("Start")]
+    public void Start()
+    {
+        foreach (TestItem item in items)
+        {
+            item.BeginVisibilityChecks(intersectionRect, scrollRect.onMove);
+            item.BeginVisibilityChecks(intersectionRect, 1f);
+            item.BeginVisibilityChecks(intersectionRect, 90);
+        }
+        
+        for (int i = 0; i < 10; i++)
+        {
+            TestItem item = Instantiate(testItemPrefab, parent);
+            item.Initialize();
+            item.BeginVisibilityChecks(intersectionRect, scrollRect.onMove);
+            item.BeginVisibilityChecks(intersectionRect, 1f);
+            item.BeginVisibilityChecks(intersectionRect, 90);
+            items.Add(item);
+        }
+        
+        // foreach (TestItem testItem in items)
+        // {
+        //     testItem.BeginVisibilityChecks(other);
+        // }
+    }
+
+    [ContextMenu("End")]
+    public void End()
+    {
+        foreach (TestItem item in items)
+        {
+            item.EndVisibilityChecks();
+        }
+    }
+    
+    
+
     //public string testString;
     
     // [SerializeField]
@@ -18,14 +62,14 @@ public class Tester : PersistentSingleton<Tester>
     //
     // public bool isKeyboardOpen;
 
-    [ContextMenu("Test")]
-    public void Test()
-    {
-        Debug.Log("verylongstringverylongstringverylongstringverylongstringverylongstring".Truncate(10));
-        Debug.Log("short".Truncate(10));
-        // Debug.Log(SystemInfo.deviceUniqueIdentifier);
-        // StartCoroutine(TestRoutine());
-    }
+    // [ContextMenu("Test")]
+    // public void Test()
+    // {
+    //     Debug.Log("verylongstringverylongstringverylongstringverylongstringverylongstring".Truncate(10));
+    //     Debug.Log("short".Truncate(10));
+    //     // Debug.Log(SystemInfo.deviceUniqueIdentifier);
+    //     // StartCoroutine(TestRoutine());
+    // }
 
     // public void Open()
     // {
