@@ -24,13 +24,12 @@ namespace PhenomTools
         public Action onBecamePartlyHidden;
         public bool isVisible { get; private set; }
         public bool isFullyVisible { get; private set; }
-        public bool isChecking{ get; private set; }
+        public bool isChecking { get; private set; }
+        public bool hasBeenVisible { get; private set; }
         public VisibilityCheckType visibilityCheckType { get; private set; }
 
         private RectTransform rect;
         private RectTransform otherRect;
-
-        private bool hasBeenVisible;
         private bool overlapsCache;
         private bool containsCache;
 
@@ -131,6 +130,14 @@ namespace PhenomTools
 
         protected virtual void OnDisable()
         {
+            if (otherRect != null && isVisible)
+            {
+                BecameHidden();
+
+                isVisible = false;
+                isFullyVisible = false;
+            }
+            
             PauseVisibilityChecks();
         }
 
