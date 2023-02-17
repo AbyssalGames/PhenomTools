@@ -25,7 +25,7 @@ namespace PhenomTools
         public bool isVisible { get; private set; }
         public bool isFullyVisible { get; private set; }
         public bool isChecking { get; private set; }
-        public bool hasBeenVisible;
+        public bool hasBeenVisible { get; set; }
         public VisibilityCheckType visibilityCheckType { get; private set; }
 
         private RectTransform rect;
