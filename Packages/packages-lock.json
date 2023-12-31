@@ -9,13 +9,6 @@
         "com.unity.textmeshpro": ""
       }
     },
-    "com.dbrizov.naughtyattributes": {
-      "version": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "6ff42768879f6d3721f27c1fc1ba0c1d145a3f27"
-    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
@@ -43,7 +36,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.16",
+      "version": "3.0.24",
       "depth": 0,
       "source": "registry",
       "dependencies": {
