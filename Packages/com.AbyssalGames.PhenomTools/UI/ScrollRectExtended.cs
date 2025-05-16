@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace PhenomTools
 {
-    public class ScrollRectExtended : ScrollRect, IBeginDragHandler, IEndDragHandler
+    public class ScrollRectExtended : ScrollRect
     {
         public UnityEvent onMove = new UnityEvent();
         public UnityEvent onDrag = new UnityEvent();
@@ -59,7 +59,6 @@ namespace PhenomTools
             {
                 float anchoredYBeforeSet = content.anchoredPosition.y;
                 content.anchoredPosition = Vector2.up * value;
-                // SetNormalizedPosition(value, 1);
                 m_ContentStartPosition += new Vector2(0f, content.anchoredPosition.y - anchoredYBeforeSet);
             }
             else

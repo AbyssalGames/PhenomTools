@@ -1,44 +1,46 @@
+using System;
 using UnityEngine;
 
 namespace PhenomTools
 {
-    public class Singleton<T> : MonoBehaviour where T : Component
+  public class Singleton<T> : MonoBehaviour where T : Component
+  {
+    private static T instance;
+
+    public static T Instance
     {
-        private static T _instance;
-        public static T Instance
+      get
+      {
+        if (instance != null)
+          return instance;
+
+        if (FindObjectsOfType(typeof(T)) is not T[] { Length: > 0 } objs) 
+          return instance;
+        
+        instance = objs[0];
+
+        if (objs.Length > 1)
         {
-            get
-            {
-                if (_instance == null)
-                {
-                    T[] objs = FindObjectsOfType(typeof(T)) as T[];
-
-                    if (objs.Length > 0)
-                    {
-                        _instance = objs[0];
-
-                        if (objs.Length > 1)
-                        {
-                            for (int i = 1; i < objs.Length; i++)
-                            {
-                                Debug.Log("Duplicate of " + typeof(T).Name + " found, destroying " + objs[i].gameObject.name);
-                                Destroy(objs[i].gameObject);
-                            }
-                        }
-
-                        Debug.Log("Instance of " + typeof(T).Name + " set to " + _instance.gameObject.name, _instance.gameObject);
-                        return _instance;
-                    }
-
-                    Debug.LogError("No instance of " + typeof(T).Name + " in the scene.");
-                }
-
-                return _instance;
-            }
-            set
-            {
-                _instance = value;
-            }
+          for (int i = 1; i < objs.Length; i++)
+            Destroy(objs[i].gameObject);
         }
+
+        return instance;
+      }
+      set => instance = value;
     }
+
+    protected void Awake()
+    {
+      if(instance == null)
+      {
+        instance = this as T;
+        DontDestroyOnLoad(gameObject);
+      }
+      else
+      {
+        DestroyImmediate(gameObject);
+      }
+    }
+  }
 }

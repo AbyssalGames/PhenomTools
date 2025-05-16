@@ -263,7 +263,7 @@ namespace PhenomTools
         public static void Cannonball(this Rigidbody body, Vector3 targetPoint, float initialAngle, bool inheritVelocity = false, float additionalGravity = 0)
         {
             if (!inheritVelocity)
-                body.velocity = Vector3.zero;
+                body.linearVelocity = Vector3.zero;
 
             float gravity = -Physics.gravity.y - additionalGravity;
             //Debug.Log(gravity);

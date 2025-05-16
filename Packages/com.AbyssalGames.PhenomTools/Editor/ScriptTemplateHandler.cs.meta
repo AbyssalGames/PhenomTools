@@ -3,7 +3,14 @@ guid: 983a2c64629eaa94e8dce7fb63242ee2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - classTemplate: {fileID: 4900000, guid: 6f8a098ea3171d3419ae7e47669c3be5, type: 3}
+  - monoBehaviourTemplate: {fileID: 4900000, guid: e5970e406bac0fd46bf539cc3969b04b,
+      type: 3}
+  - structTemplate: {fileID: 4900000, guid: f66d3ae7c44614048a17bdd28e62bf8d, type: 3}
+  - scriptableObjectTemplate: {fileID: 4900000, guid: 9eed86cce76869a4198ff0d41eb238a8,
+      type: 3}
+  - editorTemplate: {fileID: 4900000, guid: 55c75429428e8e64ca5c5a1fde245467, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -1,0 +1,13 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace NAMESPACE
+{
+  [CreateAssetMenu(menuName = "MyGame/Data/#SCRIPTNAME#", fileName = "New #SCRIPTNAME#", order = 0)]
+  public class #SCRIPTNAME# : ScriptableObject
+  {
+    #NOTRIM#
+  }
+}
