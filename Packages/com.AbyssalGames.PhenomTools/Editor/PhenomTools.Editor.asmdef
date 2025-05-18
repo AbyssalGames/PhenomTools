@@ -2,8 +2,7 @@
     "name": "PhenomTools.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:ccf2d654365268a4eb08352a5f343d1c",
-        "GUID:0ba589267ed4d3a459dcc95f9cc6b1d0"
+        "GUID:6cd7007db6aa26f43b79927c6cd5fd3a"
     ],
     "includePlatforms": [
         "Editor"

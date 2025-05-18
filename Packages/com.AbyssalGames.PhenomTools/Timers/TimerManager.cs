@@ -9,7 +9,7 @@ namespace PhenomTools
 
         public static void RegisterNewTimer(TimeKeeper timer)
         {
-            CoroutineHolder.StartCoroutine(timer.keeperCoroutine);
+            // CoroutineHolder.StartCoroutine(timer.keeperCoroutine);
 
             if(!activeTimeKeepers.Contains(timer))
                 activeTimeKeepers.Add(timer);

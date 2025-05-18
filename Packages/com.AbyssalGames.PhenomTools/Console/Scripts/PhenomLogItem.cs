@@ -1,4 +1,5 @@
 ﻿using System;
+using PhenomTools.Utility;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -58,7 +59,7 @@ namespace PhenomTools
 
             if (collapse)
             {
-                countText.SetText(count.ToBigNumberString());
+                countText.SetText(count.TryFormatAsVeryLargeNumber());
             }
             else
             {

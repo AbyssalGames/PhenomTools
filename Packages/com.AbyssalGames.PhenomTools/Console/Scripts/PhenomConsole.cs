@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using PhenomTools.Utility;
 using Object = UnityEngine.Object;
 
 namespace PhenomTools
@@ -219,7 +220,7 @@ namespace PhenomTools
         {
             currentLogCount++;
             logTypeCounts[(int)logType]++;
-            logTypeCountTexts[(int)logType].SetText(logTypeCounts[(int)logType].ToBigNumberString());
+            logTypeCountTexts[(int)logType].SetText(logTypeCounts[(int)logType].TryFormatAsVeryLargeNumber());
             
             if (logs.AnyOut(l => l.log == logText && l.logType == logType, out PhenomLog log))
             {

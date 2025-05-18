@@ -10,7 +10,7 @@ namespace PhenomTools
     public class LongPressEventTrigger : UIBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
     {
         [Tooltip("How long must pointer be down on this object to trigger a long press")]
-        public float durationThreshold = 1.0f;
+        public float durationThreshold = .5f;
 
         public UnityEvent onLongPress = new UnityEvent();
 

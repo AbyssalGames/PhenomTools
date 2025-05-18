@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using System.Text.RegularExpressions;
+using PhenomTools.UI;
+using PhenomTools.Utility;
 
-public class Tester : PhenomTools.Singleton<Tester>
+public class Tester : Singleton<Tester>
 {
     public RectTransform intersectionRect;
     public ScrollRectExtended scrollRect;
@@ -21,9 +23,9 @@ public class Tester : PhenomTools.Singleton<Tester>
     {
         foreach (TestItem item in items)
         {
-            item.BeginVisibilityChecks(intersectionRect, scrollRect.onMove);
-            item.BeginVisibilityChecks(intersectionRect, 1f);
-            item.BeginVisibilityChecks(intersectionRect, 90);
+            // item.BeginVisibilityChecks(intersectionRect, scrollRect.onMove);
+            // item.BeginVisibilityChecks(intersectionRect, 1f);
+            // item.BeginVisibilityChecks(intersectionRect, 90);
         }
         
         for (int i = 0; i < 10; i++)
