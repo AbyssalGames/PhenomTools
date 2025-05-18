@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="77d3d4a3-1cf5-4f92-9d82-1034e224b2ff" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PhenomTools/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PhenomTools/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PhenomTools/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PhenomTools/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PhenomTools/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vsconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AdvancedInputField.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AdvancedInputField.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AnubisInputField.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnubisInputField.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/LED0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/LED0.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/LED1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/LED1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/LED2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/LED2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/LED3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/LED3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/LED4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/LED4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/LED5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/LED5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/arrow_down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/arrow_down.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/arrow_up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/arrow_up.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/cancel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/cancel.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/copyIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/copyIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/deleteIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/deleteIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/error.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/error.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/find.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/find.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/gearIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/gearIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/hourglass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/hourglass.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/inspector_header_bulk_audio_importer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/inspector_header_bulk_audio_importer.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/inspector_header_master_audio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/inspector_header_master_audio.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/muteOff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/muteOff.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/muteOn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/muteOn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/nextTrackIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/nextTrackIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/pauseIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/pauseIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/pauseIconOn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/pauseIconOn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/playIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/playIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/prevTrackIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/prevTrackIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/randomIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/randomIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/ready.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/ready.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/save.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/save.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/soloOff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/soloOff.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/soloOn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/soloOn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/speakerIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/speakerIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/stopIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor Default Resources/MasterAudio/stopIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhenomExtras.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhenomExtras/Misc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhenomExtras/Misc/CopyPastePose.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhenomExtras/Misc/CopyPastePose.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhenomExtras/Misc/MixamoHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhenomExtras/Misc/MixamoHelper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhenomExtras/Misc/PhenomExtras.Editor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhenomExtras/Misc/PhenomExtras.Editor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhenomExtras/Presets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhenomExtras/Presets/AudioImporter.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhenomExtras/Presets/AudioImporter.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhenomExtras/Presets/ButtonExtended.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhenomExtras/Presets/ButtonExtended.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhenomExtras/Presets/TextureImporter.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhenomExtras/Presets/TextureImporter.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MasterAudio.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MasterAudio/MasterAudioSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MasterAudio/MasterAudioSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UnityPlayerAccountSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UnityPlayerAccountSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Empty.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Empty.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleSceneSettings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleSceneSettings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_AD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_AD.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Aim.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Aim.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_AlarmClock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_AlarmClock.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_AlarmOff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_AlarmOff.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_AlarmOn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_AlarmOn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Archer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Archer.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ArrowDown.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ArrowDown.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ArrowLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ArrowLeft.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ArrowLeftRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ArrowLeftRight.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ArrowRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ArrowRight.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ArrowUp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ArrowUp.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ArrowUpDown.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ArrowUpDown.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Attachment.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Attachment.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Attack.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Award.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Award.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BackSpace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BackSpace.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Bag1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Bag1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Ban.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Ban.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Battery0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Battery0.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Battery100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Battery100.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Battery25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Battery25.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Battery50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Battery50.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Battery75.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Battery75.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BatteryEmpty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BatteryEmpty.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Bluetooth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Bluetooth.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Bomb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Bomb.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Bone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Bone.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BoneBroken.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BoneBroken.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Book.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Book.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Bookmark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Bookmark.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnDpad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnDpad.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnDpadDirDown.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnDpadDirDown.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnDpadDirLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnDpadDirLeft.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnDpadDirRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnDpadDirRight.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnDpadDirUp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnDpadDirUp.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnDpadHorizontal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnDpadHorizontal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnDpadVertical.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnDpadVertical.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnL1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnL1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnL2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnL2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnL3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnL3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnPsCircle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnPsCircle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnPsCircleRound.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnPsCircleRound.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnPsCross.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnPsCross.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnPsCrossRound.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnPsCrossRound.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnPsSquareRound.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnPsSquareRound.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnPsTriangle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnPsTriangle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnPsTriangleRound.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnPsTriangleRound.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnR1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnR1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnR2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnR2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnR3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnR3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnXboxA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnXboxA.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnXboxARound.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnXboxARound.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnXboxB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnXboxB.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnXboxBRound.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnXboxBRound.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnXboxX.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnXboxX.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnXboxXRound.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnXboxXRound.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnXboxY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnXboxY.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnXboxYRound.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_BtnXboxYRound.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Calc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Calc.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CalendarConfirm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CalendarConfirm.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CalendarMinus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CalendarMinus.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CalendarMonth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CalendarMonth.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CalendarPlus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CalendarPlus.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CalendarWeek.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CalendarWeek.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Camera.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Camera.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Camera2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Camera2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CardClubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CardClubs.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CardDiamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CardDiamonds.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CardHearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CardHearts.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CardSpades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CardSpades.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Cash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Cash.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Chainlink.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Chainlink.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Chat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Chat.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Checkbox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Checkbox.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Clapperboard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Clapperboard.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ClapperboardPlay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ClapperboardPlay.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Close.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Cloud.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Code.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Code.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Coffee.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Coffee.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Coin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Coin.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ColorPalette.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ColorPalette.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Community.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Community.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Compass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Compass.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Confirm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Confirm.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CreditCard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CreditCard.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Crosshairs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Crosshairs.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Crown.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Crown.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CurrencyBitcoin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CurrencyBitcoin.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CurrencyDollar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CurrencyDollar.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CurrencyEuro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CurrencyEuro.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CurrencyPound.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CurrencyPound.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CurrencyRuble.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CurrencyRuble.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CurrencyWon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CurrencyWon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CurrencyYen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_CurrencyYen.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Curves.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Curves.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_DIce3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_DIce3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Database.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Database.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Defend.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Defend.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Delete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Delete.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_DeviceComputer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_DeviceComputer.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_DevicePhone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_DevicePhone.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Dice1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Dice1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Dice2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Dice2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Dice4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Dice4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Dice5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Dice5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Dice6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Dice6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Eat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Eat.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Edit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Edit.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_EllipsisHorizontal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_EllipsisHorizontal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_EllipsisVertical.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_EllipsisVertical.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Energy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Energy.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Eraser.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Eraser.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Exit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Exit.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FaithChristianity.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FaithChristianity.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FaithIslam.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FaithIslam.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FaithJudaism.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FaithJudaism.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FaithTaosim.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FaithTaosim.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FastForward.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FastForward.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FileCopy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FileCopy.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FileCut.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FileCut.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FileDocument.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FileDocument.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FileFolder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FileFolder.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FilePaste.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FilePaste.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Fill.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Fill.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Film.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Film.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FilmPlay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FilmPlay.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Filter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Filter.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Fire.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Fire.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FirstAid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FirstAid.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Flag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Flag.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Frost.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Frost.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FullscreenEnter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FullscreenEnter.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FullscreenExit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_FullscreenExit.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Gauge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Gauge.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Gem.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Gem.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_GenderFemale1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_GenderFemale1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_GenderFemale2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_GenderFemale2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_GenderMale1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_GenderMale1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_GenderMale2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_GenderMale2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Gift.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Gift.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Glass.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Globe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Globe.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Graduation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Graduation.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Hammer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Hammer.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Hashtag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Hashtag.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_HealthKit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_HealthKit.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Heart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Heart.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_HeartEmpty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_HeartEmpty.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Hierarchy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Hierarchy.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_History.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_History.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Home.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ID.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ID.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Inbox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Inbox.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InboxIn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InboxIn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InboxOut.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InboxOut.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Infinite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Infinite.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Info.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Info.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InputController.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InputController.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InputJoystick.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InputJoystick.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InputKeyboard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InputKeyboard.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvBelt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvBelt.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvBoots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvBoots.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvChest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvChest.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvCloak.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvCloak.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvGloves.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvGloves.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvHelmet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvHelmet.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvPants.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvPants.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvPotion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvPotion.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvRing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_InvRing.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Invisible.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Invisible.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Key.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Key.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Leaf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Leaf.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_LightbulbOff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_LightbulbOff.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_LightbulbOn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_LightbulbOn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Like.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Like.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_List.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_List.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Location.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Location.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_LockLocked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_LockLocked.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_LockUnlocked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_LockUnlocked.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Loop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Loop.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Mail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Mail.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_MailRead.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_MailRead.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Map.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Map.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Medal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Medal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Meeple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Meeple.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Menu.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_MenuHorizontal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_MenuHorizontal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Merge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Merge.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_MicOff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_MicOff.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_MicOn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_MicOn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Minus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Minus.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Mirror.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Mirror.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Moon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Moon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_MultiPlayer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_MultiPlayer.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_MusicOff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_MusicOff.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_MusicOn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_MusicOn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_NewPlayer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_NewPlayer.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_OnOff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_OnOff.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Paperplane.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Paperplane.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Pause.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Paw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Paw.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Pen1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Pen1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Pen2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Pen2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Percentage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Percentage.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Photo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Photo.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Pin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Pin.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_PineTree.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_PineTree.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Play.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_PlayBackwards.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_PlayBackwards.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Plus.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Print.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Print.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Puzzle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Puzzle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Question.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Question.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_QuoteLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_QuoteLeft.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_QuoteRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_QuoteRight.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_RSS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_RSS.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Rain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Rain.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Rainstorm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Rainstorm.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Receipt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Receipt.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Recycle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Recycle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Refresh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Refresh.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Reload.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Reload.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Repeat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Repeat.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Reply.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Reply.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ReplyAll.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ReplyAll.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Results.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Results.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Return.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Return.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Rewind.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Rewind.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Ribbon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Ribbon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_RotateLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_RotateLeft.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_RotateRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_RotateRight.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Sale.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Sale.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Sandclock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Sandclock.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Save1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Save1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Save2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Save2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Search.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Select.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Select.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Settings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Settings.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Share.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Share.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Share2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Share2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ShoppingBag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ShoppingBag.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ShoppingCart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ShoppingCart.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Shuffle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Shuffle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SignIn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SignIn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SignOut.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SignOut.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SinglePlayer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SinglePlayer.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Skip.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Skip.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SkipBack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SkipBack.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Skull.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Skull.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Sleep.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Sleep.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Sliders.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Sliders.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SmileyDead.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SmileyDead.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SmileyHappy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SmileyHappy.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SmileyLaughing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SmileyLaughing.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SmileyNeutral.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SmileyNeutral.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SmileyUnhappy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SmileyUnhappy.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialDiscord.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialDiscord.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialFacebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialFacebook.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialFoursquare.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialFoursquare.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialInstagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialInstagram.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialKickstarter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialKickstarter.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialLine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialLine.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialMessenger.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialMessenger.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialReddit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialReddit.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialTwitch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialTwitch.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialTwitter1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialTwitter1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialTwitter2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialTwitter2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialVK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialVK.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialWhatsapp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialWhatsapp.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialYoutube.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SocialYoutube.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SortABC1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SortABC1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SortABC2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SortABC2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SortSIze2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SortSIze2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SortSize1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SortSize1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SoundOff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SoundOff.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SoundOn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_SoundOn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Star.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Star.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_StarEmpty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_StarEmpty.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Stats.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Stats.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Steam.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Steam.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Stop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Stop.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Stopwatch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Stopwatch.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Store.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Store.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Suitcase.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Suitcase.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Suitcase2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Suitcase2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Sun.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Sun.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Swap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Swap.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_TShirt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_TShirt.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_TV.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_TV.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Target.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Target.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Terminal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Terminal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Text.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Text.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Thermo1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Thermo1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Thermo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Thermo2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Thermo3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Thermo3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Thermo4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Thermo4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Ticket.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Ticket.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ToggleNext.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ToggleNext.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ToggleOff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ToggleOff.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ToggleOn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ToggleOn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_TogglePrevious.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_TogglePrevious.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Trending.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Trending.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Trophy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Trophy.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_TurnAround.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_TurnAround.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_TurnLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_TurnLeft.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_TurnRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_TurnRight.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_USB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_USB.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Umbrella.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Umbrella.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_University.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_University.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Versus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Versus.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Visible.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Visible.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Wallet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Wallet.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Warning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Warning.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Water.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Water.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Wifi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Wifi.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_WifiProblem.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_WifiProblem.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Wrench.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_Wrench.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ZoomIn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ZoomIn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ZoomOut.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/128px/UI_Icon_ZoomOut.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/Source.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/Source/SimpleVectorIcons.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Simple Vector Icons/Source/SimpleVectorIcons.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tester.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tester/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tester/Editor/TesterEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tester/Editor/TesterEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tester/OtherLayout.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tester/OtherLayout.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tester/Test.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tester/Test.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tester/TestItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tester/TestItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tester/TestItem.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tester/TestItem.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tester/Tester.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tester/Tester.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/SDFFunctions.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/SDFFunctions.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP LIT.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP LIT.shadergraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP UNLIT.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP UNLIT.shadergraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile-2-Pass.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile-2-Pass.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-URP Lit.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-URP Lit.shadergraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-URP Unlit.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-URP Unlit.shadergraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectFiles/RoundedRectangle.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/MemorySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/MemorySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/MultiplayerManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/MultiplayerManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/NetworkManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NetworkManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.services.core/Settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/VersionControlSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/VersionControlSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/XRPackageSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/XRSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/XRSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snippets/SerializeFieldSnippet.snippet" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2xHAC4EjrRPXyX9DF1FcVLTfQWB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Steve\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Steve\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\Steve\\AppData\\Local\\Symbols\\src"
+    ]
+  }
+}]]></component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.23f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath P:\GitHub\Abyssal\PhenomTools -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="P:\GitHub\Abyssal\PhenomTools" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.23f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath P:\GitHub\Abyssal\PhenomTools -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="P:\GitHub\Abyssal\PhenomTools" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="77d3d4a3-1cf5-4f92-9d82-1034e224b2ff" name="Changes" comment="" />
+      <created>1747584494691</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747584494691</updated>
+      <workItem from="1747584498049" duration="14000" />
+    </task>
+    <servers />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
