@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using PhenomTools;
+using PhenomTools.UI;
+using PhenomTools.Utility;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
@@ -33,7 +37,7 @@ namespace PhenomTools
         private bool overlapsCache;
         private bool containsCache;
 
-        private List<IEnumerator> visibilityCheckRoutines = new List<IEnumerator>();
+        private Dictionary<UniTask, CancellationTokenSource> visibilityCheckRoutines = new();
 
         private int framesBetweenChecks;
         private float timeBetweenChecks;
@@ -48,7 +52,8 @@ namespace PhenomTools
             visibilityCheckType |= VisibilityCheckType.Frames;
             isChecking = true;
 
-            visibilityCheckRoutines.Add(PhenomUtils.RepeatActionByFrames(framesBetweenChecks, CheckVisibility));
+            CancellationTokenSource newToken = new();
+            visibilityCheckRoutines.Add(UniTaskUtils.RepeatActionByFrames(framesBetweenChecks, CheckVisibility, newToken.Token), newToken);
             CheckVisibility();
         }
 
@@ -60,7 +65,8 @@ namespace PhenomTools
             visibilityCheckType |= VisibilityCheckType.Time;
             isChecking = true;
 
-            visibilityCheckRoutines.Add(PhenomUtils.RepeatActionByTime(timeBetweenChecks, CheckVisibility));
+            CancellationTokenSource newToken = new();
+            visibilityCheckRoutines.Add(UniTaskUtils.RepeatActionByTime(timeBetweenChecks, CheckVisibility, newToken.Token), newToken);
             CheckVisibility();
         }
 
@@ -90,8 +96,8 @@ namespace PhenomTools
 
         public virtual void PauseVisibilityChecks()
         {
-            foreach (IEnumerator visibilityCheckRoutine in visibilityCheckRoutines)
-                visibilityCheckRoutine?.Stop();
+            foreach (CancellationTokenSource token in visibilityCheckRoutines.Values)
+                token.Cancel();
             
             visibilityCheckRoutines.Clear();
             

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using PhenomTools;
+using PhenomTools.Utility;
 
 namespace PhenomTools
 {
@@ -21,7 +23,7 @@ namespace PhenomTools
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void AutoInitialize()
         {
-            CoroutineHolder.instance.gameObject.AddComponent<DeviceOrientationManager>();
+            // CoroutineHolder.instance.gameObject.AddComponent<DeviceOrientationManager>();
         }
 #endif
 
@@ -33,7 +35,7 @@ namespace PhenomTools
                 int index = forceOrientation.ToIndex();
 
                 deviceOrientationIndex = index;
-                PhenomUtils.DelayActionByFrames(2, () => onDeviceOrientationChanged?.Invoke(deviceOrientationIndex));
+                UniTask.DelayFrame(2).ContinueWith(() => onDeviceOrientationChanged?.Invoke(deviceOrientationIndex));
 
                 //Physics.gravity = GetOrientationDirection(index) * -10f;
 

@@ -34,7 +34,7 @@ namespace PhenomTools
             {
                 if (useSeconds)
                 {
-                    if(updateMode == AnimatorUpdateMode.Normal || updateMode == AnimatorUpdateMode.AnimatePhysics)
+                    if(updateMode == AnimatorUpdateMode.Normal || updateMode == AnimatorUpdateMode.Fixed)
                         yield return waitSecond;
                     else if(updateMode == AnimatorUpdateMode.UnscaledTime)
                         yield return waitRealSecond;
@@ -49,7 +49,7 @@ namespace PhenomTools
                     {
                         currentTime = Mathf.Clamp(startTime + duration - Time.realtimeSinceStartup, 0, duration);
                     }
-                    else if (updateMode == AnimatorUpdateMode.AnimatePhysics)
+                    else if (updateMode == AnimatorUpdateMode.Fixed)
                     {
                         yield return waitFixed;
                         currentTime = Mathf.Clamp(currentTime - Time.fixedDeltaTime, 0, duration);

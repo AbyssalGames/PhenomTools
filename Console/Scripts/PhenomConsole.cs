@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using PhenomTools.Utility;
 using Object = UnityEngine.Object;
 
 namespace PhenomTools
@@ -59,62 +60,61 @@ namespace PhenomTools
         private static string fileName;
 
         [SerializeField]
-        private Canvas canvas = null;
+        private Canvas canvas;
         [SerializeField]
-        private RectTransform consoleTransform = null;
+        private RectTransform consoleTransform;
         [SerializeField]
-        private CanvasGroup consoleCanvasGroup = null;
+        private CanvasGroup consoleCanvasGroup;
         [SerializeField]
-        private CanvasGroup showButtonCanvasGroup = null;
+        private CanvasGroup showButtonCanvasGroup;
         [SerializeField]
-        private Toggle collapseToggle = null;
+        private Toggle collapseToggle;
         [SerializeField]
-        private Transform logRoot = null;
+        private Transform logRoot;
         [SerializeField]
-        private RectTransform logsRect = null;
+        private RectTransform logsRect;
         [SerializeField]
-        private GameObject stackTraceObject = null;
+        private GameObject stackTraceObject;
         [SerializeField]
-        private RectTransform stackTraceRect = null;
+        private RectTransform stackTraceRect;
         [SerializeField]
-        private TextMeshProUGUI stackTraceText = null;
+        private TextMeshProUGUI stackTraceText;
         [SerializeField]
-        private ToggleGroup toggleGroup = null;
+        private ToggleGroup toggleGroup;
         [SerializeField]
-        private PhenomLogItem logItemPrefab = null;
+        private PhenomLogItem logItemPrefab;
         [SerializeField]
-        private GameObject openLogFileButton = null;
+        private GameObject openLogFileButton;
         [SerializeField]
-        private GameObject copyButton = null;
+        private GameObject copyButton;
         [SerializeField]
         private int maxLogItems = 100;
         [SerializeField]
-        private TextMeshProUGUI[] logTypeCountTexts = null;
+        private TextMeshProUGUI[] logTypeCountTexts;
         [SerializeField]
-        private Toggle[] logTypeToggles = null;
+        private Toggle[] logTypeToggles;
 
         [Space]
         [SerializeField]
-        private bool enableOnAwake = false;
+        private bool enableOnAwake;
         [SerializeField]
         private bool collapse = true;
         [SerializeField]
-        private bool listenForSystemLogs = false;
+        private bool listenForSystemLogs;
         [SerializeField]
         private bool useTimestamp = true;
         [SerializeField]
         private bool writeLogFile = true;
 
-        private List<PhenomLog> logs = new List<PhenomLog>();
-        private List<PhenomLogItem> logItems = new List<PhenomLogItem>();
+        private List<PhenomLog> logs = new();
+        private List<PhenomLogItem> logItems = new();
         
         private int currentLogItemCount;
         private int currentLogCount;
         private Vector3 consoleOriginalPos;
         private PhenomLog selectedLog;
-        // private StreamWriter writer;
         private int[] logTypeCounts = new int[(int)PhenomLogType.Count];
-        private bool[] logTypeDisplayEnabled = new bool[(int)PhenomLogType.Count] { true, true, true, true, true };
+        private bool[] logTypeDisplayEnabled = { true, true, true, true, true };
 
         private void Awake()
         {
@@ -220,7 +220,7 @@ namespace PhenomTools
         {
             currentLogCount++;
             logTypeCounts[(int)logType]++;
-            logTypeCountTexts[(int)logType].SetText(logTypeCounts[(int)logType].ToBigNumberString());
+            logTypeCountTexts[(int)logType].SetText(logTypeCounts[(int)logType].TryFormatAsVeryLargeNumber());
             
             if (logs.AnyOut(l => l.log == logText && l.logType == logType, out PhenomLog log))
             {
@@ -297,7 +297,7 @@ namespace PhenomTools
 
         public void WriteToFile(PhenomLog log)
         {
-            using (StreamWriter writer = new StreamWriter(fileName, true))
+            using (StreamWriter writer = new(fileName, true))
                 writer.WriteLine(GetFormattedLogString(log));
         }
         
@@ -419,7 +419,7 @@ namespace PhenomTools
             }
             else
             {
-                List<KeyValuePair<DateTime, PhenomLog>> allLogs = new List<KeyValuePair<DateTime, PhenomLog>>();
+                List<KeyValuePair<DateTime, PhenomLog>> allLogs = new();
 
                 foreach (PhenomLog log in logs)
                 {

@@ -1,14 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using PhenomTools;
 using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
-namespace PhenomTools
+namespace PhenomTools.UI
 {
     public class InputFieldExtended : TMP_InputField
     {

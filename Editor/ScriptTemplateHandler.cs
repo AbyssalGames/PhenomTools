@@ -3,36 +3,53 @@ using UnityEngine;
 
 namespace PhenomTools
 {
-    public static class ScriptTemplateHandler
+  public class ScriptTemplateHandler : ScriptableObject
+  {
+    public Object classTemplate, monoBehaviourTemplate, structTemplate, scriptableObjectTemplate, editorTemplate;
+    
+    [MenuItem("Assets/Create C# Script/Class", false, 1)]
+    public static void CreateClass()
     {
-        [MenuItem("Assets/Create C# Script/Class", false, 1)]
-        public static void CreateClass()
-        {
-            ProjectWindowUtil.CreateScriptAssetFromTemplateFile(string.Concat(Application.dataPath.Remove(Application.dataPath.Length - 7), "/Templates/PhenomTemplates-NewClass.cs.txt"), "NewClass.cs");
-        }
-
-        [MenuItem("Assets/Create C# Script/Monobehavior", false, 1)]
-        public static void CreateMonoBehavior()
-        {
-            ProjectWindowUtil.CreateScriptAssetFromTemplateFile(string.Concat(Application.dataPath.Remove(Application.dataPath.Length - 7), "/Templates/PhenomTemplates-NewMonoBehavior.cs.txt"), "NewMonobehavior.cs");
-        }
-
-        [MenuItem("Assets/Create C# Script/Struct", false, 1)]
-        public static void CreateStruct()
-        {
-            ProjectWindowUtil.CreateScriptAssetFromTemplateFile(string.Concat(Application.dataPath.Remove(Application.dataPath.Length - 7), "/Templates/PhenomTemplates-NewStruct.cs.txt"), "NewStruct.cs");
-        }
-
-        [MenuItem("Assets/Create C# Script/Scriptable Object", false, 1)]
-        public static void CreateScriptableObject()
-        {
-            ProjectWindowUtil.CreateScriptAssetFromTemplateFile(string.Concat(Application.dataPath.Remove(Application.dataPath.Length - 7), "/Templates/PhenomTemplates-NewScriptableObject.cs.txt"), "NewScriptableObject.cs");
-        }
-
-        [MenuItem("Assets/Create C# Script/Editor", false, 1)]
-        public static void CreateEditor()
-        {
-            ProjectWindowUtil.CreateScriptAssetFromTemplateFile(string.Concat(Application.dataPath.Remove(Application.dataPath.Length - 7), "/Templates/PhenomTemplates-NewEditor.cs.txt"), "NewEditor.cs");
-        }
+      ScriptTemplateHandler dummy = CreateInstance<ScriptTemplateHandler>();
+      Object file = dummy.classTemplate;
+      DestroyImmediate(dummy);
+      ProjectWindowUtil.CreateScriptAssetFromTemplateFile(AssetDatabase.GetAssetPath(file), "NewClass.cs");
     }
+
+    [MenuItem("Assets/Create C# Script/Monobehavior", false, 1)]
+    public static void CreateMonoBehavior()
+    {
+      ScriptTemplateHandler dummy = CreateInstance<ScriptTemplateHandler>();
+      Object file = dummy.monoBehaviourTemplate;
+      DestroyImmediate(dummy);
+      ProjectWindowUtil.CreateScriptAssetFromTemplateFile(AssetDatabase.GetAssetPath(file), "NewMonobehavior.cs");
+    }
+
+    [MenuItem("Assets/Create C# Script/Struct", false, 1)]
+    public static void CreateStruct()
+    {
+      ScriptTemplateHandler dummy = CreateInstance<ScriptTemplateHandler>();
+      Object file = dummy.structTemplate;
+      DestroyImmediate(dummy);
+      ProjectWindowUtil.CreateScriptAssetFromTemplateFile(AssetDatabase.GetAssetPath(file), "NewStruct.cs");
+    }
+
+    [MenuItem("Assets/Create C# Script/Scriptable Object", false, 1)]
+    public static void CreateScriptableObject()
+    {
+      ScriptTemplateHandler dummy = CreateInstance<ScriptTemplateHandler>();
+      Object file = dummy.scriptableObjectTemplate;
+      DestroyImmediate(dummy);
+      ProjectWindowUtil.CreateScriptAssetFromTemplateFile(AssetDatabase.GetAssetPath(file), "NewScriptableObject.cs");
+    }
+
+    [MenuItem("Assets/Create C# Script/Editor", false, 1)]
+    public static void CreateEditor()
+    {
+      ScriptTemplateHandler dummy = CreateInstance<ScriptTemplateHandler>();
+      Object file = dummy.editorTemplate;
+      DestroyImmediate(dummy);
+      ProjectWindowUtil.CreateScriptAssetFromTemplateFile(AssetDatabase.GetAssetPath(file), "NewEditor.cs");
+    }
+  }
 }

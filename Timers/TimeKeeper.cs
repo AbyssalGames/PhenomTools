@@ -93,7 +93,7 @@ namespace PhenomTools
 
             if (keeperCoroutine != null)
             {
-                CoroutineHolder.StopCoroutine(keeperCoroutine);
+                // CoroutineHolder.StopCoroutine(keeperCoroutine);
                 keeperCoroutine = null;
             }
 
